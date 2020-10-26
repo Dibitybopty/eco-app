@@ -2,65 +2,90 @@ import Head from 'next/head'
 import styles from './layout.module.css'
 import utilStyles from '../styles/utils.module.css'
 import Link from 'next/link'
+import { motion, AnimatePresence } from 'framer-motion'
+import { Component, useEffect } from 'react'
+import Products from '../pages/products'
 
-const name = 'Lee'
-export const siteTitle = 'Next.js Sample Website'
+//TODO Make pages act like they're scrolling with transitions, so it seems like one big page.
+//TODO Change content based on weather with a weather API.
 
-export default function Layout({ children, home }) {
-  return (
-    <div className={styles.container}>
-      <Head>
-        <link rel="icon" href="/favicon.ico" />
-        <meta
-          name="description"
-          content="Learn how to build a personal website using Next.js"
-        />
-        <meta
-          property="og:image"
-          content={`https://og-image.now.sh/${encodeURI(
-            siteTitle
-          )}.png?theme=light&md=0&fontSize=75px&images=https%3A%2F%2Fassets.vercel.com%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fnextjs-black-logo.svg`}
-        />
-        <meta name="og:title" content={siteTitle} />
-        <meta name="twitter:card" content="summary_large_image" />
-      </Head>
-      <header className={styles.header}>
-        {home ? (
-          <>
-            <img
-              src="/images/profile.jpg"
-              className={`${styles.headerHomeImage} ${utilStyles.borderCircle}`}
-              alt={name}
-            />
-            <h1 className={utilStyles.heading2Xl}>{name}</h1>
-          </>
-        ) : (
-          <>
-            <Link href="/">
-              <a>
-                <img
-                  src="/images/profile.jpg"
-                  className={`${styles.headerImage} ${utilStyles.borderCircle}`}
-                  alt={name}
-                />
-              </a>
-            </Link>
-            <h2 className={utilStyles.headingLg}>
-              <Link href="/">
-                <a className={utilStyles.colorInherit}>{name}</a>
-              </Link>
-            </h2>
-          </>
-        )}
-      </header>
-      <main>{children}</main>
-      {!home && (
-        <div className={styles.backToHome}>
-          <Link href="/">
-            <a>← Back to home</a>
-          </Link>
-        </div>
-      )}
-    </div>
-  )
+export const siteTitle = 'Eco Sales'
+
+export default function Layout({ children, home, products, contactus, gallery }) {
+
+    // useEffect(() => {
+    //     const sun = document.getElementById('sun');
+    //     window.addEventListener('mousemove', (e) => {
+    //         //if(e.x < window.innerWidth - 200 && e.y < window.innerHeight - 200){
+    //         sun.style.left = (e.x - 175) + 'px';
+    //         sun.style.top = (e.y - 175) + 'px';
+    //         // }
+
+
+    //     })
+    //     window.addEventListener('mouseout', (e) => {
+    //         sun.style.left = '0px';
+    //         sun.style.top = '0px';
+    //     })
+    // })
+
+    return (
+        <>
+
+            {home && (
+                <div>
+
+
+                    {/* <div className={styles.spiralSun}> */}
+
+                    {/* <div className={styles.pageContent} > */}
+                        {children}
+                    {/* </div> */}
+
+                    {/* </div> */}
+
+
+
+                </div>)}
+            {products && (
+                <div className={styles.pageContent} >
+
+
+
+                    <div>{children}</div>
+
+
+                </div>
+
+            )}
+
+            {gallery && (
+                <>
+                    <div className={utilStyles.contactbg}>
+
+                        <div className={utilStyles.contactInnerLeft}></div>
+                        <div className={utilStyles.contactInnerRight}>
+                            <div className={utilStyles.productsSvg}>
+                                <object data="/images/undraw_art_edited.svg"></object>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div>{children}</div>
+
+                </>
+            )}
+
+            {contactus && (
+                <>
+
+                    <div>{children}</div>
+                </>
+            )}
+
+        </>
+    )
+
+
 }

@@ -1,11 +1,34 @@
-html,
+html, html {
+  /* height: 100%; */
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* background: rgb(76, 140, 47);
+  background: linear-gradient(0deg, rgba(76, 140, 47, 1) 21%, rgba(255, 255, 102, 1) 76%); */
+  scrollbar-color: rebeccapurple white;
+  scrollbar-width: none;
+}
+
+html::-webkit-scrollbar {
+  width: 0px; /* For Chrome, Safari, and Opera */
+}
+
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,
-    Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   line-height: 1.6;
   font-size: 18px;
+  background: #0054b6;
+  overflow-y: auto;
+  overflow-x: hidden;
+  /* background-image: url('/images/Sun-Tornado.svg'); */
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: repeat;
+  background-position: top center;
 }
 
 * {
@@ -25,3 +48,34 @@ img {
   max-width: 100%;
   display: block;
 }
+
+/* animate turbines */
+
+/* #mid_prop {
+  animation: midTurbine 5s cubic-bezier(0.0, 0.02, 0.75, 0.75) infinite;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+#right_prop {
+  animation: midTurbine 5.2s cubic-bezier(0.0, 0.02, 0.75, 0.75) infinite;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+#left_prop {
+  animation: midTurbine 5.3s cubic-bezier(0.0, 0.02, 0.75, 0.75) infinite;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+@keyframes midTurbine {
+  from {
+    transform: rotateZ(0);
+  }
+  to{
+    transform: rotateZ(360deg);
+  }
+} */
+
+/* end of turbines */

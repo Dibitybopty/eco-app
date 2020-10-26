@@ -1,53 +1,498 @@
+@namespace svg url(http://www.w3.org/2000/svg);
+.homeWrapper {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 2;
+}
+/* backgrounds from www.svgbackgrounds.com */
+
+.homeWrapper::after{
+  background: url(/images/liquid_blue.svg);
+  background-size: cover;
+  opacity: 0.25;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;   
+  content: '';
+}
+
+.siteWrapper {
+  /* display: flex; */
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+}
+
+.siteWrapper2 {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+  background: #fff;
+  padding: 0;
+  margin: 0;
+}
+
+.innerHomeTop {
+  flex: 2;
+  display: flex;
+}
+
+.innerHomeTop p {
+  /* text-shadow: 2px 2px #333; */
+}
+
+.innerHomeTopLeft {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.innerHomeTopRight {
+  flex: 1;
+}
+
+.innerHomeTopRight object {
+  opacity: 1;
+  width: 40rem;
+  position: absolute;
+}
+
+.innerHomeTopRight p {
+  font-size: 2rem;
+  color: white;
+  position: relative;
+  z-index: 2;
+  right: 12rem;
+  text-align: center;
+  width: 150%;
+  top: 2.5rem;
+}
+
+.innerHomeBottom {
+  flex: 1;
+}
+
+.innerHomeBottom img {
+  position: absolute;
+  width: 100%;
+}
+
+.innerHomeBottom svg {
+  position: absolute;
+  /* height: 80%; */
+  bottom: 0;
+  opacity: 0.25;
+}
+
+.turbineWrapper {
+  width: 70%;
+  position: absolute;
+  bottom: 0;
+  left: 4rem;
+  /* height: 100%; */
+}
+
+.waveSquareWrapper{
+  /* height: 30%; */
+  width: 100vh;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  transform: rotateZ(-90deg);
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  z-index: -2;
+  opacity: 0.1;
+  overflow: hidden;
+}
+
+.waveSquareWrapper object {
+  height: 30rem;
+  width: 150%;
+
+}
+
+.waveSquareWrapperLeft{
+  /* height: 30%; */
+  width: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  transform: rotateZ(90deg);
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  z-index: -2;
+  opacity: 0.1;
+  overflow: hidden;
+}
+
+.waveSquareWrapperLeft object {
+  height: 30rem;
+  width: 150%;
+
+}
+
+
+.solarShape {
+  width: 25rem;
+  height: 25rem;
+  background-color: #002d85;
+  /* border: 5px solid rgba(255, 255, 255, 0.8); */
+  overflow: visible;
+  box-shadow: 50px 50px rgba(0, 0, 255, 0.1);
+  transform-style: preserve-3d;
+  transition: transform 3s;
+}
+
+.solarShape h1 {
+  /* text-shadow: 2px 2px #333; */
+  overflow: visible;
+  position: relative;
+  left: -6.5rem;
+  width: 200%;
+  color: white;
+  top: 2.5rem;
+  font-weight: 800;
+}
+
+.innerHomeTopRightContent {
+  transform-style: preserve-3d;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  position: relative;
+  top: 6rem;
+  right: 9rem;
+}
+
+.solarHeadingPop {
+  position: relative;
+  transform: translateZ(6rem);
+}
+
+.solarHeadingPop h1 {
+  overflow: visible;
+  position: relative;
+  left: -6.5rem;
+  width: 200%;
+  color: white;
+  top: 2.5rem;
+  font-weight: 800;
+  user-select: none;
+}
+
+.solarInfoPop {
+  position: relative;
+  transform: translateZ(3rem);
+}
+
+.solarInfoPop p {
+  font-size: 2rem;
+  color: white;
+  position: relative;
+  z-index: 2;
+  right: 12rem;
+  text-align: center;
+  width: 150%;
+  top: 2.5rem;
+  user-select: none;
+}
+
+.lowerMain {
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  /* position: absolute;
+  bottom: -60rem; */
+}
+
+.sideMenuWrapper {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  width: 20%;
+  height: 100vh;
+  position: fixed;
+  z-index: 333;
+}
+
+.navClick {
+  cursor: pointer;
+}
+
+.sideMenuEffect{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow-x: visible;
+    padding: 6rem 0 6rem 3rem;
+    width: 1vw;
+    position: fixed;
+    z-index: 335;
+}
+
+.sideMenuEffect svg {
+  position: fixed;
+  top: 6.3rem;
+  height: 22rem;
+}
+
+
+.sideMenuItems {
+  /* margin-left: 3rem; */
+  height: 100vh;
+  /* width: 20rem; */
+  display: flex;
+  /* justify-content: space-evenly; */
+  flex-direction: column;
+  /* background-color: rgba(0, 0, 0, 0.39); */
+  overflow-x: visible;
+  padding: 6rem 0 6rem 6rem;
+  width: 20vw;
+  position: fixed;
+  z-index: 334;
+}
+
+.sideMenuItems a {
+  text-align: left;
+  font-size: 3.5rem;
+  color: white;
+  font-weight: 900;
+  /* text-shadow: 2px 2px rgba(0, 0, 0, 0.5); */
+  /* opacity: 0.5; */
+  cursor: pointer;
+  text-decoration: none;
+  width: max-content;
+  /* text-shadow: 2px 2px rgba(0, 0, 0, 0.6); */
+  user-select: none;
+}
+
+.sideMenuItemWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.menuEffect {
+  position: absolute;
+  margin-top: 0.5rem;
+  z-index: 333;
+  width: 1rem;
+  height: 5rem;
+  background-color: transparent;
+}
+
+.menuEffectInner {
+  text-align: center;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 2s;
+  transform-style: preserve-3d;
+}
+
+.menuEffectFront, .menuEffectBack {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+
+.menuEffectFront {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  /* transform: rotateY(.5turn); */
+  transform: translateZ(10px);
+  /* box-shadow: 5px 10px #888888; */
+}
+
+.menuEffectBack {
+  /* transform: rotateY(.5turn);   */
+  background: transparent;
+}
+
+.menuSquares {
+  height: 1rem;
+  width: 1rem;
+  border: whitesmoke solid 1px;
+  background: rgba(0, 0, 255, 0.5);
+}
+
+.menuWrapper {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  z-index: 399;
+  width: 100%;
+  height: 3.9rem;
+  background-color: rgba(0, 0, 0, 0.39);
+}
+
+.menuItems {
+  /* position: absolute; */
+  /* top: 1.3rem; */
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  /* width: 100%; */
+  white-space: nowrap;
+  flex: 2;
+}
+
+.menuItems a {
+  color: white;
+  font-weight: bold;
+  font-size: 1.9rem;
+}
+
+.ecoImage {
+  /* position: absolute; */
+  /* top: 0; */
+  /* left: 60px; */
+  /* z-index: 39; */
+  font-weight: bold;
+  font-size: 2rem;
+  /* height: 10vh; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  white-space: nowrap;
+}
+
+.contactbg {
+  display: flex;
+  /* background-image: url(../public/images/undraw_contact_us_15o2.svg); */
+  background: transparent;
+  width: 100%;
+  height: 100vh;
+  justify-content: flex-end;
+}
+
+.contactbg object {
+  width: 75%;
+}
+
+.contactInnerLeft {
+  flex: 1;
+}
+
+.contactInnerRight {
+  flex: 3;
+}
+
+.contactInnerRight object {
+  width: 100%;
+  height: 100%;
+}
+
+@namespace svg url(http://www.w3.org/2000/svg);
+/* Necessary to select only SVG <a> elements, and not also HTML’s.
+   See warning below */
+
+.contactInnerRight svg a:link, .contactInnerRight svg a:visited {
+  cursor: pointer;
+}
+
+.contactInnerRight svg a text, .contactInnerRight text svg a {
+  fill: yellow;
+  /* Even for text, SVG uses fill over color */
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.phone {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  white-space: nowrap;
+}
+
+.phone p {
+  font-weight: 600;
+  color: white;
+  font-size: 1.3rem;
+}
+
+.productsSvg {
+  padding: 6rem;
+  height: 100vh;
+  opacity: 1;
+  background-color: transparent;
+}
+
 .heading2Xl {
-    font-size: 2.5rem;
-    line-height: 1.2;
-    font-weight: 800;
-    letter-spacing: -0.05rem;
-    margin: 1rem 0;
-  }
-  
-  .headingXl {
-    font-size: 2rem;
-    line-height: 1.3;
-    font-weight: 800;
-    letter-spacing: -0.05rem;
-    margin: 1rem 0;
-  }
-  
-  .headingLg {
-    font-size: 1.5rem;
-    line-height: 1.4;
-    margin: 1rem 0;
-  }
-  
-  .headingMd {
-    font-size: 1.2rem;
-    line-height: 1.5;
-  }
-  
-  .borderCircle {
-    border-radius: 90px;
-  }
-  
-  .colorInherit {
-    color: inherit;
-  }
-  
-  .padding1px {
-    padding-top: 1px;
-  }
-  
-  .list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .listItem {
-    margin: 0 0 1.25rem;
-  }
-  
-  .lightText {
-    color: #999;
-  }
-  
+  font-size: 2.5rem;
+  line-height: 1.2;
+  font-weight: 800;
+  letter-spacing: -0.05rem;
+  margin: 1rem 0;
+}
+
+.headingXl {
+  font-size: 2rem;
+  line-height: 1.3;
+  font-weight: 800;
+  letter-spacing: -0.05rem;
+  margin: 1rem 0;
+}
+
+.headingLg {
+  font-size: 1.5rem;
+  line-height: 1.4;
+  margin: 1rem 0;
+}
+
+.headingMd {
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+.borderCircle {
+  border-radius: 90px;
+}
+
+.colorInherit {
+  color: inherit;
+}
+
+.padding1px {
+  padding-top: 1px;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.listItem {
+  margin: 0 0 1.25rem;
+}
+
+.lightText {
+  color: #999;
+}
