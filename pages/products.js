@@ -1,16 +1,14 @@
 import { motion } from 'framer-motion'
 import Head from 'next/head'
 import Link from 'next/link'
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import Layout, { siteTitle } from '../components/layout'
 import utilStyles from '../styles/utils.module.css'
 
 export default function Products() {
 
-  const [tilt, setTilt] = useState(0);
-
   function moveCard(e) {
-    console.log(e.tiltX)
+    //console.log(e)
   }
 
   useEffect(() => {
@@ -47,9 +45,9 @@ export default function Products() {
 
         <div className={utilStyles.productLeft}></div>
         <div className={utilStyles.productRight}>
-          <motion.div onTap={(e)=>setTilt(e.tiltY)} type='cardContainer' className={utilStyles.productCardContainer}>
+          <motion.div onPointerMove={(e)=>moveCard(e)} type='cardContainer' className={utilStyles.productCardContainer}>
             <div type='card' className={utilStyles.productCard}>
-  <h3>Some Product with {tilt} tilt!</h3>
+              <h3>Some Product</h3>
             </div>
           </motion.div>
           <div type='cardContainer' className={utilStyles.productCardContainer}>

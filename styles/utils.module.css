@@ -556,6 +556,12 @@
   transform-style: preserve-3d;
 }
 
+.productCard h3{
+  font-size: 2rem;
+  text-align: center;
+  transform: translateZ(30px);
+}
+
 @namespace svg url(http://www.w3.org/2000/svg);
 /* Necessary to select only SVG <a> elements, and not also HTML’s.
    See warning below */
