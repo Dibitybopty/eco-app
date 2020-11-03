@@ -11,16 +11,21 @@ export default function Products() {
     const card = e.currentTarget;
     if (card.attributes.type !== undefined) {
       if (card.attributes.type.value === 'cardContainer') {
-        let xAxis = (window.innerWidth / 2 - e.clientX) / 20;
-        let yAxis = (window.innerHeight / 2 - e.clientY) / 20;
+        let xAxis = (card.scrollWidth / 2 - e.nativeEvent.layerX) / 25;
+        let yAxis = (card.scrollHeight / 2 - e.nativeEvent.layerY) / 25;
+        
+        card.firstChild.style.transform = `rotateY(${xAxis}deg) rotateX(${-yAxis}deg)`
+        card.firstChild.style.transition = ''
 
-        card.firstChild.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`
+        //console.log(e)
+
       } 
     }
   }
 
   function leaveCard(e){
     const card = e.currentTarget;
+    card.firstChild.style.transition = 'ease 0.5s'
     card.firstChild.style.transform = 'rotateY(0deg) rotateX(0deg)'
   }
 
@@ -63,17 +68,41 @@ export default function Products() {
               <h3>Some Product</h3>
             </div>
           </motion.div>
-          <div type='cardContainer' className={utilStyles.productCardContainer}>
+          <motion.div onPointerMove={(e) => moveCard(e)} onPointerLeave={(e)=>leaveCard(e)} type='cardContainer' className={utilStyles.productCardContainer}>
             <div type='card' className={utilStyles.productCard}>
               <h3>Some Product</h3>
             </div>
-          </div>
-          <div className={utilStyles.productCardContainer}></div>
-          <div className={utilStyles.productCardContainer}></div>
-          <div className={utilStyles.productCardContainer}></div>
-          <div className={utilStyles.productCardContainer}></div>
-          <div className={utilStyles.productCardContainer}></div>
-          <div className={utilStyles.productCardContainer}></div>
+          </motion.div>
+          <motion.div onPointerMove={(e) => moveCard(e)} onPointerLeave={(e)=>leaveCard(e)} type='cardContainer' className={utilStyles.productCardContainer}>
+            <div type='card' className={utilStyles.productCard}>
+              <h3>Some Product</h3>
+            </div>
+          </motion.div>
+          <motion.div onPointerMove={(e) => moveCard(e)} onPointerLeave={(e)=>leaveCard(e)} type='cardContainer' className={utilStyles.productCardContainer}>
+            <div type='card' className={utilStyles.productCard}>
+              <h3>Some Product</h3>
+            </div>
+          </motion.div>
+          <motion.div onPointerMove={(e) => moveCard(e)} onPointerLeave={(e)=>leaveCard(e)} type='cardContainer' className={utilStyles.productCardContainer}>
+            <div type='card' className={utilStyles.productCard}>
+              <h3>Some Product</h3>
+            </div>
+          </motion.div>
+          <motion.div onPointerMove={(e) => moveCard(e)} onPointerLeave={(e)=>leaveCard(e)} type='cardContainer' className={utilStyles.productCardContainer}>
+            <div type='card' className={utilStyles.productCard}>
+              <h3>Some Product</h3>
+            </div>
+          </motion.div>
+          <motion.div onPointerMove={(e) => moveCard(e)} onPointerLeave={(e)=>leaveCard(e)} type='cardContainer' className={utilStyles.productCardContainer}>
+            <div type='card' className={utilStyles.productCard}>
+              <h3>Some Product</h3>
+            </div>
+          </motion.div>
+          <motion.div onPointerMove={(e) => moveCard(e)} onPointerLeave={(e)=>leaveCard(e)} type='cardContainer' className={utilStyles.productCardContainer}>
+            <div type='card' className={utilStyles.productCard}>
+              <h3>Some Product</h3>
+            </div>
+          </motion.div>
         </div>
 
 

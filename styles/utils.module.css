@@ -557,6 +557,7 @@
   border-radius: 30px;
   transform-style: preserve-3d;
   background-color: #002c85;
+  /* transition: ease 3s; */
 }
 
 .productCard h3{
