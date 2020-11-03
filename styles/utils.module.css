@@ -9,7 +9,7 @@
 }
 /* backgrounds from www.svgbackgrounds.com */
 
-.homeWrapper::after{
+/* .homeWrapper::after{
   background: url(/images/liquid_blue.svg);
   background-size: cover;
   opacity: 0.25;
@@ -20,6 +20,19 @@
   position: absolute;
   z-index: -1;   
   content: '';
+} */
+
+.mainBackground{
+   background: url(/images/liquid_blue.svg);
+   background-size: cover;
+   opacity: 0.25;
+   top: 0;
+   left: 0;
+   bottom: 0;
+   right: 0;
+   position: absolute;
+   z-index: -1;   
+   content: '';
 }
 
 .siteWrapper {
@@ -150,6 +163,17 @@
 
 }
 
+.solarShapeBG{
+  width: 25rem;
+  height: 25rem;
+  background-color: rgba(0,45,133,0.5);
+  /* border: 5px solid rgba(255, 255, 255, 0.8); */
+  overflow: visible;
+  position: absolute;
+  top: 3rem;
+  left: 3rem;
+}
+
 
 .solarShape {
   width: 25rem;
@@ -157,7 +181,7 @@
   background-color: #002d85;
   /* border: 5px solid rgba(255, 255, 255, 0.8); */
   overflow: visible;
-  box-shadow: 50px 50px rgba(0, 0, 255, 0.1);
+  /* box-shadow: 50px 50px rgba(0, 0, 255, 0.1); */
   transform-style: preserve-3d;
   transition: transform 3s;
 }
@@ -216,6 +240,84 @@
   user-select: none;
 }
 
+.solarInfoTel {
+  position: relative;
+  transform: translateZ(3rem);
+}
+
+.solarInfoTel p {
+  font-size: 2rem;
+  color: #69cd3c;
+  position: relative;
+  z-index: 2;
+  right: 0rem;
+  text-align: center;
+  width: 150%;
+  top: 2rem;
+  user-select: none;
+  font-weight: 900;
+}
+
+.banner {
+  height: 2.5rem;
+  width: 100%;
+  background-color: #69cd3c;
+  position: absolute;
+  top: 0;
+  z-index: 336;
+  /* border-top: 1px solid black; */
+  border-bottom: 1px solid black;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: rgb(9, 15, 15);
+  user-select: none;
+
+}
+
+.banner span {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: black;
+  user-select: none;
+}
+
+.modalBackground{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 337;
+  cursor: zoom-out;
+
+}
+
+.modal{
+  width: 70%;
+  height: 70%;
+  border-radius: 20px;
+  background-color: #69cd3c;
+  position: absolute;
+  z-index: 338;
+  text-align: center;
+  cursor: default;
+
+}
+
+.modal h2{
+  display: inline-block;
+  font-size: 2.5rem;
+  user-select: none;
+
+}
+
 .lowerMain {
   width: 100%;
   height: 100%;
@@ -258,13 +360,9 @@
 
 
 .sideMenuItems {
-  /* margin-left: 3rem; */
   height: 100vh;
-  /* width: 20rem; */
   display: flex;
-  /* justify-content: space-evenly; */
   flex-direction: column;
-  /* background-color: rgba(0, 0, 0, 0.39); */
   overflow-x: visible;
   padding: 6rem 0 6rem 6rem;
   width: 20vw;
@@ -277,12 +375,9 @@
   font-size: 3.5rem;
   color: white;
   font-weight: 900;
-  /* text-shadow: 2px 2px rgba(0, 0, 0, 0.5); */
-  /* opacity: 0.5; */
   cursor: pointer;
   text-decoration: none;
   width: max-content;
-  /* text-shadow: 2px 2px rgba(0, 0, 0, 0.6); */
   user-select: none;
 }
 
@@ -382,6 +477,21 @@
   white-space: nowrap;
 }
 
+.contactModalPlaceholder {
+  width: 10%;
+  height: 10%;
+  background-color: white;
+  position: absolute;
+  z-index: 1337;
+}
+
+.emailText{
+  font-size: 2rem;
+  letter-spacing: 5px;
+  font-weight: bold;
+  display: inline-block;
+}
+
 .contactbg {
   display: flex;
   /* background-image: url(../public/images/undraw_contact_us_15o2.svg); */
@@ -392,6 +502,10 @@
 }
 
 .contactbg object {
+  width: 75%;
+}
+
+.contactbg svg {
   width: 75%;
 }
 

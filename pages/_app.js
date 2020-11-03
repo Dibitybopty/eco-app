@@ -31,7 +31,7 @@ function MyApp({ Component, pageProps, router }) {
       x: "5rem",
       scale: 1.3,
       WebkitTextStroke: '0px #fff',
-      WebkitTextFillColor: 'rgba(255, 255, 255, 1)',
+      WebkitTextFillColor: 'rgba(105,205,60,1)',
     },
     out: {
       // opacity: 0.85,
@@ -143,7 +143,7 @@ function MyApp({ Component, pageProps, router }) {
 
 
       {/* <div className={utilStyles.sideMenuWrapper}> */}
-      <div className={utilStyles.sideMenuEffect}>
+      <div id='sideMenuEffect' className={utilStyles.sideMenuEffect}>
         <svg viewBox="0 0 22 412" fill="none" xmlns="http://www.w3.org/2000/svg">
           <rect width="22" height="404" fill="transparent" />
           <motion.line id="navLine" x1="11" y1="10" x2="11" y2="403" stroke="rgba(255,255,255,0.6)" strokeWidth="5" strokeLinecap="round" />
@@ -162,7 +162,7 @@ function MyApp({ Component, pageProps, router }) {
           <motion.circle id="navCircle" cx="11" cy="50" r="11" fill="rgba(255,255,255,1)" className={utilStyles.navCircle} animate={{ transform: 'translateY(' + dotStart + ')', filter: blur }} initial={{ transform: 'translateY(-4rem)', filter: 'blur(30px)' }} transition={navTransition} />
         </svg>
       </div>
-      <div className={utilStyles.sideMenuItems}>
+      <div id='sideMenu' className={utilStyles.sideMenuItems}>
 
         {/* I don't like this effect */}
 
@@ -230,7 +230,7 @@ function MyApp({ Component, pageProps, router }) {
 
         <motion.div className={utilStyles.siteWrapper} key={router.route} initial="pageEnter" animate="center" exit="pageExit" variants={variants}
           transition={{
-            y: { ease: "easeInOut", stiffness: 150, damping: 25, duration: 1.5, delay: 0.2 }
+            y: { ease: "easeInOut", stiffness: 150, damping: 25, duration: 1.5, delay: 0 }
           }}
         >
           <Component {...pageProps} />
