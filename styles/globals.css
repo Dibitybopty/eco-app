@@ -29,6 +29,7 @@ body {
   background-size: cover;
   background-repeat: repeat;
   background-position: top center;
+  perspective: 1000px;
 }
 
 * {

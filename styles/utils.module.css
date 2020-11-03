@@ -522,6 +522,40 @@
   height: 100%;
 }
 
+.productBG{
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 0.5fr 1fr;
+}
+
+.productRight{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 20rem);
+  column-gap: 2rem;
+  row-gap: 2rem;
+  justify-content: center;
+}
+
+.productCardContainer{
+  width: 100%;
+  height: 25rem;
+  background-color: white;
+  border: 2px solid black;
+  align-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000px;
+
+}
+
+.productCard{
+  width: 85%;
+  height: 85%;
+  border: 2px solid black;
+  transform-style: preserve-3d;
+}
+
 @namespace svg url(http://www.w3.org/2000/svg);
 /* Necessary to select only SVG <a> elements, and not also HTML’s.
    See warning below */
