@@ -8,7 +8,20 @@ import utilStyles from '../styles/utils.module.css'
 export default function Products() {
 
   function moveCard(e) {
-    //console.log(e)
+    const card = e.currentTarget;
+    if (card.attributes.type !== undefined) {
+      if (card.attributes.type.value === 'cardContainer') {
+        let xAxis = (window.innerWidth / 2 - e.clientX) / 20;
+        let yAxis = (window.innerHeight / 2 - e.clientY) / 20;
+
+        card.firstChild.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`
+      } 
+    }
+  }
+
+  function leaveCard(e){
+    const card = e.currentTarget;
+    card.firstChild.style.transform = 'rotateY(0deg) rotateX(0deg)'
   }
 
   useEffect(() => {
@@ -26,13 +39,13 @@ export default function Products() {
       // }
 
 
-      cardContainer[0].addEventListener('mousemove', (e)=>{
-        let xAxis = (window.innerWidth / 2 - e.clientX) / 10;
-        let yAxis = (window.innerHeight / 2 - e.clientY) / 10;
+      // cardContainer[0].addEventListener('mousemove', (e)=>{
+      //   let xAxis = (window.innerWidth / 2 - e.clientX) / 10;
+      //   let yAxis = (window.innerHeight / 2 - e.clientY) / 10;
 
-        card[0].style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`
+      //   card[0].style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`
 
-      })
+      // })
     })
   })
   return (
@@ -45,7 +58,7 @@ export default function Products() {
 
         <div className={utilStyles.productLeft}></div>
         <div className={utilStyles.productRight}>
-          <motion.div onPointerMove={(e)=>moveCard(e)} type='cardContainer' className={utilStyles.productCardContainer}>
+          <motion.div onPointerMove={(e) => moveCard(e)} onPointerLeave={(e)=>leaveCard(e)} type='cardContainer' className={utilStyles.productCardContainer}>
             <div type='card' className={utilStyles.productCard}>
               <h3>Some Product</h3>
             </div>
