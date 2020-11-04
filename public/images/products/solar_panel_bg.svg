@@ -1,0 +1,17 @@
+<svg width="168" height="168" viewBox="0 0 168 168" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="168" height="168" opacity='0' fill="#E5E5E5"/>
+<g id="Mask Group">
+<mask id="mask0" mask-type="alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="168" height="168">
+<rect id="Rectangle 15" width="168" height="168" opacity='1' fill="#000"/>
+</mask>
+<g mask="url(#mask0)">
+<line id="Line 1" x1="34.5" y1="2.18557e-08" x2="34.5" y2="169" stroke="#8298BF"/>
+<line id="Line 2" x1="134.5" y1="-1" x2="134.5" y2="169" stroke="#8298BF"/>
+<rect id="Rectangle 1" width="168" height="168" stroke="white" stroke-width="2"/>
+<rect id="Rectangle 10" x="-8.48529" width="12" height="12" transform="rotate(-45 -8.48529 0)" fill="white"/>
+<rect id="Rectangle 12" x="-8.48529" y="168" width="12" height="12" transform="rotate(-45 -8.48529 168)" fill="white"/>
+<rect id="Rectangle 13" x="159.515" y="168" width="12" height="12" transform="rotate(-45 159.515 168)" fill="white"/>
+<rect id="Rectangle 14" x="159.515" width="12" height="12" transform="rotate(-45 159.515 0)" fill="white"/>
+</g>
+</g>
+</svg>

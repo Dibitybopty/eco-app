@@ -2,7 +2,7 @@ import '../styles/globals.css'
 import { motion, AnimatePresence } from 'framer-motion';
 import utilStyles from '../styles/utils.module.css'
 import Link from 'next/link';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 function MyApp({ Component, pageProps, router }) {
 
@@ -98,22 +98,7 @@ function MyApp({ Component, pageProps, router }) {
     ease: "anticipate"
   }
 
-  // const [overflow, setOverflow] = useState(true);
-
-  // useEffect(() => {
-  //   if(overflow){
-  //     document.querySelector('body').style.overflowY = 'hidden';
-  //   }else{
-  //     document.querySelector('body').style.overflowY = 'auto';
-
-
-  //   }
-  // })
-
-
   var dotStart = '0rem';
-
-
 
   if (router.route === '/products') {
     dotStart = '6.5rem';
@@ -185,7 +170,7 @@ function MyApp({ Component, pageProps, router }) {
           </div> */}
 
         <Link href="/">
-          <motion.a whileHover="in" animate={router.route === '/' ? "in" : "out"} initial="initial" variants={linkEffects} transition={transition} onClick={() => setBlur('blur(30px)')} >HOME</motion.a>
+          <motion.a id='mainPage' whileHover="in" animate={router.route === '/' ? "in" : "out"} initial="initial" variants={linkEffects} transition={transition} onClick={() => setBlur('blur(30px)')} >HOME</motion.a>
         </Link>
 
         <Link href="products">

@@ -9,7 +9,7 @@ import Products from '../pages/products'
 //TODO Make pages act like they're scrolling with transitions, so it seems like one big page.
 //TODO Change content based on weather with a weather API.
 
-export const siteTitle = 'Eco Sales'
+export const siteTitle = 'Eco Sales';
 
 export default function Layout({ children, home, products, contactus, gallery }) {
 
