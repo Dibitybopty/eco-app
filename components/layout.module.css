@@ -88,7 +88,7 @@
   position: absolute;
   z-index: 11;
   /* clip-path: polygon(100% 55%, 0 100%, 100% 100%); */
-  background-image: element(#solarPanelContainer);
+  /* background-image: element(#solarPanelContainer); */
 }
 
 .solarPanelContainer {

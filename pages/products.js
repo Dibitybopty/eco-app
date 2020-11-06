@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { useEffect } from 'react'
 import Layout, { siteTitle } from '../components/layout'
 import utilStyles from '../styles/utils.module.css'
+import Image from 'next/image'
 
 export default function Products() {
 
@@ -29,6 +30,52 @@ export default function Products() {
     card.firstChild.style.transform = 'rotateY(0deg) rotateX(0deg)'
   }
 
+  const cardAnimations = {
+    animate: {
+      transition: {
+        staggerChildren: 0.15,
+        delayChildren: 0.35,
+        
+      }
+    },
+    exit: {
+      transition: {
+        staggerChildren: 0.15,
+        delayChildren: 0,
+        
+      }
+    },
+    initial: {
+      transition: {
+        staggerChildren: 0.15,
+        delayChildren: 0.7,
+        
+      }
+    }
+  }
+
+  const cards = {
+    animate: {
+      y: 0,
+      transition: {
+        duration: 1
+      }
+      
+    },
+    initial: {
+      y: 1000,
+      
+    },
+    exit: {
+      y: 1000,
+      transition: {
+        duration: 1.7,
+        delayChildren: 0
+      }     
+      
+    }
+  }
+
   return (
     <Layout products>
       <Head>
@@ -39,65 +86,76 @@ export default function Products() {
         {/* <object data="images/undraw_contact_us_15o2.svg"></object> */}
 
         <div className={utilStyles.productLeft}></div>
-        <div className={utilStyles.productRight}>
+        <motion.div transition={{duration: 1.7}} animate='animate' exit='exit' initial='initial' variants={cardAnimations} className={utilStyles.productRight}>
 
-          <motion.div onPointerMove={(e) => moveCard(e)} onPointerLeave={(e) => leaveCard(e)} type='cardContainer' className={utilStyles.productCardContainer}>
-            
-              <div type='card' className={utilStyles.productCard}>
-                <h3>Lithium Battery</h3>
-              </div>
-          </motion.div>
-          <motion.div onPointerMove={(e) => moveCard(e)} onPointerLeave={(e) => leaveCard(e)} type='cardContainer' className={utilStyles.productCardContainer}>
+          <motion.div variants={cards} onPointerMove={(e) => moveCard(e)} onPointerLeave={(e) => leaveCard(e)} type='cardContainer' className={utilStyles.productCardContainer}>
+
             <div type='card' className={utilStyles.productCard}>
-              <h3>Air Source Heat Pumps</h3>
+            <div className={utilStyles.productCircle}></div>
+              <div className={utilStyles.productImages}>
+              <Image
+                src='/images/products/sp2000_storage_battery.png'
+                width={183}
+                height={178}
+                alt='Lithium Battery'
+              ></Image>
+              </div>
+              <h3>Lithium Battery</h3>
+
             </div>
           </motion.div>
-          <motion.div onPointerMove={(e) => moveCard(e)} onPointerLeave={(e) => leaveCard(e)} type='cardContainer' className={utilStyles.productCardContainer}>
+          <motion.div variants={cards}  onPointerMove={(e) => moveCard(e)} onPointerLeave={(e) => leaveCard(e)} type='cardContainer' className={utilStyles.productCardContainer}>
+            <div type='card' className={utilStyles.productCard}>
+              <h3>Air Source Heat Pumps</h3>
+
+            </div>
+          </motion.div>
+          <motion.div variants={cards} onPointerMove={(e) => moveCard(e)} onPointerLeave={(e) => leaveCard(e)} type='cardContainer' className={utilStyles.productCardContainer}>
             <div type='card' className={utilStyles.productCard}>
               <h3>Solar Photovoltaic</h3>
             </div>
           </motion.div>
-          <motion.div onPointerMove={(e) => moveCard(e)} onPointerLeave={(e) => leaveCard(e)} type='cardContainer' className={utilStyles.productCardContainer}>
+          <motion.div  variants={cards}onPointerMove={(e) => moveCard(e)} onPointerLeave={(e) => leaveCard(e)} type='cardContainer' className={utilStyles.productCardContainer}>
             <div type='card' className={utilStyles.productCard}>
               <h3>Solar Thermal Panels</h3>
             </div>
           </motion.div>
-          <motion.div onPointerMove={(e) => moveCard(e)} onPointerLeave={(e) => leaveCard(e)} type='cardContainer' className={utilStyles.productCardContainer}>
+          <motion.div variants={cards} onPointerMove={(e) => moveCard(e)} onPointerLeave={(e) => leaveCard(e)} type='cardContainer' className={utilStyles.productCardContainer}>
             <div type='card' className={utilStyles.productCard}>
               <h3>Thermodynamic Hot Water Systems</h3>
             </div>
           </motion.div>
-          <motion.div onPointerMove={(e) => moveCard(e)} onPointerLeave={(e) => leaveCard(e)} type='cardContainer' className={utilStyles.productCardContainer}>
+          <motion.div variants={cards} onPointerMove={(e) => moveCard(e)} onPointerLeave={(e) => leaveCard(e)} type='cardContainer' className={utilStyles.productCardContainer}>
             <div type='card' className={utilStyles.productCard}>
               <h3>Air-to-Air Heat Pumps</h3>
             </div>
           </motion.div>
-          <motion.div onPointerMove={(e) => moveCard(e)} onPointerLeave={(e) => leaveCard(e)} type='cardContainer' className={utilStyles.productCardContainer}>
+          <motion.div variants={cards} onPointerMove={(e) => moveCard(e)} onPointerLeave={(e) => leaveCard(e)} type='cardContainer' className={utilStyles.productCardContainer}>
             <div type='card' className={utilStyles.productCard}>
               <h3>Home Energy Minder</h3>
             </div>
           </motion.div>
-          <motion.div onPointerMove={(e) => moveCard(e)} onPointerLeave={(e) => leaveCard(e)} type='cardContainer' className={utilStyles.productCardContainer}>
+          <motion.div variants={cards} onPointerMove={(e) => moveCard(e)} onPointerLeave={(e) => leaveCard(e)} type='cardContainer' className={utilStyles.productCardContainer}>
             <div type='card' className={utilStyles.productCard}>
               <h3>ESP Ecocent Series</h3>
             </div>
           </motion.div>
-          <motion.div onPointerMove={(e) => moveCard(e)} onPointerLeave={(e) => leaveCard(e)} type='cardContainer' className={utilStyles.productCardContainer}>
+          <motion.div variants={cards} onPointerMove={(e) => moveCard(e)} onPointerLeave={(e) => leaveCard(e)} type='cardContainer' className={utilStyles.productCardContainer}>
             <div type='card' className={utilStyles.productCard}>
               <h3>Solar iBoost</h3>
             </div>
           </motion.div>
-          <motion.div onPointerMove={(e) => moveCard(e)} onPointerLeave={(e) => leaveCard(e)} type='cardContainer' className={utilStyles.productCardContainer}>
+          <motion.div variants={cards} onPointerMove={(e) => moveCard(e)} onPointerLeave={(e) => leaveCard(e)} type='cardContainer' className={utilStyles.productCardContainer}>
             <div type='card' className={utilStyles.productCard}>
               <h3>Growatt Inverter Upgrade</h3>
             </div>
           </motion.div>
-          <motion.div onPointerMove={(e) => moveCard(e)} onPointerLeave={(e) => leaveCard(e)} type='cardContainer' className={utilStyles.productCardContainer}>
+          <motion.div variants={cards} onPointerMove={(e) => moveCard(e)} onPointerLeave={(e) => leaveCard(e)} type='cardContainer' className={utilStyles.productCardContainer}>
             <div type='card' className={utilStyles.productCard}>
               <h3>Infrared Heating Panels</h3>
             </div>
           </motion.div>
-        </div>
+        </motion.div>
 
 
 
