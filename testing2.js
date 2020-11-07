@@ -10,6 +10,8 @@ twitch-videoad.js application/javascript
                         url.searchParams.forEach(function(value, key) {
 							console.log(value, key)
 							console.log(url.searchParams)
+							console.log(arguments[0])
+							console.log(arguments)
                             //url.searchParams.delete(key);
                         });
 			arguments[0] = url.href;
