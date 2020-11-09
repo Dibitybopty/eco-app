@@ -211,7 +211,7 @@ function MyApp({ Component, pageProps, router }) {
 
       </div> */}
 
-      <AnimatePresence initial={true} >
+      <AnimatePresence initial={false} >
 
         <motion.div className={utilStyles.siteWrapper} key={router.route} initial="pageEnter" animate="center" exit="pageExit" variants={variants}
           transition={{

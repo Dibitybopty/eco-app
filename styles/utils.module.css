@@ -543,13 +543,18 @@
 }
 
 .productCard {
-  width: 87%;
-  height: 85%;
+  width: 87.8%;
+  height: 85.8%;
   box-shadow: -10px -10px rgba(255, 255, 255, 0.3), 10px 10px rgba(0, 0, 0, 0.2);
   transform-style: preserve-3d;
   /* border-radius: 30px; */
   background: linear-gradient(145deg, #004ca4, #005ac3);
   box-shadow: 12px 12px 24px #003c83, -6px -6px 18px #006ce9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 2px solid black;
   
 
 }
@@ -570,41 +575,82 @@
   content: '';
 }
 
+.productCard button{
+  margin-top: 1rem;
+  width: 108%;
+  height: 2.5rem;
+  border: 2px solid black;
+  font-size: 1.5rem;
+  font-weight: 900;
+  background-color: #69cd3c;
+  transform: translateZ(20px);
+  cursor: pointer;
+}
+
 .productCard h3 {
   font-size: 1.5rem;
-  text-align: center;
+  /* text-align: center; */
   transform: translateZ(30px);
-  color: #69cd3c;
-  margin: 1rem 1.2rem 1rem 1.2rem;
-  text-shadow: 2.5px 2.5px 2.5px rgba(0, 0, 0, 0.2);
+  color: white;
+  /* margin: 1rem 1.2rem 1rem 1.2rem; */
+  /* text-shadow: 2.5px 2.5px 0.5px rgba(0, 0, 0, 0.5); */
   user-select: none;
+  /* position: absolute; */
+  top: -2.3rem;
+  left: -2rem;
+  /* -webkit-text-stroke: 0.2px black; */
+  margin: 0.5rem;
+  text-align: center;
+
+}
+
+.productCard p {
+  font-size: 1rem;
+  margin: 0.5rem;
+  color: white;
+  font-weight: 600;
+  
 }
 
 
 .productImages {
   transform: translateZ(30px);
-  height: 100%;
-  width: 100%;
   top: 0;
-  position: absolute;
+  /* position: absolute; */
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-bottom: 6rem;
+  /* padding-bottom: 6rem; */
+  flex: 1;
+  width: 100%;
   
+}
+
+.productInnerImages{
+  width: 100%;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+.lowerImage{
+  flex: 0.5;
 }
 
 
 .productCircle {
-  height: 10.5rem;
-  width: 95%;
-  background: linear-gradient(145deg,rgba(0,0,0,0.3), #69cd3c);
-  position: absolute;
-  top: 22%;
-  left: 0.5rem;
-  /* border: 2.5px solid black; */
-  transform: translateZ(10px) ;
-  border-radius: 30px;
+  height: 80%;
+  width: 108%;
+  background: linear-gradient(145deg, #004ca4, #005ac3);
+  /* position: absolute; */
+  top: 0;
+  left: 0;
+  border: 2.5px solid black;
+  transform: translateZ(20px) ;
+  /* border-radius: 30px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 
 }
 
