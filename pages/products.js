@@ -12,19 +12,24 @@ export default function Products() {
     const card = e.currentTarget;
     if (card.attributes.type !== undefined) {
       if (card.attributes.type.value === 'cardContainer') {
-        let xAxis = ((card.offsetLeft + (card.offsetWidth / 2)) - e.clientX) / 25;
-        //let yAxis = ((card.clientHeight / 2) - (e.clientX / 4)) / 25;
-        // ((card.scrollHeight / 2  - (window.innerHeight - card.offsetTop) ) - e.clientY) / 25;
-        //use currentTarget offsetLeft somehow to fix jaggy
+        //minus the scroll position of the screen so it's always the same value no matter how far scrolled
+        let scrollPosition = card.parentElement.parentElement.scrollTop;
 
-        card.firstChild.style.transform = `rotateY(${xAxis}deg)`
+        let xAxis = ((card.offsetLeft + (card.offsetWidth / 2)) - e.clientX) / 50;
+        let yAxis = ((card.offsetTop + (card.offsetHeight / 2) - scrollPosition) - e.clientY) / 50;
+        //use currentTarget offsetLeft somehow to fix jaggy? | fixed when paired with scroll position above! :D
+
+        card.firstChild.style.transform = `rotateY(${xAxis}deg) rotateX(${-yAxis}deg)`
         card.firstChild.style.transition = ''
 
-        //console.log(e.clientY)
+        //console.log(card.parentElement.parentElement.scrollTop);
+
+        //console.log(e.pageX)
 
       }
     }
   }
+
 
   function leaveCard(e) {
     const card = e.currentTarget;
@@ -83,7 +88,7 @@ export default function Products() {
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <div className={utilStyles.productBG}>
+      <div id="productBG" className={utilStyles.productBG}>
 
         {/* <object data="images/undraw_contact_us_15o2.svg"></object> */}
 
@@ -119,7 +124,7 @@ export default function Products() {
           </motion.div>
           <motion.div variants={cards} onPointerMove={(e) => moveCard(e)} onPointerLeave={(e) => leaveCard(e)} type='cardContainer' className={utilStyles.productCardContainer}>
             <div type='card' className={utilStyles.productCard}>
-            <div className={utilStyles.productCircle}>
+              <div className={utilStyles.productCircle}>
                 <div className={utilStyles.productImages}>
                   <Image
                     src='/images/products/pumps.png'
@@ -139,13 +144,13 @@ export default function Products() {
 
 
               <motion.button>MORE INFO</motion.button>
-              
+
 
             </div>
           </motion.div>
           <motion.div variants={cards} onPointerMove={(e) => moveCard(e)} onPointerLeave={(e) => leaveCard(e)} type='cardContainer' className={utilStyles.productCardContainer}>
             <div type='card' className={utilStyles.productCard}>
-            <div className={utilStyles.productCircle}>
+              <div className={utilStyles.productCircle}>
                 <div className={utilStyles.productImages}>
                   <Image
                     src='/images/products/solarphoto.png'
@@ -165,7 +170,7 @@ export default function Products() {
 
 
               <motion.button>MORE INFO</motion.button>
-              
+
             </div>
           </motion.div>
           <motion.div variants={cards} onPointerMove={(e) => moveCard(e)} onPointerLeave={(e) => leaveCard(e)} type='cardContainer' className={utilStyles.productCardContainer}>
@@ -175,7 +180,7 @@ export default function Products() {
           </motion.div>
           <motion.div variants={cards} onPointerMove={(e) => moveCard(e)} onPointerLeave={(e) => leaveCard(e)} type='cardContainer' className={utilStyles.productCardContainer}>
             <div type='card' className={utilStyles.productCard}>
-            <div className={utilStyles.productCircle}>
+              <div className={utilStyles.productCircle}>
                 <div className={utilStyles.productImages}>
                   <Image
                     src='/images/products/thermals.png'
@@ -195,7 +200,7 @@ export default function Products() {
 
 
               <motion.button>MORE INFO</motion.button>
-              
+
             </div>
           </motion.div>
           <motion.div variants={cards} onPointerMove={(e) => moveCard(e)} onPointerLeave={(e) => leaveCard(e)} type='cardContainer' className={utilStyles.productCardContainer}>

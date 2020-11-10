@@ -123,7 +123,8 @@ function MyApp({ Component, pageProps, router }) {
 
 
   return (
-    <>
+    <div className={utilStyles.allWrapper}>
+
 
 
 
@@ -221,7 +222,7 @@ function MyApp({ Component, pageProps, router }) {
           <Component {...pageProps} />
         </motion.div>
       </AnimatePresence>
-    </>
+    </div>
   )
 }
 

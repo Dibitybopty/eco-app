@@ -519,6 +519,8 @@
   display: grid;
   height: 100vh;
   grid-template-columns: 0.5fr 1fr;
+  overflow: auto;
+  scrollbar-width: none;
 }
 
 .productRight {
@@ -555,11 +557,9 @@
   align-items: center;
   flex-direction: column;
   border: 2px solid black;
-  
-
 }
 
-.productCard::after{
+.productCard::after {
   background-image: url(/images/products/solar_panel_bg.svg);
   background-repeat: repeat;
   background-size: 3.18rem;
@@ -569,13 +569,12 @@
   bottom: 0;
   right: 0;
   position: absolute;
-  z-index: -1;   
+  z-index: -1;
   transform-style: preserve-3d;
-
   content: '';
 }
 
-.productCard button{
+.productCard button {
   margin-top: 1rem;
   width: 108%;
   height: 2.5rem;
@@ -601,7 +600,6 @@
   /* -webkit-text-stroke: 0.2px black; */
   margin: 0.5rem;
   text-align: center;
-
 }
 
 .productCard p {
@@ -609,9 +607,7 @@
   margin: 0.5rem;
   color: white;
   font-weight: 600;
-  
 }
-
 
 .productImages {
   transform: translateZ(30px);
@@ -623,19 +619,17 @@
   /* padding-bottom: 6rem; */
   flex: 1;
   width: 100%;
-  
 }
 
-.productInnerImages{
+.productInnerImages {
   width: 100%;
   border-top: 1px solid black;
   border-bottom: 1px solid black;
 }
 
-.lowerImage{
+.lowerImage {
   flex: 0.5;
 }
-
 
 .productCircle {
   height: 80%;
@@ -645,15 +639,13 @@
   top: 0;
   left: 0;
   border: 2.5px solid black;
-  transform: translateZ(20px) ;
+  transform: translateZ(20px);
   /* border-radius: 30px; */
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-
 }
-
 
 /* silly fancy pants idea */
 
@@ -676,8 +668,6 @@
   transform: rotateX(-59deg) rotateY(-0deg) rotateZ(-20deg) translateZ(100px);
   
 } */
-
-
 
 @namespace svg url(http://www.w3.org/2000/svg);
 /* Necessary to select only SVG <a> elements, and not also HTML’s.
@@ -766,4 +756,16 @@
 
 .lightText {
   color: #999;
+}
+
+.sticky {
+  position: fixed;
+  z-index: 100;
+  /* margin-top: -32px; */
+  top: 50%;
+}
+
+.allWrapper{
+  height: 100vh;
+  width: 100%;
 }

@@ -30,7 +30,8 @@ export default function Layout({ children, home, products, contactus, gallery })
     // })
 
     return (
-        <>
+        <div>
+            
 
             {home && (
                 <div>
@@ -84,7 +85,7 @@ export default function Layout({ children, home, products, contactus, gallery })
                 </>
             )}
 
-        </>
+        </div>
     )
 
 
