@@ -20,7 +20,7 @@ export default function Products() {
         //use currentTarget offsetLeft somehow to fix jaggy? | fixed when paired with scroll position above! :D
 
         card.firstChild.style.transform = `rotateY(${xAxis}deg) rotateX(${-yAxis}deg)`
-        card.firstChild.style.transition = ''
+        // card.firstChild.style.transition = ''
 
         //console.log(card.parentElement.parentElement.scrollTop);
 

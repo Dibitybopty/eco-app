@@ -64,7 +64,7 @@ export default function Home() {
       </Head>
       {/* fake div to enable scroll - may delete if not needed */}
       <motion.div transition={{ delay: 2 }}></motion.div>
-      <motion.div className={utilStyles.mainBackground} animate={{ opacity: 0.5 }} initial={{ opacity: 0 }} exit={{ opacity: 0 }} transition={{ delay: 2 }}></motion.div>
+      {/* <motion.div className={utilStyles.mainBackground} animate={{ opacity: 0.5 }} initial={{ opacity: 0 }} exit={{ opacity: 0 }} transition={{ delay: 2 }}></motion.div> */}
       <div className={utilStyles.homeWrapper}>
         <AnimateSharedLayout>
           <motion.div onClick={() => setShowModal(!showModal)} layoutId="banner" className={utilStyles.banner} animate="show" exit="hidden" initial="hidden" variants={container} >

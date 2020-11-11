@@ -121,10 +121,30 @@ function MyApp({ Component, pageProps, router }) {
 
   })
 
+  function moveSun(e) {
+    const sun = document.getElementById('sunImg');
+    const sunRays = document.getElementById('sunRays');
+    //console.log(sun)
+    if (sun !== undefined) {
+      //minus the scroll position of the screen so it's always the same value no matter how far scrolled
+      let scrollPosition = sun.scrollTop;
+
+      let xAxis = ((sun.offsetLeft + (sun.offsetWidth / 2)) - e.clientX) / 50;
+      let yAxis = ((sun.offsetTop + (sun.offsetHeight / 2) - scrollPosition) - e.clientY) / 50;
+      //use currentTarget offsetLeft somehow to fix jaggy? | fixed when paired with scroll position above! :D
+
+      sun.style.transform = `translate3d(${~~xAxis + 'px'},${~~yAxis + 'px'},0)`
+      sunRays.style.transform = `rotateZ(${~~(xAxis + yAxis) / 60 + 'deg'}`
+
+      //console.log(xAxis)
+
+
+    }
+  }
+
 
   return (
-    <div className={utilStyles.allWrapper}>
-
+    <div onPointerMove={(e) => moveSun(e)} className={utilStyles.allWrapper}>
 
 
 
@@ -222,7 +242,30 @@ function MyApp({ Component, pageProps, router }) {
           <Component {...pageProps} />
         </motion.div>
       </AnimatePresence>
+
+      <motion.div className={utilStyles.sunBG}>
+        <div className={utilStyles.sunRays}>
+          <img id='sunRays' src='/images/sunrays.svg'></img>
+
+
+        </div>
+        <div id='sunImg' className={utilStyles.sunRays}>
+          {/* <img id='sunRays' src='/images/sunrays.svg'></img> */}
+          <svg viewBox="0 0 5050 5050" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle id="sun" cx="2525" cy="2525" r="395" fill="#E3C713" />
+
+          </svg>
+
+        </div>
+        <div className={utilStyles.theSun}>
+          <img id='theSun' src='/images/sunshine.svg'></img>
+
+        </div>
+
+      </motion.div>
     </div>
+
+
   )
 }
 
