@@ -13,14 +13,14 @@ export default function Products() {
     if (card.attributes.type !== undefined) {
       if (card.attributes.type.value === 'cardContainer') {
         //minus the scroll position of the screen so it's always the same value no matter how far scrolled
-        let scrollPosition = card.parentElement.parentElement.scrollTop;
+        let scrollPositionProduct = card.parentElement.parentElement.scrollTop;
 
-        let xAxis = ((card.offsetLeft + (card.offsetWidth / 2)) - e.clientX) / 50;
-        let yAxis = ((card.offsetTop + (card.offsetHeight / 2) - scrollPosition) - e.clientY) / 50;
+        let xAxisProduct = ((card.offsetLeft + (card.offsetWidth / 2)) - e.clientX) / 50;
+        let yAxisProduct = ((card.offsetTop + (card.offsetHeight / 2) - scrollPositionProduct) - e.clientY) / 50;
         //use currentTarget offsetLeft somehow to fix jaggy? | fixed when paired with scroll position above! :D
 
-        card.firstChild.style.transform = `rotateY(${xAxis}deg) rotateX(${-yAxis}deg)`
-        // card.firstChild.style.transition = ''
+        card.firstChild.style.transform = `rotateY(${xAxisProduct}deg) rotateX(${-yAxisProduct}deg)`
+        card.firstChild.style.transition = ''
 
         //console.log(card.parentElement.parentElement.scrollTop);
 

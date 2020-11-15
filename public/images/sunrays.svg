@@ -1,5 +1,5 @@
 <svg viewBox="0 0 5050 5050" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g id="sunrays" opacity='0.08'>
+<g id="sunrays" opacity='1'>
 <path id="Vector 1" d="M-5.3765e-06 2372.27L0 2675.27L2842.78 2547.17L2842.78 2504.06L-5.3765e-06 2372.27Z" fill="#FFD600"/>
 <path id="Vector 3" d="M380.598 1103.61L229.098 1366.02L2755.07 2676.47L2776.62 2639.14L380.598 1103.61Z" fill="#FFD600"/>
 <path id="Vector 4" d="M1448.47 231.561L1182.44 376.599L2655.67 2811.22L2693.52 2790.59L1448.47 231.561Z" fill="#FFD600"/>
@@ -13,5 +13,7 @@
 <path id="Vector 8" d="M5050 2675.27L5050 2372.27L2207.22 2500.37L2207.22 2543.48L5050 2675.27Z" fill="#FFD600"/>
 <path id="Vector 9" d="M4686.38 3945.21L4837.88 3682.8L2311.91 2372.35L2290.36 2409.68L4686.38 3945.21Z" fill="#FFD600"/>
 <circle id="Ellipse 1" cx="2525" cy="2525" r="317.78" fill="#FFD600"/>
+<circle id="sunImg" cx="2525" cy="2525" r="495" fill="#E3C713" />
+
 </g>
 </svg>
