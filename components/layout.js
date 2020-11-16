@@ -34,18 +34,9 @@ export default function Layout({ children, home, products, contactus, gallery })
             
 
             {home && (
-                <div >
+                <div className={styles.pageContent}>
 
-
-                    {/* <div className={styles.spiralSun}> */}
-
-                    {/* <div className={styles.pageContent} > */}
                         {children}
-                    {/* </div> */}
-
-                    {/* </div> */}
-
-
 
                 </div>)}
             {products && (
