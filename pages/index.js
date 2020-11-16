@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import Image from 'next/image'
 import Layout, { siteTitle } from '../components/layout'
-import utilStyles from '../styles/utils.module.css'
+import homeStyles from '../styles/Home.module.css'
 import { motion, AnimateSharedLayout, AnimatePresence } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import WindTurbine from '../components/wind_turbine'
@@ -64,10 +64,10 @@ export default function Home() {
       </Head>
       {/* fake div to enable scroll - may delete if not needed */}
       <motion.div transition={{ delay: 2 }}></motion.div>
-      {/* <motion.div className={utilStyles.mainBackground} animate={{ opacity: 0.5 }} initial={{ opacity: 0 }} exit={{ opacity: 0 }} transition={{ delay: 2 }}></motion.div> */}
-      <div className={utilStyles.homeWrapper}>
+      {/* <motion.div className={homeStyles.mainBackground} animate={{ opacity: 0.5 }} initial={{ opacity: 0 }} exit={{ opacity: 0 }} transition={{ delay: 2 }}></motion.div> */}
+      <div className={homeStyles.homeWrapper}>
         <AnimateSharedLayout>
-          <motion.div onClick={() => setShowModal(!showModal)} layoutId="banner" className={utilStyles.banner} animate="show" exit="hidden" initial="hidden" variants={container} >
+          <motion.div onClick={() => setShowModal(!showModal)} layoutId="banner" className={homeStyles.banner} animate="show" exit="hidden" initial="hidden" variants={container} >
             Up to&nbsp;
           <motion.span variants={item} >£</motion.span>
             <motion.span variants={item} >1</motion.span>
@@ -81,15 +81,15 @@ export default function Home() {
         </motion.div>
           <Modal showModal={showModal} setShowModal={setShowModal} text="Green Homes Government Grant" />
         </AnimateSharedLayout>
-        <div className={utilStyles.innerHomeTop}>
-          <div className={utilStyles.innerHomeTopLeft}></div>
-          <div className={utilStyles.innerHomeTopRight}>
-            <div className={utilStyles.innerHomeTopRightContent}>
-              <motion.div className={utilStyles.solarShape} initial={{ transform: 'rotateY(120deg)' }} animate={{ transform: 'rotateY(0)' }} exit={{ transform: 'rotateY(120deg)' }} transition={{ ease: [0.6, 0.01, -0.05, 0.9], delay: 0, duration: 0.6 }}>
-              <motion.div className={utilStyles.solarShapeBG} initial={{ x: 1000 }} animate={{ x: 0 }} exit={{ x: 1000 }} transition={{ ease: [0.6, 0.01, -0.05, 0.9], delay: 0, duration: 1.6 }}></motion.div>
-                <div className={utilStyles.solarHeadingPop}><motion.h1 initial={{ x: -3000, opacity: 1,  }} exit={{ x: -3000, opacity: 1, }} animate={{ x: 0, opacity: 1,  }} transition={{ ease: [0.6, 0.01, -0.05, 0.9], delay: 0.12, duration: 2.6 }}>Eco Sales & Services Ltd.</motion.h1></div>
-                <div className={utilStyles.solarInfoPop}><motion.p initial={{ x: 3000, opacity: 1,  }} exit={{ x: 3000, opacity: 1,  }} animate={{ x: 0, opacity: 1,  }} transition={{ ease: [0.6, 0.01, -0.05, 0.9], delay: 0.12, duration: 2.9 }}>A local friendly renewable energy company giving nationwide renewable energy management solutions.</motion.p></div>
-                <div className={utilStyles.solarInfoTel}><motion.p initial={{ x: 3000, opacity: 1,  }} exit={{ x: 3000, opacity: 1,  }} animate={{ x: 0, opacity: 1,  }} transition={{ ease: [0.6, 0.01, -0.05, 0.9], delay: 0.08, duration: 2.3 }}>TEL: 01782 256805</motion.p></div>
+        <div className={homeStyles.innerHomeTop}>
+          <div className={homeStyles.innerHomeTopLeft}></div>
+          <div className={homeStyles.innerHomeTopRight}>
+            <div className={homeStyles.innerHomeTopRightContent}>
+              <motion.div className={homeStyles.solarShape} initial={{ transform: 'rotateY(120deg)' }} animate={{ transform: 'rotateY(0)' }} exit={{ transform: 'rotateY(120deg)' }} transition={{ ease: [0.6, 0.01, -0.05, 0.9], delay: 0, duration: 0.6 }}>
+              <motion.div className={homeStyles.solarShapeBG} initial={{ x: 1000 }} animate={{ x: 0 }} exit={{ x: 1000 }} transition={{ ease: [0.6, 0.01, -0.05, 0.9], delay: 0, duration: 1.6 }}></motion.div>
+                <div className={homeStyles.solarHeadingPop}><motion.h1 initial={{ x: -3000, opacity: 1,  }} exit={{ x: -3000, opacity: 1, }} animate={{ x: 0, opacity: 1,  }} transition={{ ease: [0.6, 0.01, -0.05, 0.9], delay: 0.12, duration: 2.6 }}>Eco Sales & Services Ltd.</motion.h1></div>
+                <div className={homeStyles.solarInfoPop}><motion.p initial={{ x: 3000, opacity: 1,  }} exit={{ x: 3000, opacity: 1,  }} animate={{ x: 0, opacity: 1,  }} transition={{ ease: [0.6, 0.01, -0.05, 0.9], delay: 0.12, duration: 2.9 }}>A local friendly renewable energy company giving nationwide renewable energy management solutions.</motion.p></div>
+                <div className={homeStyles.solarInfoTel}><motion.p initial={{ x: 3000, opacity: 1,  }} exit={{ x: 3000, opacity: 1,  }} animate={{ x: 0, opacity: 1,  }} transition={{ ease: [0.6, 0.01, -0.05, 0.9], delay: 0.08, duration: 2.3 }}>TEL: 01782 256805</motion.p></div>
 
               </motion.div>
 
@@ -97,20 +97,20 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className={utilStyles.innerHomeBottom}>
-          {/* <motion.div  initial={{opacity: 0, y: 0}} animate={{opacity: 1, y: 0}} exit={{opacity: 0, y: -1000}} transition={{duration: 1.2, delay: 0.1}} className={utilStyles.turbineWrapper}><WindTurbine /></motion.div> */}
-          {/* <div className={utilStyles.waveSquareWrapper}><object data="/images/wave_square.svg"></object></div> */}
-          {/* <div className={utilStyles.waveSquareWrapperLeft}><object data="/images/wave_square.svg"></object></div> */}
+        <div className={homeStyles.innerHomeBottom}>
+          {/* <motion.div  initial={{opacity: 0, y: 0}} animate={{opacity: 1, y: 0}} exit={{opacity: 0, y: -1000}} transition={{duration: 1.2, delay: 0.1}} className={homeStyles.turbineWrapper}><WindTurbine /></motion.div> */}
+          {/* <div className={homeStyles.waveSquareWrapper}><object data="/images/wave_square.svg"></object></div> */}
+          {/* <div className={homeStyles.waveSquareWrapperLeft}><object data="/images/wave_square.svg"></object></div> */}
         </div>
 
 
 
 
       </div>
-      <div className={utilStyles.lowerMain}>
+      <div className={homeStyles.lowerMain}>
 
       </div>
-      <div className={utilStyles.lowerMain}>
+      <div className={homeStyles.lowerMain}>
       
 
       </div>

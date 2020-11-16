@@ -4,6 +4,8 @@ import utilStyles from '../styles/utils.module.css'
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
+//TODO Change mouseover effect on links to nothing, only grow when click - maybe remove the side scroller thing
+
 function MyApp({ Component, pageProps, router }) {
 
   const variants = {
@@ -40,6 +42,14 @@ function MyApp({ Component, pageProps, router }) {
       WebkitTextStroke: '2px #fff',
       WebkitTextFillColor: 'rgba(255, 255, 255, 0.3)',
 
+    },
+    hover: {
+      WebkitTextStroke: '0px #fff',
+      WebkitTextFillColor: 'rgba(105,205,60,1)',
+      transition: {
+        delay: 0,
+        duration: 0.3
+      }
     },
     initial: {
       opacity: 1.0,
@@ -98,39 +108,47 @@ function MyApp({ Component, pageProps, router }) {
     ease: "anticipate"
   }
 
-  var dotStart = '0rem';
+  // var dotStart = '0rem';
 
-  if (router.route === '/products') {
-    dotStart = '6.5rem';
+  // if (router.route === '/products') {
+  //   dotStart = '6.5rem';
 
-  } else if (router.route === '/gallery') {
-    dotStart = '12.99rem'
-  } else if (router.route === '/contactus') {
-    dotStart = '19.7rem'
-  }
-
-  const [blur, setBlur] = useState('blur(0px)');
+  // } else if (router.route === '/gallery') {
+  //   dotStart = '12.99rem'
+  // } else if (router.route === '/contactus') {
+  //   dotStart = '19.7rem'
+  // }
 
 
   useEffect(() => {
-    window.addEventListener('DOMContentLoaded', () => {
+    window.addEventListener('load', () => {
+      let allWrapper = document.getElementById('allWrapper');
+      let sunGroup = document.getElementById('sunGroup');
+      let sunRays = document.getElementById('sunRays');
+
+      allWrapper.addEventListener('mousemove', (e) => {
+
+        let xAxis = ((allWrapper.offsetLeft + (allWrapper.offsetWidth / 2)) - e.clientX) / 90;
+        let yAxis = ((allWrapper.offsetTop + (allWrapper.offsetHeight / 2)) - e.clientY) / 90;
+
+        sunGroup.style.transform = `translate(${xAxis}px,${yAxis}px)`
+
+
+        // console.log(xAxis)
+      })
     })
-    if (blur === 'blur(30px)') {
-      var blurTimer = setInterval(() => {
-        setBlur('blur(0px)');
-        clearInterval(blurTimer);
-      }, 590);
-    }
 
   })
 
   function moveSun(e) {
-    let sun = document.getElementById('sunImg');
+    let sunGroup = document.getElementById('sunGroup');
+    let sunContainer = document.getElementById('sunContainer');
+    //let sun = document.getElementById('sunImg');
     let sunRays = document.getElementById('sunRays');
-    let outerRing = document.getElementById('outer-ring');
-    let innerRing = document.getElementById('inner-ring');
+    // let outerRing = document.getElementById('outer-ring');
+    // let innerRing = document.getElementById('inner-ring');
     //console.log(sun)
-    if ((sun !== undefined && sun !== null) && ((sunRays !== undefined && sunRays !== null))) {
+    if ((sunGroup !== undefined && sunGroup !== null) && ((sunRays !== undefined && sunRays !== null))) {
       //minus the scroll position of the screen so it's always the same value no matter how far scrolled
       //let scrollPosition = sunContainer.scrollTop;
 
@@ -138,10 +156,11 @@ function MyApp({ Component, pageProps, router }) {
       let yAxis = ((sunContainer.offsetTop + (sunContainer.offsetHeight / 2)) - e.clientY) / 90;
       //use currentTarget offsetLeft somehow to fix jaggy? | fixed when paired with scroll position above! :D
 
-      sun.style.transform = `translate(0,0)`
+      //sun.style.transform = `translate(0,0)`
       //sunRays.style.transform = `rotateZ(${(xAxis + yAxis) / 60 + 'deg'}) translate(0,0)`
-      outerRing.style.transform = `rotateZ(${(xAxis + yAxis) / 2 + 'deg'}) translate(${(xAxis / 2) + 'px'},${(yAxis / 2) + 'px'})`
-      innerRing.style.transform = `rotateZ(${(xAxis + yAxis) / 6 + 'deg'}) translate(${(xAxis / 3) + 'px'},${(yAxis / 3) + 'px'})`
+      //outerRing.style.transform = `rotateZ(${(xAxis + yAxis) / 2 + 'deg'}) translate(${(xAxis / 2) + 'px'},${(yAxis / 2) + 'px'})`
+      sunGroup.style.transform = `translate(${xAxis}px,${yAxis}px)`
+      //innerRing.style.transform = `rotateZ(${(xAxis + yAxis) / 6 + 'deg'}) translate(${(xAxis / 3) + 'px'},${(yAxis / 3) + 'px'})`
       //sunRays.style.transformOrigin = 'center'
 
       //console.log(e.clientX)
@@ -152,34 +171,34 @@ function MyApp({ Component, pageProps, router }) {
 
 
   return (
-    <div onPointerMove={(e) => moveSun(e)} className={utilStyles.allWrapper}>
+    <div id='allWrapper' className={utilStyles.allWrapper}>
 
 
 
       {/* <div className={utilStyles.sideMenuWrapper}> */}
       <div id='sideMenuEffect' className={utilStyles.sideMenuEffect}>
-        <svg viewBox="0 0 22 412" fill="none" xmlns="http://www.w3.org/2000/svg">
+        {/* <svg viewBox="0 0 22 412" fill="none" xmlns="http://www.w3.org/2000/svg">
           <rect width="22" height="404" fill="transparent" />
           <motion.line id="navLine" x1="11" y1="10" x2="11" y2="403" stroke="rgba(255,255,255,0.6)" strokeWidth="5" strokeLinecap="round" />
           <motion.circle id="navCircle" cx="11" cy="50" r="11" fill="rgba(255,255,255,1)" className={utilStyles.navCircle} animate={{ transform: 'translateY(' + dotStart + ')', filter: blur }} initial={{ transform: 'translateY(-4rem)', filter: 'blur(30px)' }} transition={navTransition} />
-        </svg>
+        </svg> */}
       </div>
       <div id='sideMenu' className={utilStyles.sideMenuItems}>
 
         <Link href="/">
-          <motion.a id='mainPage' whileHover="in" animate={router.route === '/' ? "in" : "out"} initial="initial" variants={linkEffects} transition={transition} onClick={() => setBlur('blur(30px)')} >HOME</motion.a>
+          <motion.a id='mainPage' whileHover="hover" animate={router.route === '/' ? "in" : "out"} initial="initial" variants={linkEffects} transition={transition}  >HOME</motion.a>
         </Link>
 
         <Link href="products">
-          <motion.a whileHover="in" animate={router.route === '/products' ? "in" : "out"} initial="initial" variants={linkEffects} transition={transition} onClick={() => setBlur('blur(30px)')}>PRODUCTS</motion.a>
+          <motion.a whileHover="hover" animate={router.route === '/products' ? "in" : "out"} initial="initial" variants={linkEffects} transition={transition} >PRODUCTS</motion.a>
         </Link>
 
         <Link href="gallery">
-          <motion.a whileHover="in" animate={router.route === '/gallery' ? "in" : "out"} initial="initial" variants={linkEffects} transition={transition} onClick={() => setBlur('blur(30px)')}>GALLERY</motion.a>
+          <motion.a whileHover="hover" animate={router.route === '/gallery' ? "in" : "out"} initial="initial" variants={linkEffects} transition={transition} >GALLERY</motion.a>
         </Link>
 
         <Link href="contactus">
-          <motion.a whileHover="in" animate={router.route === '/contactus' ? "in" : "out"} initial="initial" variants={linkEffects} transition={transition} onClick={() => { setBlur('blur(30px)') }}>CONTACT US</motion.a>
+          <motion.a whileHover="hover" animate={router.route === '/contactus' ? "in" : "out"} initial="initial" variants={linkEffects} transition={transition} >CONTACT US</motion.a>
         </Link>
 
       </div>
@@ -195,7 +214,7 @@ function MyApp({ Component, pageProps, router }) {
         </motion.div>
       </AnimatePresence>
 
-      <div className={utilStyles.sunBG}>
+      <div id='sunBG' className={utilStyles.sunBG}>
         <div id='sunContainer' className={utilStyles.sunRays}>
           <svg width="6467" height="5654" viewBox="0 0 6467 5654" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g id="sunshine">
@@ -213,21 +232,23 @@ function MyApp({ Component, pageProps, router }) {
                 <path id="Vector 8" d="M5757 2977L5757 2674L3054 2802.1L3054 2845.21L5757 2977Z" fill="#FFD600" opacity="0.09" />
                 <path id="Vector 9" d="M5393.38 4247.21L5544.88 3984.8L3080.57 2709.95L3059.01 2747.28L5393.38 4247.21Z" fill="#FFD600" opacity="0.09" />
               </g>
-              <g id="sunGroup">
-                <circle id="sunImg" cx="3233.54" cy="2826.54" r="249.084" fill="#FFF15F" />
-                <g style={{ transformOrigin: 'center' }} id="outer-ring">
-                  <path id="Ellipse 4" d="M3417.22 3064.61C3458.61 3032.67 3490.96 2990.5 3511.08 2942.26C3531.2 2894.01 3538.4 2841.35 3531.96 2789.47C3525.52 2737.6 3505.68 2688.29 3474.38 2646.42C3443.08 2604.56 3401.4 2571.57 3353.47 2550.72C3305.53 2529.86 3252.99 2521.87 3201.02 2527.51C3149.05 2533.16 3099.45 2552.25 3057.11 2582.91C3014.77 2613.57 2981.15 2654.74 2959.57 2702.35C2937.99 2749.96 2929.2 2802.38 2934.05 2854.42" stroke="#FFAC0A" stroke-width="25" stroke-linecap="round" stroke-linejoin="round" />
-                  <path id="Ellipse 7" d="M2943.38 2905.73C2946.61 2917.56 2950.55 2929.17 2955.2 2940.51" stroke="#FFAC0A" stroke-width="25" stroke-linecap="round" stroke-linejoin="round" />
-                  <path id="Ellipse 8" d="M2978.82 2986.45C3019.15 3050.68 3082.26 3097.29 3155.51 3116.96C3228.76 3136.63 3306.73 3127.89 3373.81 3092.51" stroke="#FFAC0A" stroke-width="25" stroke-linecap="round" stroke-linejoin="round" />
+              <g style={{ transformOrigin: 'center' }} id="sunGroup">
+                <circle id="sunImg" cx="3233.54" cy="2826.54" r="249.084" fill="#ECFA24" />
+                <g id="outer-ring">
+                  <path id="Ellipse 7" d="M2957.04 2902.37C2960.11 2913.61 2963.87 2924.66 2968.29 2935.45" stroke="white" strokeWidth="9" strokeLinecap="round" strokeLinejoin="round" />
+                  <path id="Ellipse 8" d="M2990.75 2979.15C3029.11 3040.24 3089.15 3084.58 3158.82 3103.28C3228.49 3121.99 3302.66 3113.68 3366.46 3080.03" stroke="white" strokeWidth="9" strokeLinecap="round" strokeLinejoin="round" />
+                  <path id="Ellipse 4" d="M3407.75 3053.49C3378.01 3076.43 3344.04 3093.3 3307.78 3103.12C3271.52 3112.94 3233.68 3115.52 3196.42 3110.72C3159.16 3105.92 3123.21 3093.82 3090.63 3075.12C3058.05 3056.43 3029.46 3031.5 3006.51 3001.75C2983.57 2972.01 2966.7 2938.04 2956.88 2901.78C2947.06 2865.52 2944.48 2827.68 2949.28 2790.42C2954.08 2753.16 2966.18 2717.21 2984.88 2684.63C3003.57 2652.05 3028.5 2623.46 3058.25 2600.51C3087.99 2577.57 3121.96 2560.7 3158.22 2550.88C3194.48 2541.06 3232.32 2538.48 3269.58 2543.28C3306.84 2548.08 3342.79 2560.18 3375.37 2578.88C3407.95 2597.57 3436.54 2622.5 3459.49 2652.25C3482.43 2681.99 3499.3 2715.96 3509.12 2752.22C3518.94 2788.48 3521.52 2826.32 3516.72 2863.58C3511.92 2900.84 3499.82 2936.79 3481.12 2969.37C3462.43 3001.95 3437.5 3030.54 3407.75 3053.49L3407.75 3053.49Z" stroke="white" strokeWidth="9" strokeLinecap="round" strokeLinejoin="round" />
                 </g>
-                <g style={{ transformOrigin: 'center' }} id="inner-ring">
-                  <path id="Ellipse 3" d="M3400.35 2617.15C3356.17 2581.89 3301.96 2561.53 3245.49 2558.97C3189.02 2556.41 3133.2 2571.79 3086.01 2602.91C3038.82 2634.03 3002.69 2679.29 2982.81 2732.2C2962.92 2785.11 2960.29 2842.96 2975.3 2897.46C2990.31 2951.96 3022.19 3000.3 3066.37 3035.57C3110.54 3070.84 3164.75 3091.21 3221.21 3093.78C3277.68 3096.35 3333.51 3080.98 3380.71 3049.87C3427.9 3018.76 3464.03 2973.5 3483.93 2920.59" stroke="#E2DB22" stroke-width="30" stroke-linecap="round" stroke-linejoin="round" />
-                  <path id="Ellipse 5" d="M3497.42 2870.37C3500.04 2854.62 3501.25 2838.67 3501.03 2822.7" stroke="#E2DB22" stroke-width="30" stroke-linecap="round" stroke-linejoin="round" />
-                  <path id="Ellipse 6" d="M3493.73 2764.16C3483.86 2722.87 3464.32 2684.52 3436.71 2652.28" stroke="#E2DB22" stroke-width="30" stroke-linecap="round" stroke-linejoin="round" />
+                <g id="inner-ring">
+                  <path id="Ellipse 5" d="M3495.33 2870.81C3497.93 2855.17 3499.13 2839.32 3498.92 2823.47" stroke="#E2DB22" strokeWidth="37" strokeLinecap="round" strokeLinejoin="round" />
+                  <path id="Ellipse 6" d="M3491.66 2765.34C3481.86 2724.34 3462.46 2686.26 3435.04 2654.24" stroke="#E2DB22" strokeWidth="37" strokeLinecap="round" strokeLinejoin="round" />
+                  <path id="Ellipse 3" d="M3397.99 2618.6C3425.37 2640.25 3448.22 2667.09 3465.23 2697.57C3482.25 2728.05 3493.09 2761.58 3497.14 2796.26C3501.2 2830.93 3498.38 2866.06 3488.86 2899.64C3479.33 2933.23 3463.29 2964.6 3441.64 2991.99C3419.99 3019.37 3393.15 3042.22 3362.67 3059.23C3332.19 3076.25 3298.66 3087.09 3263.99 3091.14C3229.31 3095.2 3194.18 3092.38 3160.6 3082.86C3127.02 3073.33 3095.64 3057.29 3068.25 3035.64C3040.87 3013.99 3018.02 2987.15 3001.01 2956.67C2983.99 2926.19 2973.15 2892.66 2969.1 2857.99C2965.04 2823.31 2967.86 2788.18 2977.38 2754.6C2986.91 2721.02 3002.95 2689.64 3024.6 2662.25C3046.25 2634.87 3073.09 2612.02 3103.57 2595.01C3134.05 2577.99 3167.58 2567.15 3202.26 2563.1C3236.93 2559.04 3272.06 2561.86 3305.64 2571.38C3339.23 2580.91 3370.6 2596.95 3397.99 2618.6L3397.99 2618.6Z" stroke="#F7D625" strokeWidth="37" strokeLinecap="round" strokeLinejoin="round" />
                 </g>
               </g>
             </g>
           </svg>
+
+
 
         </div>
         {/* <div className={utilStyles.theSun}>

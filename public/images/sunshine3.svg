@@ -1,0 +1,31 @@
+<svg width="6467" height="5654" viewBox="0 0 6467 5654" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="sunshine">
+<g id="sunRays">
+<path id="Vector 1" d="M707 2674L707 2977L3412 2848.9L3412 2805.79L707 2674Z" fill="#FFD600" fill-opacity="0.1"/>
+<path id="Vector 3" d="M1087.6 1405.61L936.098 1668.02L3370.95 2925.86L3392.5 2888.53L1087.6 1405.61Z" fill="#FFD600" fill-opacity="0.1"/>
+<path id="Vector 4" d="M2155.47 533.561L1889.44 678.599L3296.79 2992.38L3334.64 2971.74L2155.47 533.561Z" fill="#FFD600" fill-opacity="0.1"/>
+<path id="Vector 10" d="M4367.63 5098.01L4630.04 4946.51L3167.67 2669.79L3130.33 2691.35L4367.63 5098.01Z" fill="#FFD600" fill-opacity="0.1"/>
+<path id="Vector 5" d="M3385 302H3082L3210.1 2993H3253.21L3385 302Z" fill="#FFD600" fill-opacity="0.1"/>
+<path id="Vector 11" d="M3079 5352L3382 5352L3253.9 2660L3210.79 2660L3079 5352Z" fill="#FFD600" fill-opacity="0.1"/>
+<path id="Vector 6" d="M4630.04 712.158L4367.63 560.658L3124.17 2970.6L3161.5 2992.16L4630.04 712.158Z" fill="#FFD600" fill-opacity="0.1"/>
+<path id="Vector 13" d="M1830.32 4931.73L2092.72 5083.23L3335.66 2674.2L3298.32 2652.65L1830.32 4931.73Z" fill="#FFD600" fill-opacity="0.1"/>
+<path id="Vector 7" d="M5500.54 1702.5L5349.04 1440.1L3072.9 2902.14L3094.46 2939.48L5500.54 1702.5Z" fill="#FFD600" fill-opacity="0.1"/>
+<path id="Vector 12" d="M960.732 3965.1L1112.23 4227.5L3396.6 2760.71L3375.04 2723.38L960.732 3965.1Z" fill="#FFD600" fill-opacity="0.1"/>
+<path id="Vector 8" d="M5757 2977L5757 2674L3054 2802.1L3054 2845.21L5757 2977Z" fill="#FFD600" fill-opacity="0.1"/>
+<path id="Vector 9" d="M5393.38 4247.21L5544.88 3984.8L3080.57 2709.95L3059.01 2747.28L5393.38 4247.21Z" fill="#FFD600" fill-opacity="0.1"/>
+</g>
+<g id="sunGroup">
+<circle id="sunImg" cx="3233.54" cy="2826.54" r="249.084" fill="#ECFA24"/>
+<g id="outer-ring">
+<path id="Ellipse 4" d="M3407.75 3053.49C3447.12 3023.11 3477.89 2983 3497.03 2937.11C3516.17 2891.21 3523.01 2841.12 3516.89 2791.78C3510.77 2742.43 3491.89 2695.54 3462.12 2655.71C3432.35 2615.89 3392.71 2584.51 3347.11 2564.68C3301.52 2544.84 3251.54 2537.24 3202.11 2542.61C3152.67 2547.98 3105.49 2566.14 3065.22 2595.3C3024.95 2624.46 2992.97 2663.62 2972.44 2708.91C2951.92 2754.2 2943.55 2804.05 2948.17 2853.56" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Ellipse 7" d="M2957.04 2902.37C2960.11 2913.61 2963.87 2924.66 2968.29 2935.45" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Ellipse 8" d="M2990.75 2979.15C3029.11 3040.24 3089.15 3084.58 3158.82 3103.28C3228.49 3121.99 3302.66 3113.68 3366.46 3080.03" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g id="inner-ring">
+<path id="Ellipse 3" d="M3398.93 2619.35C3355.06 2584.34 3301.23 2564.11 3245.15 2561.57C3189.08 2559.03 3133.64 2574.31 3086.78 2605.21C3039.92 2636.11 3004.04 2681.06 2984.29 2733.6C2964.55 2786.15 2961.94 2843.59 2976.84 2897.71C2991.75 2951.83 3023.4 2999.84 3067.27 3034.86C3111.14 3069.88 3164.97 3090.12 3221.04 3092.67C3277.12 3095.22 3332.56 3079.95 3379.42 3049.06C3426.29 3018.16 3462.17 2973.22 3481.93 2920.68" stroke="#F7D625" stroke-width="35" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Ellipse 5" d="M3495.33 2870.81C3497.93 2855.17 3499.13 2839.32 3498.92 2823.47" stroke="#E2DB22" stroke-width="35" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Ellipse 6" d="M3491.66 2765.34C3481.86 2724.34 3462.46 2686.26 3435.04 2654.24" stroke="#E2DB22" stroke-width="35" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+</g>
+</svg>
