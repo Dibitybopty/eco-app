@@ -121,21 +121,22 @@ function MyApp({ Component, pageProps, router }) {
 
 
   useEffect(() => {
-    window.addEventListener('load', () => {
-      let allWrapper = document.getElementById('allWrapper');
-      let sunGroup = document.getElementById('sunGroup');
-      let sunRays = document.getElementById('sunRays');
+    window.addEventListener('load', (event) => {
+      if (document.readyState === 'complete') {
+        let allWrapper = document.getElementById('allWrapper');
+        let sunGroup = document.getElementById('sunGroup');
 
-      allWrapper.addEventListener('mousemove', (e) => {
+        allWrapper.addEventListener('mousemove', (e) => {
 
-        let xAxis = ((allWrapper.offsetLeft + (allWrapper.offsetWidth / 2)) - e.clientX) / 90;
-        let yAxis = ((allWrapper.offsetTop + (allWrapper.offsetHeight / 2)) - e.clientY) / 90;
+          let xAxis = ((allWrapper.offsetLeft + (allWrapper.offsetWidth / 2)) - e.clientX) / 90;
+          let yAxis = ((allWrapper.offsetTop + (allWrapper.offsetHeight / 2)) - e.clientY) / 90;
 
-        sunGroup.style.transform = `translate(${xAxis}px,${yAxis}px)`
+          sunGroup.style.transform = `translate(${xAxis}px,${yAxis}px)`
 
+          // console.log(xAxis)
+        })
+      }
 
-        // console.log(xAxis)
-      })
     })
 
   })
