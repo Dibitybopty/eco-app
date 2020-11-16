@@ -4,8 +4,6 @@ import utilStyles from '../styles/utils.module.css'
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
-//TODO Change mouseover effect on links to nothing, only grow when click - maybe remove the side scroller thing
-
 function MyApp({ Component, pageProps, router }) {
 
   const variants = {
@@ -128,12 +126,12 @@ function MyApp({ Component, pageProps, router }) {
 
         allWrapper.addEventListener('mousemove', (e) => {
 
-          let xAxis = ((allWrapper.offsetLeft + (allWrapper.offsetWidth / 2)) - e.clientX) / 90;
-          let yAxis = ((allWrapper.offsetTop + (allWrapper.offsetHeight / 2)) - e.clientY) / 90;
+          let xAxis = ((allWrapper.offsetLeft + (allWrapper.offsetWidth / 2)) - e.pageX) / 90;
+          let yAxis = ((allWrapper.offsetTop + (allWrapper.offsetHeight / 2)) - e.pageY) / 90;
 
           sunGroup.style.transform = `translate(${xAxis}px,${yAxis}px)`
 
-          // console.log(xAxis)
+          //console.log(e)
         })
       }
 
@@ -175,19 +173,13 @@ function MyApp({ Component, pageProps, router }) {
     <div id='allWrapper' className={utilStyles.allWrapper}>
 
 
-
-      {/* <div className={utilStyles.sideMenuWrapper}> */}
       <div id='sideMenuEffect' className={utilStyles.sideMenuEffect}>
-        {/* <svg viewBox="0 0 22 412" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect width="22" height="404" fill="transparent" />
-          <motion.line id="navLine" x1="11" y1="10" x2="11" y2="403" stroke="rgba(255,255,255,0.6)" strokeWidth="5" strokeLinecap="round" />
-          <motion.circle id="navCircle" cx="11" cy="50" r="11" fill="rgba(255,255,255,1)" className={utilStyles.navCircle} animate={{ transform: 'translateY(' + dotStart + ')', filter: blur }} initial={{ transform: 'translateY(-4rem)', filter: 'blur(30px)' }} transition={navTransition} />
-        </svg> */}
+
       </div>
       <div id='sideMenu' className={utilStyles.sideMenuItems}>
 
         <Link href="/">
-          <motion.a id='mainPage' whileHover="hover" animate={router.route === '/' ? "in" : "out"} initial="initial" variants={linkEffects} transition={transition}  >HOME</motion.a>
+          <motion.a whileHover="hover" animate={router.route === '/' ? "in" : "out"} initial="initial" variants={linkEffects} transition={transition}  >HOME</motion.a>
         </Link>
 
         <Link href="products">
@@ -249,13 +241,7 @@ function MyApp({ Component, pageProps, router }) {
             </g>
           </svg>
 
-
-
         </div>
-        {/* <div className={utilStyles.theSun}>
-          <img id='sunImg' src='/images/sunshine.svg'></img>
-
-        </div> */}
 
       </div>
     </div>

@@ -62,9 +62,6 @@ export default function Home() {
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      {/* fake div to enable scroll - may delete if not needed */}
-      <motion.div transition={{ delay: 2 }}></motion.div>
-      {/* <motion.div className={homeStyles.mainBackground} animate={{ opacity: 0.5 }} initial={{ opacity: 0 }} exit={{ opacity: 0 }} transition={{ delay: 2 }}></motion.div> */}
       <div className={homeStyles.homeWrapper}>
         <AnimateSharedLayout>
           <motion.div onClick={() => setShowModal(!showModal)} layoutId="banner" className={homeStyles.banner} animate="show" exit="hidden" initial="hidden" variants={container} >
@@ -98,20 +95,7 @@ export default function Home() {
           </div>
         </div>
         <div className={homeStyles.innerHomeBottom}>
-          {/* <motion.div  initial={{opacity: 0, y: 0}} animate={{opacity: 1, y: 0}} exit={{opacity: 0, y: -1000}} transition={{duration: 1.2, delay: 0.1}} className={homeStyles.turbineWrapper}><WindTurbine /></motion.div> */}
-          {/* <div className={homeStyles.waveSquareWrapper}><object data="/images/wave_square.svg"></object></div> */}
-          {/* <div className={homeStyles.waveSquareWrapperLeft}><object data="/images/wave_square.svg"></object></div> */}
         </div>
-
-
-
-
-      </div>
-      <div className={homeStyles.lowerMain}>
-
-      </div>
-      <div className={homeStyles.lowerMain}>
-      
 
       </div>
     </Layout>
