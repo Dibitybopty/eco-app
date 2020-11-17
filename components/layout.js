@@ -34,7 +34,7 @@ export default function Layout({ children, home, products, contactus, gallery })
             
 
             {home && (
-                <div className={styles.pageContent} >
+                <div className={utilStyles.contactbg} >
 
                         {children}
 

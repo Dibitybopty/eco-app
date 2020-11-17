@@ -47,18 +47,29 @@ export default function ProductModal({ showModal, setShowModal, text, productIma
                     }} className={utilStyles.modalBackground} variants={backdropVarients} animate="visible" exit="hidden" initial="hidden">
                         <motion.div animate="animate" initial="initial" exit="exit" variants={modalVarients} layoutId='background' className={productStyles.modalProducts} transition={modalTransition}>
 
-                            <motion.h2 style={{ display: 'inline-block' }} transition={modalTransition} layoutId="title">{text}</motion.h2>
+                            <div className={productStyles.upperInfo}>
+                                <motion.h2 style={{ display: 'inline-block' }} transition={modalTransition} layoutId="title">{text}</motion.h2>
 
-                            <div className={productStyles.modalImages} >
-                                <motion.img
-                                    layoutId='productImg'
-                                    src={productImage}
-                                    width={643}
-                                    height={378}
-                                    alt={alt}
-                                    animate='animate' initial='initial' exit='exit' variants={modalVarients} transition={modalTransition}
+                                <div className={productStyles.modalImages} >
+                                    <motion.img
+                                        layoutId='productImg'
+                                        src={productImage}
+                                        width={643}
+                                        height={378}
+                                        alt={alt}
+                                        animate='animate' initial='initial' exit='exit' variants={modalVarients} transition={modalTransition}
 
-                                ></motion.img>
+                                    ></motion.img>
+                                </div>
+                            </div>
+                            <div className={productStyles.lowerInfo}>
+                                <div className={productStyles.inputs}>
+                                    <input></input>
+                                    <input></input>
+                                    <input></input>
+                                    <button>ENQUIRE</button>
+                                </div>
+
                             </div>
 
                         </motion.div>

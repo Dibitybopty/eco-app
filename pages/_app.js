@@ -119,12 +119,12 @@ function MyApp({ Component, pageProps, router }) {
 
 
   useEffect(() => {
-    console.log('hello!?')
+    //console.log(document.readyState)
 
-      if (document.readyState === 'complete') {
+      //if (document.readyState === 'complete') {
         var allWrapper = document.getElementById('allWrapper');
         var sunGroup = document.getElementById('sunGroup');
-        console.log('it is ready')
+        //console.log('it is ready')
 
 
 
@@ -135,9 +135,9 @@ function MyApp({ Component, pageProps, router }) {
 
           sunGroup.style.transform = `translate(${xAxis}px,${yAxis}px)`
 
-          console.log('weee')
+          //console.log('weee')
         })
-      }
+      //}
 
   })
 
@@ -145,11 +145,11 @@ function MyApp({ Component, pageProps, router }) {
     let sunGroup = document.getElementById('sunGroup');
     let sunContainer = document.getElementById('sunContainer');
     //let sun = document.getElementById('sunImg');
-    let sunRays = document.getElementById('sunRays');
+    //let sunRays = document.getElementById('sunRays');
     // let outerRing = document.getElementById('outer-ring');
     // let innerRing = document.getElementById('inner-ring');
     //console.log(sun)
-    if ((sunGroup !== undefined && sunGroup !== null) && ((sunRays !== undefined && sunRays !== null))) {
+    if ((sunGroup !== undefined && sunGroup !== null)) {
       //minus the scroll position of the screen so it's always the same value no matter how far scrolled
       //let scrollPosition = sunContainer.scrollTop;
 
@@ -207,7 +207,7 @@ function MyApp({ Component, pageProps, router }) {
 
       <div id='sunBG' className={utilStyles.sunBG}>
         <div id='sunContainer' className={utilStyles.sunRays}>
-          <svg width="6467" height="5654" viewBox="0 0 6467 5654" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg width="6467" height="5654" viewBox="0 0 6467 5654" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g id="sunshine">
               <g id="sunRays">
                 <path id="Vector 1" d="M707 2674L707 2977L3412 2848.9L3412 2805.79L707 2674Z" fill="#FFD600" opacity="0.09" />

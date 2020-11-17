@@ -22,14 +22,13 @@ body {
   line-height: 1.6;
   font-size: 18px;
   background: #0054b6;
-  overflow-y: auto;
+  /* overflow-y: auto; */
   /* overflow-x: hidden; */
   /* background-image: url('/images/Sun-Tornado.svg'); */
   background-attachment: fixed;
   background-size: cover;
   background-repeat: repeat;
   background-position: top center;
-  perspective: 1000px;
 }
 
 * {
