@@ -139,7 +139,7 @@ function MyApp({ Component, pageProps, router }) {
         })
       //}
 
-  })
+  }, [])
 
   function moveSun(e) {
     let sunGroup = document.getElementById('sunGroup');
