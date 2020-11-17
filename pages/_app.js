@@ -121,26 +121,26 @@ function MyApp({ Component, pageProps, router }) {
   // }
 
 
-  useEffect(() => {
-    window.addEventListener('load', (event) => {
-      if (document.readyState === 'complete') {
-        var allWrapper = document.getElementById('allWrapper');
-        var sunGroup = document.getElementById('sunGroup');
+  // useEffect(() => {
+  //   window.addEventListener('load', (event) => {
+  //     if (document.readyState === 'complete') {
+  //       var allWrapper = document.getElementById('allWrapper');
+  //       var sunGroup = document.getElementById('sunGroup');
 
-        allWrapper.addEventListener('mousemove', (e) => {
+  //       allWrapper.addEventListener('mousemove', (e) => {
 
-          let xAxis = ((allWrapper.offsetLeft + (allWrapper.offsetWidth / 2)) - e.pageX) / 90;
-          let yAxis = ((allWrapper.offsetTop + (allWrapper.offsetHeight / 2)) - e.pageY) / 90;
+  //         let xAxis = ((allWrapper.offsetLeft + (allWrapper.offsetWidth / 2)) - e.pageX) / 90;
+  //         let yAxis = ((allWrapper.offsetTop + (allWrapper.offsetHeight / 2)) - e.pageY) / 90;
 
-          sunGroup.style.transform = `translate(${xAxis}px,${yAxis}px)`
+  //         sunGroup.style.transform = `translate(${xAxis}px,${yAxis}px)`
 
-          //console.log(e)
-        })
-      }
+  //         //console.log(e)
+  //       })
+  //     }
 
-    })
+  //   })
 
-  })
+  // })
 
   function moveSun(e) {
     let sunGroup = document.getElementById('sunGroup');

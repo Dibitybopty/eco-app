@@ -30,7 +30,7 @@ export default function Home() {
 
   const container = {
     hidden: { y: -50 },
-    exit: { y: -50 },
+    exit: { y: 0 },
     show: {
       y: 0,
       transition: {
@@ -64,8 +64,8 @@ export default function Home() {
       </Head>
       <div className={homeStyles.homeWrapper}>
         <AnimateSharedLayout>
-          <motion.div onClick={() => setShowModal(!showModal)} layoutId="banner" className={homeStyles.banner} animate="show" initial="hidden" variants={container} >
-            Up to&nbsp;
+          <motion.div onClick={() => setShowModal(!showModal)} layoutId="banner" className={homeStyles.banner} animate="show" exit="exit" initial="hidden" variants={container} >
+            {/* Up to&nbsp;
           <motion.span variants={item} >£</motion.span>
             <motion.span variants={item} >1</motion.span>
             <motion.span variants={item} >0</motion.span>
@@ -74,8 +74,8 @@ export default function Home() {
             <motion.span variants={item} >0</motion.span>
             <motion.span variants={item} >0</motion.span>
           &nbsp;
-          {/* <motion.p style={{ display: 'inline-block' }} layoutId="title">Green Homes Government Grant</motion.p> *. */}
-           Click here to register your interest.
+          <motion.p style={{ display: 'inline-block' }} layoutId="title">Green Homes Government Grant</motion.p> *.
+           Click here to register your interest. */}
         </motion.div>
           <Modal showModal={showModal} setShowModal={setShowModal} text="Green Homes Government Grant" />
         </AnimateSharedLayout>
