@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import Layout, { siteTitle } from '../components/layout'
 import homeStyles from '../styles/Home.module.css'
+import utilStyles from '../styles/utils.module.css'
 import { motion, AnimateSharedLayout } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import WindTurbine from '../components/wind_turbine'
@@ -35,14 +36,14 @@ export default function Home() {
       y: 0,
       transition: {
         staggerChildren: 0.05,
-        delayChildren: 1.5
+        delayChildren: 1.1
       }
     }
   }
 
   const item = {
     hidden: { y: -50 },
-    exit: { y: -50 },
+    exit: { y: 0 },
     show: { y: 0 }
   }
 
@@ -64,7 +65,7 @@ export default function Home() {
       </Head>
       <div className={homeStyles.homeWrapper}>
         <AnimateSharedLayout>
-          <motion.div onClick={()=> setShowModal(!showModal)} layoutId="banner" style={{width: '100%', height: '2.5rem', borderBottom: '1px solid black', cursor: 'pointer', backgroundColor: '#69cd3c'}}>
+          <motion.div onClick={()=> setShowModal(!showModal)} layoutId="banner" className={utilStyles.banner} animate="show" exit="exit" initial="hidden" variants={container}>
             Up to&nbsp;
           <motion.span variants={item} >£</motion.span>
             <motion.span variants={item} >1</motion.span>
@@ -73,8 +74,20 @@ export default function Home() {
             <motion.span variants={item} >0</motion.span>
             <motion.span variants={item} >0</motion.span>
             <motion.span variants={item} >0</motion.span>
-          &nbsp;
-          <motion.p style={{ display: 'inline-block' }} layoutId="title">Green Homes Government Grant</motion.p> *.
+            &nbsp;
+            <motion.span variants={item} >F</motion.span>
+            <motion.span variants={item} >R</motion.span>
+            <motion.span variants={item} >E</motion.span>
+            <motion.span variants={item} >E</motion.span>
+            &nbsp;
+            <motion.span variants={item} >S</motion.span>
+            <motion.span variants={item} >O</motion.span>
+            <motion.span variants={item} >L</motion.span>
+            <motion.span variants={item} >A</motion.span>
+            <motion.span variants={item} >R</motion.span>
+            &nbsp;
+          
+          <motion.p style={{ display: 'inline-block' }} layoutId="title">Green Homes Government Grant</motion.p>.
            Click here to register your interest.
         </motion.div>
           <Modal showModal={showModal} setShowModal={setShowModal} text="Green Homes Government Grant" />
