@@ -119,13 +119,14 @@ function MyApp({ Component, pageProps, router }) {
 
 
   useEffect(() => {
-    window.addEventListener('load', (event) => {
+    window.addEventListener('DomContentLoaded', (event) => {
       console.log('it has loaded')
 
       if (document.readyState === 'complete') {
         var allWrapper = document.getElementById('allWrapper');
         var sunGroup = document.getElementById('sunGroup');
         console.log('it is ready')
+
 
 
         allWrapper.addEventListener('mousemove', (e) => {
