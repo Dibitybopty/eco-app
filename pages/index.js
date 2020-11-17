@@ -74,7 +74,7 @@ export default function Home() {
             <motion.span variants={item} >0</motion.span>
             <motion.span variants={item} >0</motion.span>
           &nbsp;
-          <motion.p style={{ display: 'inline-block' }} layoutId="title">Green Homes Government Grant</motion.p>*.
+          {/* <motion.p style={{ display: 'inline-block' }} layoutId="title">Green Homes Government Grant</motion.p> *. */}
            Click here to register your interest.
         </motion.div>
           <Modal showModal={showModal} setShowModal={setShowModal} text="Green Homes Government Grant" />
