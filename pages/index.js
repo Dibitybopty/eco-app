@@ -48,12 +48,12 @@ export default function Home() {
 
   const [showModal, setShowModal] = useState(false);
 
-  useEffect(()=>{
+  useEffect(() => {
     let sideMenu = document.getElementById('sideMenu');
-    let sideMenuEffect = document.getElementById('sideMenuEffect');
+    //let sideMenuEffect = document.getElementById('sideMenuEffect');
     showModal ? sideMenu.style.zIndex = '3' : sideMenu.style.zIndex = '334';
-    showModal ? sideMenuEffect.style.zIndex = '3' : sideMenuEffect.style.zIndex = '335';
-    
+    //showModal ? sideMenuEffect.style.zIndex = '3' : sideMenuEffect.style.zIndex = '335';
+
   })
 
 
@@ -73,7 +73,7 @@ export default function Home() {
             <motion.span variants={item} >0</motion.span>
             <motion.span variants={item} >0</motion.span>
             <motion.span variants={item} >0</motion.span>
-          &nbsp;<motion.p style={{display: 'inline-block'}} layoutId="title">Green Homes Government Grant</motion.p>*.
+          &nbsp;<motion.p style={{ display: 'inline-block' }} layoutId="title">Green Homes Government Grant</motion.p>*.
            Click here to register your interest.
         </motion.div>
           <Modal showModal={showModal} setShowModal={setShowModal} text="Green Homes Government Grant" />
@@ -83,18 +83,16 @@ export default function Home() {
           <div className={homeStyles.innerHomeTopRight}>
             <div className={homeStyles.innerHomeTopRightContent}>
               <motion.div className={homeStyles.solarShape} initial={{ transform: 'rotateY(120deg)' }} animate={{ transform: 'rotateY(0)' }} exit={{ transform: 'rotateY(120deg)' }} transition={{ ease: [0.6, 0.01, -0.05, 0.9], delay: 0, duration: 0.6 }}>
-              <motion.div className={homeStyles.solarShapeBG} initial={{ x: 1000 }} animate={{ x: 0 }} exit={{ x: 1000 }} transition={{ ease: [0.6, 0.01, -0.05, 0.9], delay: 0, duration: 1.6 }}></motion.div>
-                <div className={homeStyles.solarHeadingPop}><motion.h1 initial={{ x: -3000, opacity: 1,  }} exit={{ x: -3000, opacity: 1, }} animate={{ x: 0, opacity: 1,  }} transition={{ ease: [0.6, 0.01, -0.05, 0.9], delay: 0.12, duration: 2.6 }}>Eco Sales & Services Ltd.</motion.h1></div>
-                <div className={homeStyles.solarInfoPop}><motion.p initial={{ x: 3000, opacity: 1,  }} exit={{ x: 3000, opacity: 1,  }} animate={{ x: 0, opacity: 1,  }} transition={{ ease: [0.6, 0.01, -0.05, 0.9], delay: 0.12, duration: 2.9 }}>A local friendly renewable energy company giving nationwide renewable energy management solutions.</motion.p></div>
-                <div className={homeStyles.solarInfoTel}><motion.p initial={{ x: 3000, opacity: 1,  }} exit={{ x: 3000, opacity: 1,  }} animate={{ x: 0, opacity: 1,  }} transition={{ ease: [0.6, 0.01, -0.05, 0.9], delay: 0.08, duration: 2.3 }}>TEL: 01782 256805</motion.p></div>
+                <motion.div className={homeStyles.solarShapeBG} initial={{ x: 1000 }} animate={{ x: 0 }} exit={{ x: 1000 }} transition={{ ease: [0.6, 0.01, -0.05, 0.9], delay: 0, duration: 1.6 }}></motion.div>
+                <div className={homeStyles.solarHeadingPop}><motion.h1 initial={{ x: -3000, opacity: 1, }} exit={{ x: -3000, opacity: 1, }} animate={{ x: 0, opacity: 1, }} transition={{ ease: [0.6, 0.01, -0.05, 0.9], delay: 0.12, duration: 2.6 }}>Eco Sales & Services Ltd.</motion.h1></div>
+                <div className={homeStyles.solarInfoPop}><motion.p initial={{ x: 3000, opacity: 1, }} exit={{ x: 3000, opacity: 1, }} animate={{ x: 0, opacity: 1, }} transition={{ ease: [0.6, 0.01, -0.05, 0.9], delay: 0.12, duration: 2.9 }}>A local friendly renewable energy company giving nationwide renewable energy management solutions.</motion.p></div>
+                <div className={homeStyles.solarInfoTel}><motion.p initial={{ x: 3000, opacity: 1, }} exit={{ x: 3000, opacity: 1, }} animate={{ x: 0, opacity: 1, }} transition={{ ease: [0.6, 0.01, -0.05, 0.9], delay: 0.08, duration: 2.3 }}>TEL: 01782 256805</motion.p></div>
 
               </motion.div>
 
 
             </div>
           </div>
-        </div>
-        <div className={homeStyles.innerHomeBottom}>
         </div>
 
       </div>

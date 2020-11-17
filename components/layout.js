@@ -64,7 +64,7 @@ export default function Layout({ children, home, products, contactus, gallery })
                         </div>
 
                     </div>
-                    <div>{children}</div>
+                    {children}
 
                 </>
             )}
@@ -72,7 +72,7 @@ export default function Layout({ children, home, products, contactus, gallery })
             {contactus && (
                 <>
 
-                    <div>{children}</div>
+                    {children}
                 </>
             )}
 

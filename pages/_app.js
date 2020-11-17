@@ -172,10 +172,6 @@ function MyApp({ Component, pageProps, router }) {
   return (
     <div id='allWrapper' className={utilStyles.allWrapper}>
 
-
-      <div id='sideMenuEffect' className={utilStyles.sideMenuEffect}>
-
-      </div>
       <div id='sideMenu' className={utilStyles.sideMenuItems}>
 
         <Link href="/">

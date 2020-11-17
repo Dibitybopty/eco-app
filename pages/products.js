@@ -16,9 +16,9 @@ export default function Products() {
 
   useEffect(()=>{
     let sideMenu = document.getElementById('sideMenu');
-    let sideMenuEffect = document.getElementById('sideMenuEffect');
+    //let sideMenuEffect = document.getElementById('sideMenuEffect');
     showModal ? sideMenu.style.zIndex = '3' : sideMenu.style.zIndex = '334';
-    showModal ? sideMenuEffect.style.zIndex = '3' : sideMenuEffect.style.zIndex = '335';
+    //showModal ? sideMenuEffect.style.zIndex = '3' : sideMenuEffect.style.zIndex = '335';
     
   })
 
