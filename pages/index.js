@@ -92,7 +92,7 @@ export default function Home() {
         </motion.div>
           <Modal showModal={showModal} setShowModal={setShowModal} text="Green Homes Government Grant" />
         </AnimateSharedLayout>
-        {/* <div className={homeStyles.innerHomeTop}>
+        <div className={homeStyles.innerHomeTop}>
           <div className={homeStyles.innerHomeTopLeft}></div>
           <div className={homeStyles.innerHomeTopRight}>
             <div className={homeStyles.innerHomeTopRightContent}>
@@ -107,7 +107,7 @@ export default function Home() {
 
             </div>
           </div>
-        </div> */}
+        </div>
 
       </div>
     </Layout>

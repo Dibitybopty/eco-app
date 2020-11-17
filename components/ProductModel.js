@@ -64,9 +64,15 @@ export default function ProductModal({ showModal, setShowModal, text, productIma
                             </div>
                             <div className={productStyles.lowerInfo}>
                                 <div className={productStyles.inputs}>
+                                    <p>Name:</p>
+                                    <div className={productStyles.inputWrapper}>
+                                        <input type='text' name='name' required></input>
+                                        <label className={productStyles.labelName} for='name'></label>
+                                    </div>
+                                    <p>E-Mail:</p>
                                     <input></input>
-                                    <input></input>
-                                    <input></input>
+                                    <p>Your Enquiry:</p>
+                                    <textarea></textarea>
                                     <button>ENQUIRE</button>
                                 </div>
 
