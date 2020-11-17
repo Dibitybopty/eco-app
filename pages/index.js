@@ -63,9 +63,9 @@ export default function Home() {
         <title>{siteTitle}</title>
       </Head>
       <div className={homeStyles.homeWrapper}>
-        {/* <AnimateSharedLayout> */}
-          <motion.div className={homeStyles.bannerFix}>
-            {/* Up to&nbsp;
+        <AnimateSharedLayout>
+          <motion.div onClick={()=> setShowModal(!showModal)} layoutId="banner" style={{width: '100%', height: '2.5rem', borderBottom: '1px solid black', cursor: 'pointer', backgroundColor: '#69cd3c'}}>
+            Up to&nbsp;
           <motion.span variants={item} >£</motion.span>
             <motion.span variants={item} >1</motion.span>
             <motion.span variants={item} >0</motion.span>
@@ -75,10 +75,10 @@ export default function Home() {
             <motion.span variants={item} >0</motion.span>
           &nbsp;
           <motion.p style={{ display: 'inline-block' }} layoutId="title">Green Homes Government Grant</motion.p> *.
-           Click here to register your interest. */}
+           Click here to register your interest.
         </motion.div>
-          {/* <Modal showModal={showModal} setShowModal={setShowModal} text="Green Homes Government Grant" /> */}
-        {/* </AnimateSharedLayout> */}
+          <Modal showModal={showModal} setShowModal={setShowModal} text="Green Homes Government Grant" />
+        </AnimateSharedLayout>
         {/* <div className={homeStyles.innerHomeTop}>
           <div className={homeStyles.innerHomeTopLeft}></div>
           <div className={homeStyles.innerHomeTopRight}>

@@ -153,10 +153,12 @@
   display: flex;
   flex-direction: column;
   overflow-x: visible;
-  padding: 6rem 0 6rem 6rem;
+  padding: 4.5rem 0 6rem 6rem;
   width: 20vw;
   position: fixed;
   z-index: 334;
+  margin-top: 2.5rem;
+
 }
 
 .sideMenuItems a {
