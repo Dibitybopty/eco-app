@@ -119,6 +119,7 @@ function MyApp({ Component, pageProps, router }) {
 
 
   useEffect(() => {
+    console.log('hello!?')
     window.addEventListener('DOMContentLoaded', (event) => {
       console.log('it has loaded')
 
