@@ -120,10 +120,12 @@ function MyApp({ Component, pageProps, router }) {
 
   useEffect(() => {
     window.addEventListener('load', (event) => {
+      console.log('it has loaded')
+
       if (document.readyState === 'complete') {
         var allWrapper = document.getElementById('allWrapper');
         var sunGroup = document.getElementById('sunGroup');
-        console.log(allWrapper)
+        console.log('it is ready')
 
 
         allWrapper.addEventListener('mousemove', (e) => {
@@ -133,7 +135,7 @@ function MyApp({ Component, pageProps, router }) {
 
           sunGroup.style.transform = `translate(${xAxis}px,${yAxis}px)`
 
-          console.log(allWrapper)
+          console.log('weee')
         })
       }
 
