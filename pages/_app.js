@@ -16,7 +16,10 @@ function MyApp({ Component, pageProps, router }) {
       y: 0
     },
     pageExit: {
-      y: router.route === '/' ? '-169vh' : '169vh'
+      y: router.route === '/' ? '-169vh' : '169vh',
+      transition: {
+        duration: 5
+      }
     }
   };
 
@@ -121,8 +124,8 @@ function MyApp({ Component, pageProps, router }) {
   useEffect(() => {
     window.addEventListener('load', (event) => {
       if (document.readyState === 'complete') {
-        let allWrapper = document.getElementById('allWrapper');
-        let sunGroup = document.getElementById('sunGroup');
+        var allWrapper = document.getElementById('allWrapper');
+        var sunGroup = document.getElementById('sunGroup');
 
         allWrapper.addEventListener('mousemove', (e) => {
 
@@ -196,7 +199,7 @@ function MyApp({ Component, pageProps, router }) {
 
         <motion.div className={utilStyles.siteWrapper} key={router.route} initial="pageEnter" animate="center" exit="pageExit" variants={variants}
           transition={{
-            y: { ease: "easeInOut", stiffness: 150, damping: 25, duration: 1.5, delay: 0 }
+            y: { ease: "easeInOut", stiffness: 150, damping: 25, duration: 1, delay: 0 }
           }}
         >
           <Component {...pageProps} />
