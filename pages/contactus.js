@@ -1,7 +1,5 @@
 import { AnimateSharedLayout } from 'framer-motion';
 import Head from 'next/head'
-import Link from 'next/link'
-import { useEffect, useState } from 'react';
 import ContactBG from '../components/ContactBG';
 import Layout, { siteTitle } from '../components/layout'
 import utilStyles from '../styles/utils.module.css'

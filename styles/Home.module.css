@@ -41,9 +41,6 @@
   display: flex;
 }
 
-.innerHomeTop p {
-  /* text-shadow: 2px 2px #333; */
-}
 
 .innerHomeTopLeft {
   flex: 1;
