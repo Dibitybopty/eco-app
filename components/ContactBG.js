@@ -12,7 +12,7 @@ export default function ContactBG() {
         showModal ? sideMenu.style.zIndex = '3' : sideMenu.style.zIndex = '334';
         //showModal ? sideMenuEffect.style.zIndex = '3' : sideMenuEffect.style.zIndex = '335';
 
-    }, [])
+    })
 
     return (
         <>
