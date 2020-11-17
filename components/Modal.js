@@ -1,6 +1,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import utilStyles from '../styles/utils.module.css'
+import homeStyles from '../styles/Home.module.css'
 
 export default function Modal({ showModal, setShowModal, text }) {
 
@@ -41,8 +42,8 @@ export default function Modal({ showModal, setShowModal, text }) {
                 <>
                     <motion.div id="modalBG" onClick={(e) => {
                         if(e.target.id === 'modalBG') setShowModal(!showModal)
-                    }} className={utilStyles.modalBackground} variants={backdropVarients} animate="visible" exit="hidden" initial="hidden">
-                        <motion.div animate="animate" initial="initial" exit="exit" variants={modalVarients} layoutId="banner" className={utilStyles.modal} transition={modalTransition}>
+                    }} className={homeStyles.modalBackground} variants={backdropVarients} animate="visible" exit="hidden" initial="hidden">
+                        <motion.div animate="animate" initial="initial" exit="exit" variants={modalVarients} layoutId="banner" className={homeStyles.modal} transition={modalTransition}>
                             <motion.h2 style={{display: 'inline-block'}} transition={modalTransition} layoutId="title">{text}</motion.h2>
 
                         </motion.div>

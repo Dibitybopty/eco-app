@@ -66,13 +66,13 @@ export default function Home() {
         <AnimateSharedLayout>
           <motion.div onClick={() => setShowModal(!showModal)} layoutId="banner" className={homeStyles.banner} animate="show" initial="hidden" variants={container} >
             Up to&nbsp;
-          {/* <motion.span variants={item} >£</motion.span>
+          <motion.span variants={item} >£</motion.span>
             <motion.span variants={item} >1</motion.span>
             <motion.span variants={item} >0</motion.span>
             <motion.span variants={item} >,</motion.span>
             <motion.span variants={item} >0</motion.span>
             <motion.span variants={item} >0</motion.span>
-            <motion.span variants={item} >0</motion.span> */}
+            <motion.span variants={item} >0</motion.span>
           &nbsp;
           <motion.p style={{ display: 'inline-block' }} layoutId="title">Green Homes Government Grant</motion.p>*.
            Click here to register your interest.
