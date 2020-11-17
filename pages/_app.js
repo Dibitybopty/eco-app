@@ -123,6 +123,8 @@ function MyApp({ Component, pageProps, router }) {
       if (document.readyState === 'complete') {
         var allWrapper = document.getElementById('allWrapper');
         var sunGroup = document.getElementById('sunGroup');
+        console.log(allWrapper)
+
 
         allWrapper.addEventListener('mousemove', (e) => {
 
