@@ -38,7 +38,9 @@ export default function Layout({ children, home, products, contactus, gallery })
 
                         {children}
 
-                </div>)}
+                </div>
+                )}
+                
             {products && (
                 <div className={styles.pageContent} >
 

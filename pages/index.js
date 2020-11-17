@@ -64,7 +64,7 @@ export default function Home() {
       </Head>
       <div className={homeStyles.homeWrapper}>
         {/* <AnimateSharedLayout> */}
-          <motion.div style={{height: '50px', width: '100%', background: 'red'}}>
+          <motion.div className={homeStyles.banner}>
             {/* Up to&nbsp;
           <motion.span variants={item} >£</motion.span>
             <motion.span variants={item} >1</motion.span>
