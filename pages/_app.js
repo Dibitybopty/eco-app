@@ -16,10 +16,7 @@ function MyApp({ Component, pageProps, router }) {
       y: 0
     },
     pageExit: {
-      y: router.route === '/' ? '-169vh' : '169vh',
-      transition: {
-        duration: 5
-      }
+      y: router.route === '/' ? '-169vh' : '169vh'
     }
   };
 
@@ -121,26 +118,26 @@ function MyApp({ Component, pageProps, router }) {
   // }
 
 
-  // useEffect(() => {
-  //   window.addEventListener('load', (event) => {
-  //     if (document.readyState === 'complete') {
-  //       var allWrapper = document.getElementById('allWrapper');
-  //       var sunGroup = document.getElementById('sunGroup');
+  useEffect(() => {
+    window.addEventListener('load', (event) => {
+      if (document.readyState === 'complete') {
+        var allWrapper = document.getElementById('allWrapper');
+        var sunGroup = document.getElementById('sunGroup');
 
-  //       allWrapper.addEventListener('mousemove', (e) => {
+        allWrapper.addEventListener('mousemove', (e) => {
 
-  //         let xAxis = ((allWrapper.offsetLeft + (allWrapper.offsetWidth / 2)) - e.pageX) / 90;
-  //         let yAxis = ((allWrapper.offsetTop + (allWrapper.offsetHeight / 2)) - e.pageY) / 90;
+          let xAxis = ((allWrapper.offsetLeft + (allWrapper.offsetWidth / 2)) - e.pageX) / 90;
+          let yAxis = ((allWrapper.offsetTop + (allWrapper.offsetHeight / 2)) - e.pageY) / 90;
 
-  //         sunGroup.style.transform = `translate(${xAxis}px,${yAxis}px)`
+          sunGroup.style.transform = `translate(${xAxis}px,${yAxis}px)`
 
-  //         //console.log(e)
-  //       })
-  //     }
+          console.log(allWrapper)
+        })
+      }
 
-  //   })
+    })
 
-  // })
+  })
 
   function moveSun(e) {
     let sunGroup = document.getElementById('sunGroup');
@@ -199,7 +196,7 @@ function MyApp({ Component, pageProps, router }) {
 
         <motion.div className={utilStyles.siteWrapper} key={router.route} initial="pageEnter" animate="center" exit="pageExit" variants={variants}
           transition={{
-            y: { ease: "easeInOut", stiffness: 150, damping: 25, duration: 1, delay: 0 }
+            y: { ease: "easeInOut", stiffness: 150, damping: 25, duration: 1.5, delay: 0 }
           }}
         >
           <Component {...pageProps} />
