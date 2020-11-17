@@ -1,27 +1,13 @@
-@namespace svg url(http://www.w3.org/2000/svg);
+
 .homeWrapper {
   width: 100%;
   height: 100vh;
   display: flex;
   flex-direction: column;
-  position: relative;
-  z-index: 2;
 }
 
 /* backgrounds from www.svgbackgrounds.com */
 
-/* .homeWrapper::after{
-  background: url(/images/liquid_blue.svg);
-  background-size: cover;
-  opacity: 0.25;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  position: absolute;
-  z-index: -1;   
-  content: '';
-} */
 
 .mainBackground {
   background: url(/images/liquid_blue.svg);
