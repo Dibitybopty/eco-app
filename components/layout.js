@@ -13,28 +13,12 @@ export const siteTitle = 'Eco Sales';
 
 export default function Layout({ children, home, products, contactus, gallery }) {
 
-    // useEffect(() => {
-    //     const sun = document.getElementById('sun');
-    //     window.addEventListener('mousemove', (e) => {
-    //         //if(e.x < window.innerWidth - 200 && e.y < window.innerHeight - 200){
-    //         sun.style.left = (e.x - 175) + 'px';
-    //         sun.style.top = (e.y - 175) + 'px';
-    //         // }
-
-
-    //     })
-    //     window.addEventListener('mouseout', (e) => {
-    //         sun.style.left = '0px';
-    //         sun.style.top = '0px';
-    //     })
-    // })
-
     return (
         <div>
             
 
             {home && (
-                <div className={utilStyles.contactbg} >
+                <div className={styles.pageContent} >
 
                         {children}
 

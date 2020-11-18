@@ -5,6 +5,7 @@ import productStyles from '../styles/Products.module.css'
 import Image from 'next/image'
 
 
+
 export default function ProductModal({ showModal, setShowModal, text, productImage, alt }) {
 
     const backdropVarients = {
@@ -64,15 +65,19 @@ export default function ProductModal({ showModal, setShowModal, text, productIma
                             </div>
                             <div className={productStyles.lowerInfo}>
                                 <div className={productStyles.inputs}>
-                                    <p>Name:</p>
-                                    <div className={productStyles.inputWrapper}>
+
+                                    <label className={productStyles.labelName} >
                                         <input type='text' name='name' required></input>
-                                        <label className={productStyles.labelName} for='name'></label>
-                                    </div>
-                                    <p>E-Mail:</p>
-                                    <input></input>
-                                    <p>Your Enquiry:</p>
-                                    <textarea></textarea>
+                                        <span className={productStyles.placeholder}>NAME</span>
+                                    </label>
+                                    <label className={productStyles.labelName} >
+                                        <input type='text' name='email' required></input>
+                                        <span className={productStyles.placeholder}>E-MAIL</span>
+                                    </label>
+                                    <label className={productStyles.labelName} >
+                                        <textarea type='text' name='enquire' required></textarea>
+                                        <span className={productStyles.placeholder}>HOW CAN WE HELP?</span>
+                                    </label>
                                     <button>ENQUIRE</button>
                                 </div>
 
