@@ -3,7 +3,7 @@ import { motion, AnimatePresence, transform } from 'framer-motion';
 import utilStyles from '../styles/utils.module.css'
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import { TimelineLite, CSSPlugin } from "gsap";
+import { gsap } from "gsap";
 
 function MyApp({ Component, pageProps, router }) {
 
@@ -137,7 +137,7 @@ function MyApp({ Component, pageProps, router }) {
 
           //sunGroup.style.transform = `translate(${xAxis}px,${yAxis}px)`
           
-          let myTween = new TimelineLite().to(sunGroup, 0.8, { x: xAxis, y: yAxis })
+          let myTween = new gsap.timeline().to(sunGroup, 0.8, { x: xAxis, y: yAxis })
 
           myTween.play();
 
