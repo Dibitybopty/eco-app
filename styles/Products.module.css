@@ -187,22 +187,27 @@
 
 .modalDesc {
     grid-area: info;
-    position: relative;
     font-size: 1rem;
     color: white;
+}
+
+.modalDesc p{
+    margin: 0;
+    padding: 0;
+    text-align: start;
 }
 
 .upperInfo {
     /* height: 100vh; */
     display: grid;
-    /* grid-template-columns: 1fr 1fr 1fr 1fr; */
-    grid-template-rows: 0.1fr 0.3fr 0.5fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 0.1fr 0.1fr 1fr;
     grid-gap: 1rem;
     margin: 1rem;
     grid-template-areas: 
-    'title title title title' 
-    'mainImage mainImage image1 image2' 
-    'inputs inputs info info';
+    'title title title' 
+    'image1 image2 image3' 
+    'mainImage info info';
 }
 
 .modalTitle{

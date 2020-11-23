@@ -75,7 +75,7 @@ export default function ProductModal({ showModal, setShowModal, text, productIma
 
                                     </Image>
                                 </div>
-                                {/* <div className={productStyles.image3}>
+                                <div className={productStyles.image3}>
                                     <Image
                                         src='/images/products/battery_alone.jpg'
                                         height={665}
@@ -84,7 +84,7 @@ export default function ProductModal({ showModal, setShowModal, text, productIma
                                     >
 
                                     </Image>
-                                </div> */}
+                                </div>
 
 
                                 <div className={productStyles.modalImages} >
@@ -98,7 +98,7 @@ export default function ProductModal({ showModal, setShowModal, text, productIma
                                 </div>
                                 
 
-                                <div className={productStyles.inputs}>
+                                {/* <div className={productStyles.inputs}>
 
                                     <label className={productStyles.labelName} >
                                         <input type='text' name='name' required></input>
@@ -113,7 +113,7 @@ export default function ProductModal({ showModal, setShowModal, text, productIma
                                         <span className={productStyles.placeholder}>HOW CAN WE HELP?</span>
                                     </label>
                                     <button>ENQUIRE</button>
-                                </div>
+                                </div> */}
                             </div>
                             {/* <div className={productStyles.lowerInfo}> */}
                             {/* <div className={productStyles.inputs}>

@@ -3,6 +3,7 @@ import { motion, AnimatePresence, transform } from 'framer-motion';
 import utilStyles from '../styles/utils.module.css'
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import { TimelineLite, CSSPlugin } from "gsap";
 
 function MyApp({ Component, pageProps, router }) {
 
@@ -122,8 +123,9 @@ function MyApp({ Component, pageProps, router }) {
     //console.log(document.readyState)
 
       //if (document.readyState === 'complete') {
-        var allWrapper = document.getElementById('allWrapper');
-        var sunGroup = document.getElementById('sunGroup');
+        const allWrapper = document.getElementById('allWrapper');
+        const sunGroup = document.getElementById('sunGroup');
+        
         //console.log('it is ready')
 
 
@@ -133,11 +135,19 @@ function MyApp({ Component, pageProps, router }) {
           let xAxis = ((allWrapper.offsetLeft + (allWrapper.offsetWidth / 2)) - e.pageX) / 90;
           let yAxis = ((allWrapper.offsetTop + (allWrapper.offsetHeight / 2)) - e.pageY) / 90;
 
-          sunGroup.style.transform = `translate(${xAxis}px,${yAxis}px)`
+          //sunGroup.style.transform = `translate(${xAxis}px,${yAxis}px)`
+          
+          let myTween = new TimelineLite().to(sunGroup, 0.8, { x: xAxis, y: yAxis })
 
-          //console.log('weee')
+          myTween.play();
+
+          //console.log(myTween)
         })
       //}
+
+      
+      
+     
 
   }, [])
 
