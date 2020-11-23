@@ -154,11 +154,14 @@
     border: 2px solid black;
     display: flex;
     flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    overflow: unset;
 }
 
 .modalProducts img {
-    width: 5%;
-    height: auto;
+    /* width: 10px; */
+
 }
 
 .modalProducts h2 {
@@ -166,14 +169,85 @@
     font-size: 2.5rem;
     user-select: none;
     color: white;
+    margin: 0;
+    position: relative;
+    z-index: 100;
 }
 
 .modalImages {
+    /* background-color: blueviolet; */
+    grid-area: mainImage;
     width: 100%;
 }
 
+.modalImages img {
+    width: inherit;
+    height: auto;
+}
+
+.modalDesc {
+    grid-area: info;
+    position: relative;
+    font-size: 1rem;
+    color: white;
+}
+
 .upperInfo {
-    flex: 1;
+    /* height: 100vh; */
+    display: grid;
+    /* grid-template-columns: 1fr 1fr 1fr 1fr; */
+    grid-template-rows: 0.1fr 0.3fr 0.5fr;
+    grid-gap: 1rem;
+    margin: 1rem;
+    grid-template-areas: 
+    'title title title title' 
+    'mainImage mainImage image1 image2' 
+    'inputs inputs info info';
+}
+
+.modalTitle{
+    grid-area: title;
+}
+
+.upperImage {
+    border: 2px solid black;
+}
+
+.image1 {
+    /* background-color: tomato; */
+    grid-area: image1;
+    /* border: 3px solid black; */
+    /* display: flex; */
+}
+
+.image1 img {
+    width: auto;
+    height: auto;
+}
+
+.image2 {
+    /* background-color:thistle; */
+    grid-area: image2;
+    /* display: flex; */
+    /* border: 3px solid black; */
+    
+}
+
+.image2 img {
+    width: auto;
+    height: auto;
+}
+
+.image3 {
+    /* background-color: violet; */
+    grid-area: image3;
+    /* border: 3px solid black; */
+
+}
+
+.image3 img {
+    width: auto;
+    height: auto;
 }
 
 .lowerInfo {
@@ -183,12 +257,13 @@
 }
 
 .inputs {
-    width: 50%;
+    /* width: 100%;
+    height: auto; */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
+    grid-area: inputs;
 }
 
 /* .inputs input {
@@ -221,103 +296,88 @@
     background-color: white;
 } */
 
-.labelName{
+.labelName {
     position: relative;
     width: 100%;
     margin: 1.7rem;
 }
 
-.labelName .placeholder{
+.labelName .placeholder {
     position: absolute;
     left: 0;
     top: calc(50% - 1rem);
-    transition:  0.3s ease;
+    transition: 0.3s ease;
     font-size: 1rem;
     font-weight: 600;
-    transform: translateY(-150%);
+    transform: translateY(-130%);
     color: whitesmoke;
-
-    
-
 }
 
 .labelName input {
     width: 100%;
     padding: 0.5rem;
-    height: 3rem;
+    height: 100%;
     font-size: 1rem;
-    background-color:  aliceblue;
+    background-color: aliceblue;
     border: 1px solid black;
     outline: none;
-
 }
-.labelName input:focus{
+
+.labelName input:focus {
     border: 2px solid black;
-    background-color:  white;
+    background-color: white;
 }
 
-.labelName input:valid + .placeholder,
-.labelName input:focus + .placeholder {
-
+.labelName input:valid+.placeholder, .labelName input:focus+.placeholder {
     /* font-size: 1.1rem; */
     /* left: 3px; */
     scale: 1.1;
     transform-origin: left;
     color: white;
-
-    
-
 }
 
 .labelName textarea {
     width: 100%;
     padding: 0.5rem;
-    height: 6rem;
+    height: 100%;
     font-size: 1rem;
-    background-color:  aliceblue;
+    background-color: aliceblue;
     border: 1px solid black;
     outline: none;
-
 }
-.labelName textarea:focus{
+
+.labelName textarea:focus {
     border: 2px solid black;
-    background-color:  white;
+    background-color: white;
 }
 
-.labelName textarea + .placeholder{
-    transform: translateY(-250%);
-
+.labelName textarea+.placeholder {
+    transform: translateY(-200%);
 }
 
-.labelName textarea:valid + .placeholder,
-.labelName textarea:focus + .placeholder {
-
+.labelName textarea:valid + .placeholder, .labelName textarea:focus + .placeholder {
     /* font-size: 1.1rem; */
     /* left: 3px; */
-    transform: translateY(-250%);
+    transform: translateY(-200%);
     scale: 1.1;
     transform-origin: left;
     color: white;
-
-    
-
 }
 
 .inputWrapper {
     margin: 0.3rem 1rem 1rem 1rem;
     width: 100%;
     overflow: hidden;
-
 }
 
-.inputWrapper label{
+.inputWrapper label {
     display: block;
     position: relative;
     width: 100%;
     height: 100%;
 }
 
-.inputWrapper label::after{
+.inputWrapper label::after {
     display: block;
     position: relative;
     content: '';
@@ -330,11 +390,10 @@
     transition: transform 0.3s ease;
 }
 
-
 .inputs button {
     width: 100%;
     padding: 0.5rem;
-    height: 3rem;
+    height: 100%;
     font-size: 1rem;
     margin: 0.5rem;
     color: black;
