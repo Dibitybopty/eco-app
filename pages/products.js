@@ -102,7 +102,7 @@ export default function Products() {
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <div id="productBG" className={productStyles.productBG}>
+      <div className={productStyles.productWrapper}><div id="productBG" className={productStyles.productBG}>
 
         <div className={productStyles.productLeft}></div>
         <motion.div transition={{ duration: 1.7 }} animate='animate' exit='exit' initial='initial' variants={cardAnimations} className={productStyles.productRight}>
@@ -252,7 +252,7 @@ export default function Products() {
 
 
 
-      </div>
+      </div></div>
     </Layout>
   )
 }
