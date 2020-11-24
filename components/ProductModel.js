@@ -1,7 +1,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import utilStyles from '../styles/utils.module.css'
-// import productStyles from '../styles/Products.module.css'
+// import utilStyles from '../styles/Products.module.css'
 import Image from 'next/image'
 
 
@@ -60,17 +60,17 @@ export default function ProductModal({ showModal, setShowModal, text, productIma
                     <motion.div id="modalBG" onClick={(e) => {
                         if (e.target.id === 'modalBG') setShowModal(!showModal)
                     }} className={utilStyles.modalBackground} variants={backdropVarients} animate="visible" exit="hidden" initial="hidden">
-                        <motion.div animate="animate" initial="initial" exit="exit" variants={modalVarients} layoutId='background' className={productStyles.modalProducts} transition={modalTransition}>
+                        <motion.div animate="animate" initial="initial" exit="exit" variants={modalVarients} layoutId='background' className={utilStyles.modalProducts} transition={modalTransition}>
 
-                            <div className={productStyles.upperInfo}>
-                                {/* <div className={productStyles.fabFlip}>
-                                    <div className={productStyles.arrowRight}></div>
+                            <div className={utilStyles.upperInfo}>
+                                {/* <div className={utilStyles.fabFlip}>
+                                    <div className={utilStyles.arrowRight}></div>
                                 </div> */}
-                                <div className={productStyles.modalTitle}><motion.h2 style={{ display: 'inline-block' }} transition={modalTransition} layoutId="title">{text}</motion.h2></div>
+                                <div className={utilStyles.modalTitle}><motion.h2 style={{ display: 'inline-block' }} transition={modalTransition} layoutId="title">{text}</motion.h2></div>
 
-                                <motion.div animate={{ y: 0, opacity: 1 }} exit={{ y: -200, opacity: 0 }} initial={{ y: -200, opacity: 0 }} transition={modalTransition} className={productStyles.modalDesc}><p>{someBollox}</p></motion.div>
+                                <motion.div animate={{ y: 0, opacity: 1 }} exit={{ y: -200, opacity: 0 }} initial={{ y: -200, opacity: 0 }} transition={modalTransition} className={utilStyles.modalDesc}><p>{someBollox}</p></motion.div>
 
-                                <motion.div animate='animate' exit='exit' initial='initial' variants={imageVarients} transition={modalTransition} className={productStyles.image1}>
+                                <motion.div animate='animate' exit='exit' initial='initial' variants={imageVarients} transition={modalTransition} className={utilStyles.image1}>
                                     <Image
                                     
                                         src='/images/products/battery_alone.jpg'
@@ -82,7 +82,7 @@ export default function ProductModal({ showModal, setShowModal, text, productIma
 
                                     </Image>
                                 </motion.div>
-                                <motion.div animate='animate' exit='exit' initial='initial' variants={imageVarients} transition={modalTransition} className={productStyles.image2}>
+                                <motion.div animate='animate' exit='exit' initial='initial' variants={imageVarients} transition={modalTransition} className={utilStyles.image2}>
                                     <Image
                                         src='/images/products/battery_alone.jpg'
                                         height={665}
@@ -93,7 +93,7 @@ export default function ProductModal({ showModal, setShowModal, text, productIma
 
                                     </Image>
                                 </motion.div>
-                                <motion.div animate='animate' exit='exit' initial='initial' variants={imageVarients} transition={modalTransition} className={productStyles.image3}>
+                                <motion.div animate='animate' exit='exit' initial='initial' variants={imageVarients} transition={modalTransition} className={utilStyles.image3}>
                                     <Image
                                         src='/images/products/battery_alone.jpg'
                                         height={665}
@@ -105,7 +105,7 @@ export default function ProductModal({ showModal, setShowModal, text, productIma
                                 </motion.div>
 
 
-                                <div className={productStyles.modalImages} >
+                                <div className={utilStyles.modalImages} >
                                     <motion.img
                                         layoutId='productImg'
                                         src={productImage}
@@ -116,37 +116,37 @@ export default function ProductModal({ showModal, setShowModal, text, productIma
                                 </div>
 
 
-                                {/* <div className={productStyles.inputs}>
+                                {/* <div className={utilStyles.inputs}>
 
-                                    <label className={productStyles.labelName} >
+                                    <label className={utilStyles.labelName} >
                                         <input type='text' name='name' required></input>
-                                        <span className={productStyles.placeholder}>NAME</span>
+                                        <span className={utilStyles.placeholder}>NAME</span>
                                     </label>
-                                    <label className={productStyles.labelName} >
+                                    <label className={utilStyles.labelName} >
                                         <input type='text' name='email' required></input>
-                                        <span className={productStyles.placeholder}>E-MAIL</span>
+                                        <span className={utilStyles.placeholder}>E-MAIL</span>
                                     </label>
-                                    <label className={productStyles.labelName} >
+                                    <label className={utilStyles.labelName} >
                                         <textarea type='text' name='enquire' required></textarea>
-                                        <span className={productStyles.placeholder}>HOW CAN WE HELP?</span>
+                                        <span className={utilStyles.placeholder}>HOW CAN WE HELP?</span>
                                     </label>
                                     <button>ENQUIRE</button>
                                 </div> */}
                             </div>
-                            {/* <div className={productStyles.lowerInfo}> */}
-                            {/* <div className={productStyles.inputs}>
+                            {/* <div className={utilStyles.lowerInfo}> */}
+                            {/* <div className={utilStyles.inputs}>
 
-                                    <label className={productStyles.labelName} >
+                                    <label className={utilStyles.labelName} >
                                         <input type='text' name='name' required></input>
-                                        <span className={productStyles.placeholder}>NAME</span>
+                                        <span className={utilStyles.placeholder}>NAME</span>
                                     </label>
-                                    <label className={productStyles.labelName} >
+                                    <label className={utilStyles.labelName} >
                                         <input type='text' name='email' required></input>
-                                        <span className={productStyles.placeholder}>E-MAIL</span>
+                                        <span className={utilStyles.placeholder}>E-MAIL</span>
                                     </label>
-                                    <label className={productStyles.labelName} >
+                                    <label className={utilStyles.labelName} >
                                         <textarea type='text' name='enquire'></textarea>
-                                        <span className={productStyles.placeholder}>HOW CAN WE HELP?</span>
+                                        <span className={utilStyles.placeholder}>HOW CAN WE HELP?</span>
                                     </label>
                                     <button>ENQUIRE</button>
                                 </div> */}
