@@ -1,10 +1,5 @@
-import Head from 'next/head'
 import styles from './layout.module.css'
 import utilStyles from '../styles/utils.module.css'
-import Link from 'next/link'
-import { motion, AnimatePresence } from 'framer-motion'
-import { Component, useEffect } from 'react'
-import Products from '../pages/products'
 
 //TODO Make pages act like they're scrolling with transitions, so it seems like one big page.
 //TODO Change content based on weather with a weather API.
@@ -18,7 +13,7 @@ export default function Layout({ children, home, products, contactus, gallery })
             
 
             {home && (
-                <div className={styles.pageContent} >
+                <div >
 
                         {children}
 

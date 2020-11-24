@@ -357,7 +357,7 @@
 }
 
 .theSun img{
-  position: relative;
+  position: absolute;
   top: -20%;
   right: 10%;
   height: 100%;
@@ -374,7 +374,7 @@
 }
 
 .sunRays svg{
-  position: absolute;
+  position: relative;
   top: -220%;
   left: -185%;
   height: 500%;
@@ -389,6 +389,8 @@
 }
 
 /* home module stuff - cant get other to work */
+
+
 
 .banner {
   height: 2.5rem;
@@ -488,6 +490,20 @@
   opacity: 0.25;
 }
 
+.mainContent{
+  display: flex;
+  width: 100%;
+  height: 100vh;
+
+}
+
+.shapeContainer{
+  position: absolute;
+  top: 7rem;
+  right: 5rem;
+  z-index: -1;
+}
+
 .solarShapeBG {
   width: 25rem;
   height: 25rem;
@@ -515,10 +531,15 @@
   overflow: visible;
   position: relative;
   left: -6.5rem;
-  width: 200%;
   color: white;
   top: 2.5rem;
   font-weight: 800;
+}
+
+@media screen and (max-width: 900px){
+  .solarShape h1{
+    font-size: 2rem;
+  }
 }
 
 .innerHomeTopRightContent {
@@ -534,17 +555,17 @@
 .solarHeadingPop {
   position: relative;
   transform: translateZ(6rem);
+  overflow: visible;
 }
 
 .solarHeadingPop h1 {
-  overflow: visible;
   position: relative;
   left: -6.5rem;
-  width: 200%;
   color: white;
   top: 2.5rem;
   font-weight: 800;
   user-select: none;
+  display: ruby;
 }
 
 .solarInfoPop {
@@ -575,14 +596,14 @@
   color: #69cd3c;
   position: relative;
   z-index: 2;
-  right: 0rem;
+  right: -5rem;
   text-align: center;
-  width: 150%;
   top: 2rem;
   user-select: none;
   font-weight: 900;
   text-shadow: 2px 2px #333;
 }
+
 
 .modalBackground {
   width: 100%;

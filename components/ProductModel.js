@@ -63,22 +63,20 @@ export default function ProductModal({ showModal, setShowModal, text, productIma
                         <motion.div animate="animate" initial="initial" exit="exit" variants={modalVarients} layoutId='background' className={productStyles.modalProducts} transition={modalTransition}>
 
                             <div className={productStyles.upperInfo}>
-                                <div className={productStyles.fabFlip}>
+                                {/* <div className={productStyles.fabFlip}>
                                     <div className={productStyles.arrowRight}></div>
-                                </div>
+                                </div> */}
                                 <div className={productStyles.modalTitle}><motion.h2 style={{ display: 'inline-block' }} transition={modalTransition} layoutId="title">{text}</motion.h2></div>
 
                                 <motion.div animate={{ y: 0 }} exit={{ y: -500 }} initial={{ y: -500 }} transition={modalTransition} className={productStyles.modalDesc}><p>{someBollox}</p></motion.div>
 
                                 <motion.div animate='animate' exit='exit' initial='initial' variants={imageVarients} transition={modalTransition} className={productStyles.image1}>
-                                    <Image
+                                    <Image                                    
                                         src='/images/products/battery_alone.jpg'
                                         height={665}
                                         width={600}
-                                        alt={text}
-                                        className={productStyles.upperImage}
+                                        alt={text}                                      
                                     >
-
                                     </Image>
                                 </motion.div>
                                 <motion.div animate='animate' exit='exit' initial='initial' variants={imageVarients} transition={modalTransition} className={productStyles.image2}>
@@ -87,6 +85,7 @@ export default function ProductModal({ showModal, setShowModal, text, productIma
                                         height={665}
                                         width={600}
                                         alt={text}
+                                        
                                     >
 
                                     </Image>
