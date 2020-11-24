@@ -106,7 +106,7 @@ export default function Products() {
         <div id="productBG" className={productStyles.productBG}>
 
           <div className={productStyles.productLeft}></div>
-          <motion.div transition={{ duration: 1.7 }} animate='animate' exit='exit' initial='initial' variants={cardAnimations} className={productStyles.productRight}>
+          <div transition={{ duration: 1.7 }} animate='animate' exit='exit' initial='initial' variants={cardAnimations} className={productStyles.productRight}>
 
             <AnimateSharedLayout >
               <Modal showModal={showModal} setShowModal={setShowModal} text="Lithium Battery" alt='Lithium Battery' productImage='/images/products/battery.webp' />
@@ -249,7 +249,7 @@ export default function Products() {
                 <h3>Infrared Heating Panels</h3>
               </div>
             </motion.div>
-          </motion.div>
+          </div>
 
 
 

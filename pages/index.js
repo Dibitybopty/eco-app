@@ -42,6 +42,7 @@ export default function Home() {
       <Head>
         <title>{siteTitle}</title>
       </Head>
+      <div className={utilStyles.homeWrapper}>
         <AnimateSharedLayout>
           <motion.div onClick={() => setShowModal(!showModal)} layoutId="banner" className={utilStyles.banner} animate="show" exit="exit" initial="hidden" variants={container}>
             Up to&nbsp;
@@ -70,7 +71,7 @@ export default function Home() {
         </motion.div>
           <Modal showModal={showModal} setShowModal={setShowModal} text="Green Homes Government Grant" />
         </AnimateSharedLayout>
-
+        
         <div className={utilStyles.mainContent}>
 
 
@@ -86,7 +87,8 @@ export default function Home() {
 
 
         </div>
-
+        </div>
+      
     </Layout>
   )
 }
