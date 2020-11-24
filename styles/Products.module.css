@@ -143,20 +143,34 @@
 }
 
 .modalProducts {
-    width: 70%;
-    height: 100%;
+    width: 30%;
+    height: 80%;
     background-color: #0057bc;
-    position: absolute;
+    /* position: absolute; */
     z-index: 338;
     text-align: center;
     cursor: default;
-    justify-self: end;
+    justify-self: center;
     border: 2px solid black;
     display: flex;
     flex-direction: column;
     /* justify-content: center; */
     align-items: center;
-    overflow: unset;
+    overflow: hidden;
+}
+
+@media screen and (max-width: 700px){
+    .modalProducts{
+        width: 90%;
+        height: 90%;
+    }
+}
+
+@media screen and (max-width: 1200px){
+    .modalProducts{
+        width: 80%;
+        height: 80%;
+    }
 }
 
 .modalProducts img {
@@ -200,18 +214,80 @@
 .upperInfo {
     /* height: 100vh; */
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 0.1fr 0.1fr 1fr;
+    /* grid-template-columns: 1fr 1fr 1fr; */
+    /* grid-template-rows: 0.1fr 0.1fr 1fr; */
     grid-gap: 1rem;
     margin: 1rem;
     grid-template-areas: 
     'title title title' 
+    'mainImage mainImage mainImage'
     'image1 image2 image3' 
-    'mainImage info info';
+    'info info info';
+}
+
+.gg-arrow-right {
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+    transform: scale(var(--ggs,1));
+    width: 22px;
+    height: 22px
+   }
+   
+   .arrowRight::after,
+   .arrowRight::before {
+    content: "";
+    display: block;
+    box-sizing: border-box;
+    position: absolute;
+    right: 3px
+   }
+   
+   .arrowRight::after {
+    width: 8px;
+    height: 8px;
+    border-top: 2px solid;
+    border-right: 2px solid;
+    transform: rotate(45deg);
+    bottom: 7px
+   }
+   
+   .arrowRight::before {
+    width: 16px;
+    height: 2px;
+    bottom: 10px;
+    background: currentColor
+   } 
+
+.fabFlip{
+    position: absolute;
+    /* right: 0; */
+    width: 50px;
+    height: 50px;
+    background-color: coral;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+    user-select: none;
+    
+    margin: 0 auto;
+    
+}
+
+.fabFlip p {
+    font-size: 2rem;
+    font-weight: 900;
+    text-align: center;
+    grid-area: arrow;
 }
 
 .modalTitle{
     grid-area: title;
+}
+.modalTitle h2{
+    font-size: 1.5rem;
 }
 
 .upperImage {

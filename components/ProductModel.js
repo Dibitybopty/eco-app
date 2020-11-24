@@ -41,6 +41,18 @@ export default function ProductModal({ showModal, setShowModal, text, productIma
         }
     }
 
+    const imageVarients = {
+        animate: {
+            y: 0
+        },
+        exit: {
+            y: -200
+        },
+        initial: {
+            y: -200
+        }
+    }
+
     return (
         <AnimatePresence >
             {showModal && (
@@ -51,10 +63,14 @@ export default function ProductModal({ showModal, setShowModal, text, productIma
                         <motion.div animate="animate" initial="initial" exit="exit" variants={modalVarients} layoutId='background' className={productStyles.modalProducts} transition={modalTransition}>
 
                             <div className={productStyles.upperInfo}>
-                                <div className={productStyles.modalTitle}><motion.h2 style={{ display: 'inline-block'}} transition={modalTransition} layoutId="title">{text}</motion.h2></div>
-                                <div className={productStyles.modalDesc}><p>{someBollox}</p></div>
+                                <div className={productStyles.fabFlip}>
+                                    <div className={productStyles.arrowRight}></div>
+                                </div>
+                                <div className={productStyles.modalTitle}><motion.h2 style={{ display: 'inline-block' }} transition={modalTransition} layoutId="title">{text}</motion.h2></div>
 
-                                <div className={productStyles.image1}>
+                                <motion.div animate={{ y: 0 }} exit={{ y: -500 }} initial={{ y: -500 }} transition={modalTransition} className={productStyles.modalDesc}><p>{someBollox}</p></motion.div>
+
+                                <motion.div animate='animate' exit='exit' initial='initial' variants={imageVarients} transition={modalTransition} className={productStyles.image1}>
                                     <Image
                                         src='/images/products/battery_alone.jpg'
                                         height={665}
@@ -64,8 +80,8 @@ export default function ProductModal({ showModal, setShowModal, text, productIma
                                     >
 
                                     </Image>
-                                </div>
-                                <div className={productStyles.image2}>
+                                </motion.div>
+                                <motion.div animate='animate' exit='exit' initial='initial' variants={imageVarients} transition={modalTransition} className={productStyles.image2}>
                                     <Image
                                         src='/images/products/battery_alone.jpg'
                                         height={665}
@@ -74,8 +90,8 @@ export default function ProductModal({ showModal, setShowModal, text, productIma
                                     >
 
                                     </Image>
-                                </div>
-                                <div className={productStyles.image3}>
+                                </motion.div>
+                                <motion.div animate='animate' exit='exit' initial='initial' variants={imageVarients} transition={modalTransition} className={productStyles.image3}>
                                     <Image
                                         src='/images/products/battery_alone.jpg'
                                         height={665}
@@ -84,7 +100,7 @@ export default function ProductModal({ showModal, setShowModal, text, productIma
                                     >
 
                                     </Image>
-                                </div>
+                                </motion.div>
 
 
                                 <div className={productStyles.modalImages} >
@@ -96,7 +112,7 @@ export default function ProductModal({ showModal, setShowModal, text, productIma
 
                                     ></motion.img>
                                 </div>
-                                
+
 
                                 {/* <div className={productStyles.inputs}>
 
