@@ -1,7 +1,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import utilStyles from '../styles/utils.module.css'
-import productStyles from '../styles/Products.module.css'
+// import productStyles from '../styles/Products.module.css'
 import Image from 'next/image'
 
 
