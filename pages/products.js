@@ -105,7 +105,7 @@ export default function Products() {
       <div id="productBG" className={productStyles.productBG}>
 
         <div className={productStyles.productLeft}></div>
-        <motion.div transition={{ duration: 1.7 }} animate='animate' exit='exit' initial='initial' variants={cardAnimations} className={productStyles.productRight}>
+        <motion.div  className={productStyles.productRight}>
 
           <AnimateSharedLayout >
             <Modal showModal={showModal} setShowModal={setShowModal} text="Lithium Battery" alt='Lithium Battery' productImage='/images/products/battery.webp' />
@@ -113,7 +113,7 @@ export default function Products() {
             <motion.div variants={cards} onPointerMove={(e) => moveCard(e)} onPointerLeave={(e) => leaveCard(e)} type='cardContainer' className={productStyles.productCardContainer}>
 
               <div type='card' className={productStyles.productCard}>
-                {/* <motion.div  layoutId='background' className={productStyles.productCircle}>
+                <motion.div layoutId='background' className={productStyles.productCircle}>
                   <div className={productStyles.productImages}>
                     <motion.img layoutId='productImg'
                       src='/images/products/battery.webp'
@@ -127,7 +127,7 @@ export default function Products() {
                     <p>Growatt SP2000 Energy Storage System</p>
                   </div>
 
-                </motion.div> */}
+                </motion.div>
 
 
                 <motion.button onClick={() => setShowModal(!showModal)} >MORE INFO</motion.button>
