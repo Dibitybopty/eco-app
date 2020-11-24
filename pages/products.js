@@ -107,13 +107,13 @@ export default function Products() {
         <div className={productStyles.productLeft}></div>
         <motion.div transition={{ duration: 1.7 }} animate='animate' exit='exit' initial='initial' variants={cardAnimations} className={productStyles.productRight}>
 
-          {/* <AnimateSharedLayout >
+          <AnimateSharedLayout >
             <Modal showModal={showModal} setShowModal={setShowModal} text="Lithium Battery" alt='Lithium Battery' productImage='/images/products/battery.webp' />
 
             <motion.div variants={cards} onPointerMove={(e) => moveCard(e)} onPointerLeave={(e) => leaveCard(e)} type='cardContainer' className={productStyles.productCardContainer}>
 
               <div type='card' className={productStyles.productCard}>
-                <motion.div layoutId='background' className={productStyles.productCircle}>
+                {/* <motion.div  layoutId='background' className={productStyles.productCircle}>
                   <div className={productStyles.productImages}>
                     <motion.img layoutId='productImg'
                       src='/images/products/battery.webp'
@@ -127,7 +127,7 @@ export default function Products() {
                     <p>Growatt SP2000 Energy Storage System</p>
                   </div>
 
-                </motion.div>
+                </motion.div> */}
 
 
                 <motion.button onClick={() => setShowModal(!showModal)} >MORE INFO</motion.button>
@@ -136,7 +136,7 @@ export default function Products() {
               </div>
 
             </motion.div>
-          </AnimateSharedLayout> */}
+          </AnimateSharedLayout>
           <motion.div variants={cards} onPointerMove={(e) => moveCard(e)} onPointerLeave={(e) => leaveCard(e)} type='cardContainer' className={productStyles.productCardContainer}>
             <div type='card' className={productStyles.productCard}>
               <div className={productStyles.productCircle}>
