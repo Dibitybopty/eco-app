@@ -1,5 +1,4 @@
 
-
 .siteWrapper {
   /* display: flex; */
   justify-content: center;
@@ -744,6 +743,8 @@
   /* -webkit-text-stroke: 0.2px black; */
   margin: 0.5rem;
   text-align: center;
+  text-transform: uppercase;
+
 }
 
 .productCard p {
@@ -800,7 +801,7 @@
   width: 30%;
   height: 80%;
   background-color: #0057bc;
-  /* position: absolute; */
+  position: absolute;
   z-index: 338;
   text-align: center;
   cursor: default;
@@ -884,30 +885,49 @@
 
 .fabFlip{
   position: absolute;
-  /* right: 0; */
-  width: 50px;
-  height: 50px;
-  background-color: coral;
+  right: 0;
+  width: 30px;
+  height: 30px;
+  background-color: orange;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 50%;
   cursor: pointer;
   user-select: none;
-  
-  margin: 0 auto;
+  border: 1px solid black;
   
 }
 
 .fabFlip p {
-  font-size: 2rem;
-  font-weight: 900;
+  font-size: 1rem;
+  font-weight: 700;
   text-align: center;
-  grid-area: arrow;
+}
+
+.fabFlip svg{
+  width: 50%;
+  height: 50%;
+  margin-top: 7px;
+}
+
+.fabFlipButton {
+  position: absolute;
+  right: -22px;
+  top: calc(50% - 60px);
+  width: 35px;
+  height: 120px;
+  background-color: #69cd3c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  border: 3px solid black;
 }
 
 .modalTitle{
   grid-area: title;
+  text-transform: uppercase;
 }
 .modalTitle h2{
   font-size: 1.5rem;
