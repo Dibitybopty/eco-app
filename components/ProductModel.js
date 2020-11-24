@@ -60,7 +60,7 @@ export default function ProductModal({ showModal, setShowModal, text, productIma
                     <motion.div id="modalBG" onClick={(e) => {
                         if (e.target.id === 'modalBG') setShowModal(!showModal)
                     }} className={utilStyles.modalBackground} variants={backdropVarients} animate="visible" exit="hidden" initial="hidden">
-                        <motion.div animate="animate" initial="initial" exit="exit" variants={modalVarients} layoutId='background' className={productStyles.modalProducts} transition={modalTransition}>
+                        <motion.div animate="animate" initial="initial" variants={modalVarients} layoutId='background' className={productStyles.modalProducts} transition={modalTransition}>
 
                             <div className={productStyles.upperInfo}>
                                 {/* <div className={productStyles.fabFlip}>
@@ -68,9 +68,9 @@ export default function ProductModal({ showModal, setShowModal, text, productIma
                                 </div> */}
                                 <div className={productStyles.modalTitle}><motion.h2 style={{ display: 'inline-block' }} transition={modalTransition} layoutId="title">{text}</motion.h2></div>
 
-                                <motion.div animate={{ y: 0 }} exit={{ y: -500 }} initial={{ y: -500 }} transition={modalTransition} className={productStyles.modalDesc}><p>{someBollox}</p></motion.div>
+                                <motion.div animate={{ y: 0 }}  transition={modalTransition} className={productStyles.modalDesc}><p>{someBollox}</p></motion.div>
 
-                                <motion.div animate='animate' exit='exit' initial='initial' variants={imageVarients} transition={modalTransition} className={productStyles.image1}>
+                                <motion.div animate='animate' initial='initial' variants={imageVarients} transition={modalTransition} className={productStyles.image1}>
                                     <Image                                    
                                         src='/images/products/battery_alone.jpg'
                                         height={665}
@@ -79,7 +79,7 @@ export default function ProductModal({ showModal, setShowModal, text, productIma
                                     >
                                     </Image>
                                 </motion.div>
-                                <motion.div animate='animate' exit='exit' initial='initial' variants={imageVarients} transition={modalTransition} className={productStyles.image2}>
+                                <motion.div animate='animate' initial='initial' variants={imageVarients} transition={modalTransition} className={productStyles.image2}>
                                     <Image
                                         src='/images/products/battery_alone.jpg'
                                         height={665}
@@ -90,7 +90,7 @@ export default function ProductModal({ showModal, setShowModal, text, productIma
 
                                     </Image>
                                 </motion.div>
-                                <motion.div animate='animate' exit='exit' initial='initial' variants={imageVarients} transition={modalTransition} className={productStyles.image3}>
+                                <motion.div animate='animate' initial='initial' variants={imageVarients} transition={modalTransition} className={productStyles.image3}>
                                     <Image
                                         src='/images/products/battery_alone.jpg'
                                         height={665}
