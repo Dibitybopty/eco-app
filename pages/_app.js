@@ -1,8 +1,8 @@
 import '../styles/globals.css'
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, transform } from 'framer-motion';
 import utilStyles from '../styles/utils.module.css'
 import Link from 'next/link';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { gsap } from "gsap";
 
 function MyApp({ Component, pageProps, router }) {

@@ -1,6 +1,5 @@
 import { motion, AnimateSharedLayout } from 'framer-motion'
 import Head from 'next/head'
-import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import Layout, { siteTitle } from '../components/layout'
 import productStyles from '../styles/Products.module.css'
