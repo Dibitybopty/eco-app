@@ -107,7 +107,7 @@ export default function Products() {
         {/* <object data="images/undraw_contact_us_15o2.svg"></object> */}
 
         <div className={productStyles.productLeft}></div>
-        <motion.div transition={{ duration: 1.7 }} animate='animate' exit='exit' initial='initial' variants={cardAnimations} className={productStyles.productRight}>
+        <motion.div transition={{ duration: 1.7 }}  className={productStyles.productRight}>
 
         <AnimateSharedLayout >
         <Modal showModal={showModal} setShowModal={setShowModal} text="Lithium Battery" alt='Lithium Battery' productImage='/images/products/battery.webp' />
