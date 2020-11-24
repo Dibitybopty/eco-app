@@ -14,12 +14,12 @@ export default function Products() {
 
 
 
-  useEffect(()=>{
+  useEffect(() => {
     let sideMenu = document.getElementById('sideMenu');
     //let sideMenuEffect = document.getElementById('sideMenuEffect');
     showModal ? sideMenu.style.zIndex = '3' : sideMenu.style.zIndex = '334';
     //showModal ? sideMenuEffect.style.zIndex = '3' : sideMenuEffect.style.zIndex = '335';
-    
+
   })
 
   function moveCard(e) {
@@ -104,42 +104,39 @@ export default function Products() {
       </Head>
       <div id="productBG" className={productStyles.productBG}>
 
-        {/* <object data="images/undraw_contact_us_15o2.svg"></object> */}
-
         <div className={productStyles.productLeft}></div>
-        <motion.div transition={{ duration: 1.7 }}  className={productStyles.productRight}>
+        <motion.div transition={{ duration: 1.7 }} animate='animate' exit='exit' initial='initial' variants={cardAnimations} className={productStyles.productRight}>
 
-        <AnimateSharedLayout >
-        <Modal showModal={showModal} setShowModal={setShowModal} text="Lithium Battery" alt='Lithium Battery' productImage='/images/products/battery.webp' />
+          {/* <AnimateSharedLayout >
+            <Modal showModal={showModal} setShowModal={setShowModal} text="Lithium Battery" alt='Lithium Battery' productImage='/images/products/battery.webp' />
 
-          <motion.div variants={cards} onPointerMove={(e) => moveCard(e)} onPointerLeave={(e) => leaveCard(e)} type='cardContainer' className={productStyles.productCardContainer}>
+            <motion.div variants={cards} onPointerMove={(e) => moveCard(e)} onPointerLeave={(e) => leaveCard(e)} type='cardContainer' className={productStyles.productCardContainer}>
 
-            <div type='card' className={productStyles.productCard}>
-              <motion.div layoutId='background' className={productStyles.productCircle}>
-                <div  className={productStyles.productImages}>
-                  <motion.img layoutId='productImg'
-                  
-                    src='/images/products/battery.webp'
-                    width={643}
-                    height={378}
-                    alt='Lithium Battery'
-                  ></motion.img>
-                </div>
-                <div className={productStyles.lowerImage}>
-                  <motion.h3 style={{display: 'inline-block'}} layoutId='title' >Lithium Battery</motion.h3>
-                  <p>Growatt SP2000 Energy Storage System</p>
-                </div>
+              <div type='card' className={productStyles.productCard}>
+                <motion.div layoutId='background' className={productStyles.productCircle}>
+                  <div className={productStyles.productImages}>
+                    <motion.img layoutId='productImg'
+                      src='/images/products/battery.webp'
+                      width={643}
+                      height={378}
+                      alt='Lithium Battery'
+                    ></motion.img>
+                  </div>
+                  <div className={productStyles.lowerImage}>
+                    <motion.h3 style={{ display: 'inline-block' }} layoutId='title' >Lithium Battery</motion.h3>
+                    <p>Growatt SP2000 Energy Storage System</p>
+                  </div>
 
-              </motion.div>
-
-
-              <motion.button onClick={() => setShowModal(!showModal)} >MORE INFO</motion.button>
+                </motion.div>
 
 
-            </div>
+                <motion.button onClick={() => setShowModal(!showModal)} >MORE INFO</motion.button>
 
-          </motion.div>
-          </AnimateSharedLayout>
+
+              </div>
+
+            </motion.div>
+          </AnimateSharedLayout> */}
           <motion.div variants={cards} onPointerMove={(e) => moveCard(e)} onPointerLeave={(e) => leaveCard(e)} type='cardContainer' className={productStyles.productCardContainer}>
             <div type='card' className={productStyles.productCard}>
               <div className={productStyles.productCircle}>
