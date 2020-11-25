@@ -38,13 +38,13 @@ function MyApp({ Component, pageProps, router }) {
       // opacity: 0.85,
       x: "0rem",
       scale: 1,
-      WebkitTextStroke: '2px #fff',
+      WebkitTextStroke: '1px #fff',
       WebkitTextFillColor: 'rgba(255, 255, 255, 0.3)',
 
     },
     hover: {
       WebkitTextStroke: '0px #fff',
-      WebkitTextFillColor: 'rgba(105,205,60,1)',
+      WebkitTextFillColor: 'rgba(255,255,255,1)',
       transition: {
         delay: 0,
         duration: 0.3
@@ -54,7 +54,7 @@ function MyApp({ Component, pageProps, router }) {
       opacity: 1.0,
       x: 0,
       scale: 1,
-      WebkitTextStroke: '2px #fff',
+      WebkitTextStroke: '1px #fff',
       WebkitTextFillColor: 'rgba(255, 255, 255, 0.3)',
       // scale: 0.6,
     },

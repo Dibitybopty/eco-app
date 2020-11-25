@@ -45,7 +45,7 @@ export default function Home() {
       <div className={utilStyles.homeWrapper}>
         <AnimateSharedLayout>
           <motion.div onClick={() => setShowModal(!showModal)} layoutId="banner" className={utilStyles.banner} animate="show" exit="exit" initial="hidden" variants={container}>
-            Up to&nbsp;
+            <span>Up to</span>&nbsp;
           <motion.span variants={item} >£</motion.span>
             <motion.span variants={item} >1</motion.span>
             <motion.span variants={item} >0</motion.span>
@@ -66,8 +66,8 @@ export default function Home() {
             <motion.span variants={item} >R</motion.span>
             &nbsp;
 
-          <motion.p style={{ display: 'inline-block' }} layoutId="title">Green Homes Government Grant</motion.p>.
-           Click here to register your interest.
+          <motion.span style={{ display: 'inline-block', fontWeight: 700 }} layoutId="title">Green Homes Government Grant</motion.span>
+          &nbsp;<p>Click here to register your interest.</p>
         </motion.div>
           <Modal showModal={showModal} setShowModal={setShowModal} text="Green Homes Government Grant" />
         </AnimateSharedLayout>
