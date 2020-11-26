@@ -6,11 +6,12 @@ export default function Modal({ showModal, setShowModal, text }) {
     const backdropVarients = {
         visible: {
             backgroundColor: 'rgba(0, 0, 0, 0.5)',
-            zIndex: '337'
+            zIndex: '337',
+            
         },
         hidden: {
             backgroundColor: 'rgba(0, 0, 0, 0)',
-            zIndex: '337'
+            zIndex: '337',
         }
     }
 

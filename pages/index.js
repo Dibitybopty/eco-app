@@ -66,8 +66,8 @@ export default function Home() {
             <motion.span variants={item} >R</motion.span>
             &nbsp;
 
-          <motion.span style={{ display: 'inline-block', fontWeight: 700 }} layoutId="title">Green Homes Government Grant</motion.span>
-          &nbsp;<p>Click here to register your interest.</p>
+          <motion.span style={{ display: 'inline-block', fontWeight: 600 }} layoutId="title">Green Homes Government Grant.</motion.span>
+          &nbsp;<span style={{fontWeight: 600}}>Click here to register your interest.</span>
         </motion.div>
           <Modal showModal={showModal} setShowModal={setShowModal} text="Green Homes Government Grant" />
         </AnimateSharedLayout>

@@ -1,5 +1,3 @@
-
-
 .siteWrapper {
   /* display: flex; */
   justify-content: center;
@@ -23,7 +21,6 @@
   padding: 0;
   margin: 0;
 }
-
 
 .turbineWrapper {
   width: 70%;
@@ -125,7 +122,6 @@
   position: fixed;
   z-index: 334;
   margin-top: 2.5rem;
-
 }
 
 .sideMenuItems a {
@@ -137,18 +133,13 @@
   text-decoration: none;
   width: max-content;
   user-select: none;
-  
 }
 
-@media screen and (max-width: 768px){
-  .sideMenuItems{
-    display: none;  
-  
+@media screen and (max-width: 768px) {
+  .sideMenuItems {
+    display: none;
   }
-
-  .mobileMenu{
-
-  }
+  .mobileMenu {}
 }
 
 .sideMenuItemWrapper {
@@ -292,7 +283,6 @@
   height: 100%;
 }
 
-
 @namespace svg url(http://www.w3.org/2000/svg);
 /* Necessary to select only SVG <a> elements, and not also HTML’s.
    See warning below */
@@ -322,7 +312,6 @@
   font-size: 1.3rem;
 }
 
-
 .borderCircle {
   border-radius: 90px;
 }
@@ -342,16 +331,16 @@
   top: 50%;
 }
 
-.allWrapper{
+.allWrapper {
   height: 100vh;
   width: 100%;
 }
 
 .sunBG {
-	/* position: fixed;
+  /* position: fixed;
 	top: 0;
 	left: 0; */
-	width: 100%;
+  width: 100%;
   height: 100vh;
   overflow: hidden;
   opacity: 0.89;
@@ -360,32 +349,30 @@
 }
 
 .theSun {
-	/* position: absolute;
+  /* position: absolute;
 	top: -30%;
 	left: 20%; */
-	height: 100%;
+  height: 100%;
   width: 100%;
   opacity: 1;
 }
 
-.theSun img{
+.theSun img {
   position: absolute;
   top: -20%;
   right: 10%;
   height: 100%;
   transform: translateZ(30px);
-
 }
 
 .sunRays {
-	/* position: absolute;
+  /* position: absolute;
 	top: -160%; */
   height: 100%;
   width: 100%;
-
 }
 
-.sunRays svg{
+.sunRays svg {
   position: relative;
   top: -220%;
   left: -185%;
@@ -393,11 +380,10 @@
   width: 500%;
   transform: translateZ(20px);
   overflow: visible;
-
 }
 
-@media screen and (max-width: 768px){
-  .sunRays svg{
+@media screen and (max-width: 768px) {
+  .sunRays svg {
     position: relative;
     top: -225%;
     left: -225%;
@@ -405,11 +391,10 @@
     width: 500%;
     transform: translateZ(20px);
     overflow: visible;
-  
   }
 }
 
-.sunImg{
+.sunImg {
   width: 10px;
 }
 
@@ -435,13 +420,13 @@
   /* flex-wrap: wrap; */
 }
 
-.banner p{
+.banner p {
   font-weight: 500;
   margin: 0;
 }
 
-@media screen and (max-width: 768px){
-  .banner{
+@media screen and (max-width: 768px) {
+  .banner {
     height: fit-content;
     flex-wrap: wrap;
   }
@@ -452,7 +437,6 @@
   font-weight: 700;
   color: black;
   user-select: none;
-  
 }
 
 .homeWrapper {
@@ -463,7 +447,6 @@
 }
 
 /* backgrounds from www.svgbackgrounds.com */
-
 
 .mainBackground {
   background: url(/images/liquid_blue.svg);
@@ -482,7 +465,6 @@
   flex: 2;
   display: flex;
 }
-
 
 .innerHomeTopLeft {
   flex: 1;
@@ -527,22 +509,23 @@
   opacity: 0.25;
 }
 
-.mainContent{
+.mainContent {
   display: flex;
   width: 100%;
   height: 100vh;
-
+  overflow: hidden;
 }
 
-.shapeContainer{
+.shapeContainer {
   position: absolute;
   top: 7rem;
   right: 5rem;
   z-index: -1;
+  overflow: visible;
 }
 
-@media screen and (max-width: 768px){
-  .shapeContainer{
+@media screen and (max-width: 768px) {
+  .shapeContainer {
     top: 12rem;
   }
 }
@@ -579,8 +562,8 @@
   font-weight: 800;
 }
 
-@media screen and (max-width: 900px){
-  .solarShape h1{
+@media screen and (max-width: 900px) {
+  .solarShape h1 {
     font-size: 2rem;
   }
 }
@@ -612,7 +595,6 @@
   text-shadow: 2px 2px #000;
   text-transform: uppercase;
   white-space: nowrap;
-
 }
 
 .solarInfoPop {
@@ -651,7 +633,6 @@
   text-shadow: 2px 2px #000;
 }
 
-
 .modalBackground {
   width: 100%;
   height: 100%;
@@ -663,6 +644,8 @@
   align-items: center;
   z-index: 337;
   cursor: zoom-out;
+  perspective: 1000px;
+
 }
 
 .modal {
@@ -677,19 +660,17 @@
   justify-self: center;
 }
 
-
-
 .modal h2 {
   display: inline-block;
   font-size: 2.5rem;
   user-select: none;
+  font-weight: 600;
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 768px) {
   .modal {
     width: 90%;
   }
-
   .modal h2 {
     font-size: 2rem;
   }
@@ -697,12 +678,10 @@
 
 /* products */
 
-.productWrapper{
+.productWrapper {
   width: 100%;
   height: 100vh;
 }
-
-
 
 .productsSvg {
   padding: 6rem;
@@ -719,9 +698,9 @@
   scrollbar-width: none;
 }
 
-@media screen and (max-width: 900px){
+@media screen and (max-width: 900px) {
   .productBG {
-      grid-template-columns: 0fr 1fr;
+    grid-template-columns: 0fr 1fr;
   }
 }
 
@@ -803,7 +782,6 @@
   margin: 0.5rem;
   text-align: center;
   text-transform: uppercase;
-
 }
 
 .productCard p {
@@ -856,6 +834,16 @@
   flex-direction: column;
 }
 
+.modelBackside{
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(145deg, #004ca4, #005ac3);
+  position: absolute;
+  transform: rotateY(.5turn);
+  backface-visibility: hidden;
+
+}
+
 .modalProducts {
   width: 30%;
   height: 80%;
@@ -871,25 +859,32 @@
   /* justify-content: center; */
   align-items: center;
   /* overflow: hidden; */
+  transform-style: preserve-3d;
+  /* transform: rotateY(75deg); */
 }
 
-@media screen and (max-width: 700px){
-  .modalProducts{
-      width: 90%;
-      height: 90%;
+.modalProdWrapper{
+  transform: translateZ(30px);
+  backface-visibility: hidden; 
+
+}
+
+@media screen and (max-width: 700px) {
+  .modalProducts {
+    width: 90%;
+    height: 90%;
   }
 }
 
-@media screen and (max-width: 1200px){
-  .modalProducts{
-      width: 80%;
-      height: 80%;
+@media screen and (max-width: 1200px) {
+  .modalProducts {
+    width: 80%;
+    height: 80%;
   }
 }
 
 .modalProducts img {
   /* width: 10px; */
-
 }
 
 .modalProducts h2 {
@@ -908,21 +903,22 @@
   width: 100%;
   border: 3px solid black;
   display: flex;
-
 }
 
 .modalImages img {
   width: inherit;
   height: auto;
+
 }
 
 .modalDesc {
   grid-area: info;
   font-size: 1rem;
   color: white;
+
 }
 
-.modalDesc p{
+.modalDesc p {
   margin: 0;
   padding: 0;
   text-align: start;
@@ -935,14 +931,10 @@
   grid-template-rows: 0.1fr 0.5fr 0.3fr 0.3fr;
   grid-gap: 1rem;
   margin: 1rem;
-  grid-template-areas: 
-  'title title title' 
-  'mainImage mainImage mainImage'
-  'image1 image2 image3' 
-  'info info info';
+  grid-template-areas: 'title title title' 'mainImage mainImage mainImage' 'image1 image2 image3' 'info info info';
 }
 
-.fabFlip{
+.fabFlip {
   position: absolute;
   right: 0;
   width: 30px;
@@ -954,7 +946,6 @@
   cursor: pointer;
   user-select: none;
   border: 1px solid black;
-  
 }
 
 .fabFlip p {
@@ -962,8 +953,6 @@
   font-weight: 700;
   text-align: center;
 }
-
-
 
 .fabFlipButton {
   position: absolute;
@@ -980,35 +969,35 @@
   border: 3px solid black;
 }
 
-.exitButton svg{
+.exitButton svg {
   width: 50%;
   height: 50%;
 }
 
-.arrowRight{
+.arrowRight {
   align-self: center;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.arrowRight svg{
+.arrowRight svg {
   width: 100%;
   height: 100%;
 }
 
-.modalTitle{
+.modalTitle {
   grid-area: title;
   text-transform: uppercase;
 }
-.modalTitle h2{
+
+.modalTitle h2 {
   font-size: 1.5rem;
 }
 
 .upperImage {
   border: 2px solid black;
 }
-
 
 .image1 {
   /* background-color: tomato; */
@@ -1020,6 +1009,7 @@
 .image1 img {
   width: auto;
   height: auto;
+
 }
 
 .image2 {
@@ -1027,12 +1017,12 @@
   grid-area: image2;
   display: flex;
   border: 3px solid black;
-  
 }
 
 .image2 img {
   width: auto;
   height: auto;
+
 }
 
 .image3 {
@@ -1040,12 +1030,12 @@
   grid-area: image3;
   display: flex;
   border: 3px solid black;
-
 }
 
 .image3 img {
   width: auto;
   height: auto;
+
 }
 
 .lowerInfo {
@@ -1062,6 +1052,8 @@
   justify-content: center;
   align-items: center;
   grid-area: inputs;
+  margin: 20px;
+
 }
 
 /* .inputs input {
@@ -1153,7 +1145,7 @@
   transform: translateY(-200%);
 }
 
-.labelName textarea:valid + .placeholder, .labelName textarea:focus + .placeholder {
+.labelName textarea:valid+.placeholder, .labelName textarea:focus+.placeholder {
   /* font-size: 1.1rem; */
   /* left: 3px; */
   transform: translateY(-200%);
@@ -1205,9 +1197,19 @@
 .inputs p {
   width: 100%;
   text-align: left;
-  margin: 0;
+  margin: 10px;
   color: white;
-  font-weight: 600;
+  font-weight: 900;
+  font-size: 2.5rem;
+}
+
+.inputs span {
+  width: 100%;
+  text-align: left;
+  margin: 0;
+  color: #69cd3c;
+  font-weight: 900;
+  font-size: 2.5rem;
 }
 
 .inputs p:active {
