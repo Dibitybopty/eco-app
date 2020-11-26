@@ -44,7 +44,7 @@ function MyApp({ Component, pageProps, router }) {
     },
     hover: {
       WebkitTextStroke: '0px #fff',
-      WebkitTextFillColor: 'rgba(255,255,255,1)',
+      WebkitTextFillColor: 'rgba(105,205,60,1)',
       transition: {
         delay: 0,
         duration: 0.3

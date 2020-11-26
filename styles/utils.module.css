@@ -652,12 +652,17 @@
   width: 70%;
   height: 70%;
   border-radius: 20px;
-  background-color: #69cd3c;
+  background: #69cd3c;
   position: absolute;
   z-index: 338;
   text-align: center;
   cursor: default;
   justify-self: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
 }
 
 .modal h2 {
@@ -665,6 +670,7 @@
   font-size: 2.5rem;
   user-select: none;
   font-weight: 600;
+  color: black;
 }
 
 @media screen and (max-width: 768px) {

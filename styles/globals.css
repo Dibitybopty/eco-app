@@ -16,7 +16,7 @@ html::-webkit-scrollbar {
   width: 0px; /* For Chrome, Safari, and Opera */
 }
 
-a, p, h2, h3, h1 {
+a, p, h2, h3, h1, span, button, label, input, textarea {
   font-family: Poppins;
 }
 

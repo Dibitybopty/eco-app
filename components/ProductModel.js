@@ -64,7 +64,7 @@ export default function ProductModal({ showModal, setShowModal, text, productIma
     }
 
     function closeModal(e){
-        const card = e.currentTarget.offsetParent.offsetParent;
+        const card = e.offsetParent.offsetParent;
         card.style.transform === 'rotateY(180deg)' ? card.style.transform = 'rotateY(0deg)' : card.style.transform = 'rotateY(180deg)'
         card.style.transform = '';
         card.style.transition = '';
@@ -81,7 +81,7 @@ export default function ProductModal({ showModal, setShowModal, text, productIma
 
                         <motion.div animate="animate" initial="initial" exit="exit" variants={modalVarients} layoutId='background' className={utilStyles.modalProducts} transition={modalTransition}>
                             <div className={utilStyles.modalProdWrapper}>
-                                <motion.div animate={{ scale: 1 }} initial={{ scale: 0 }} exit={{ scale: 0, transition: { delay: 0, duration: 0 } }} transition={{ delay: 0.39 }} onClick={(e) => closeModal(e)} className={utilStyles.fabFlip}>
+                                <motion.div animate={{ scale: 1 }} initial={{ scale: 0 }} exit={{ scale: 0, transition: { delay: 0, duration: 0 } }} transition={{ delay: 0.39 }} onClick={(e) => closeModal(e.currentTarget)} className={utilStyles.fabFlip}>
                                     <div className={utilStyles.exitButton}>
                                         <svg viewBox="0 0 24 24" focusable="false" ><path fill="black" d="M.439,21.44a1.5,1.5,0,0,0,2.122,2.121L11.823,14.3a.25.25,0,0,1,.354,0l9.262,9.263a1.5,1.5,0,1,0,2.122-2.121L14.3,12.177a.25.25,0,0,1,0-.354l9.263-9.262A1.5,1.5,0,0,0,21.439.44L12.177,9.7a.25.25,0,0,1-.354,0L2.561.44A1.5,1.5,0,0,0,.439,2.561L9.7,11.823a.25.25,0,0,1,0,.354Z"></path></svg>
                                     </div>
@@ -162,7 +162,12 @@ export default function ProductModal({ showModal, setShowModal, text, productIma
                             </div>
 
                             <div className={utilStyles.modelBackside}>
-                                <motion.div animate={{ scale: 1 }} initial={{ scale: 0 }} exit={{ scale: 0, transition: { delay: 0, duration: 0 } }} transition={{ delay: 0.39 }} onClick={(e) => closeModal(e)} className={utilStyles.fabFlip}>
+                                <motion.div animate={{ scale: 1 }} initial={{ scale: 0 }} exit={{ scale: 0, transition: { delay: 0, duration: 0 } }} transition={{ delay: 0.39 }} onClick={(e) => {
+                                    const current = e.currentTarget;
+                                    current.offsetParent.offsetParent.style.transition = 'ease 0.3s'
+                                    current.offsetParent.offsetParent.style.transform = 'rotateY(0deg)'
+                                    setTimeout(()=> closeModal(current), 350)
+                                }} className={utilStyles.fabFlip}>
                                     <div className={utilStyles.exitButton}>
                                         <svg viewBox="0 0 24 24" focusable="false" ><path fill="black" d="M.439,21.44a1.5,1.5,0,0,0,2.122,2.121L11.823,14.3a.25.25,0,0,1,.354,0l9.262,9.263a1.5,1.5,0,1,0,2.122-2.121L14.3,12.177a.25.25,0,0,1,0-.354l9.263-9.262A1.5,1.5,0,0,0,21.439.44L12.177,9.7a.25.25,0,0,1-.354,0L2.561.44A1.5,1.5,0,0,0,.439,2.561L9.7,11.823a.25.25,0,0,1,0,.354Z"></path></svg>
                                     </div>
