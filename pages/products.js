@@ -320,7 +320,7 @@ Products.getInitialProps = async ctx => {
   //     let db = firebase.firestore();
 
   //     db.collection("products").add({
-  //       title: "Lithium Battery",
+  //       title: "Placeholder 6",
   //       subtitle: "Growatt SP2000 Energy Storage System",
   //       mainImage: "https://img1.wsimg.com/isteam/ip/15b1b8e3-2dc8-4905-bc55-7e810b2a928f/2808c692-52b8-4c30-8d25-5ff6012d3bfe.jpg",
   //       subImage1: "https://i.imgur.com/ffihRxa.jpg",
