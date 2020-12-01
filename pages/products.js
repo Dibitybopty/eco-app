@@ -26,7 +26,7 @@ export default function Products({ productList }) {
       initFirebase();
       let db = firebase.firestore();
       let tempList = [];
-      await db.collection("products").get().then((querySnapshot) => {
+      await db.collection("products").orderBy('order', 'asc').get().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
           //console.log(`${doc.id} => ${doc.data().title}`);
           tempList.push(doc.data())
@@ -328,7 +328,8 @@ Products.getInitialProps = async ctx => {
   //       subImage3: "https://img1.wsimg.com/isteam/ip/15b1b8e3-2dc8-4905-bc55-7e810b2a928f/88856af5-df09-417b-8bb9-e91b8c3ad0f1.jpg/:/rs=w:400,h:500,cg:true,m/cr=w:800,h:500,a:cc",
   //       details1: "The SP2000 Energy Storage System stores excess renewable energy power in a Lithium battery storage pack, giving around 4kw of power which can be drawn when the PV panels are not generating. This simple system can be retrofit to most standard Solar PV installations.",
   //       details2: "The Growatt SP2000 Storage System stores DC electricity straight from the PV panels into a Lithium battery storage pack. The Growatt SP2000 Storage System solar battery storage has a useable capacity of 4kw from fully charged. As renewable energy PV power is generated throughout daylight, the controller manages the available renewable energy power and ensures the most efficient use of the PV generated power. Priority is given to the property demands, with the Lithium battery storage being prioritised next and lastly the power will be exported to the grid.",
-  //       details3: "Even the stored electricity still goes through the generation meter, so you are still paid for it, the renewable energy power simply comes from the solar battery storage as it is required instead of instantly as it is generated."
+  //       details3: "Even the stored electricity still goes through the generation meter, so you are still paid for it, the renewable energy power simply comes from the solar battery storage as it is required instead of instantly as it is generated.",
+  //       order: 1
   //     })
   //       .then(function (docRef) {
   //         console.log("Document written with ID: ", docRef.id);
