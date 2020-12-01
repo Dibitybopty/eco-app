@@ -183,6 +183,9 @@ function MyApp({ Component, pageProps, router }) {
 
   return (
     <div id='allWrapper' className={utilStyles.allWrapper}>
+      <div className={utilStyles.menuButtonWrapper}>
+        
+      </div>
 
       <div id='sideMenu' className={utilStyles.sideMenuItems}>
 
