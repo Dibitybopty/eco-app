@@ -6,7 +6,7 @@ import Image from 'next/image'
 
 
 
-export default function ProductModal({ showModal, setShowModal, text, productImage, alt }) {
+export default function ProductModal({ showModalWithID, showModal, setShowModal, title, productImage, image1, image2, image3, details1, details2, details3, subtitle }) {
 
     const someBollox = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in mauris eget risus posuere euismod ac scelerisque lectus. In libero augue, pellentesque et ultrices sit amet, consequat fermentum arcu. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque tempus, purus id molestie egestas, eros dolor gravida orci, et imperdiet dolor velit eu ipsum. Vestibulum ac enim tortor. Donec venenatis lacinia lectus in pretium. Sed bibendum consectetur leo vitae blandit. In at elementum tortor. Pellentesque et ipsum justo. ";
 
@@ -63,7 +63,7 @@ export default function ProductModal({ showModal, setShowModal, text, productIma
         card.style.transform === 'rotateY(180deg)' ? card.style.transform = 'rotateY(0deg)' : card.style.transform = 'rotateY(180deg)'
     }
 
-    function closeModal(e){
+    function closeModal(e) {
         const card = e.offsetParent.offsetParent;
         card.style.transform === 'rotateY(180deg)' ? card.style.transform = 'rotateY(0deg)' : card.style.transform = 'rotateY(180deg)'
         card.style.transform = '';
@@ -73,10 +73,17 @@ export default function ProductModal({ showModal, setShowModal, text, productIma
 
     return (
         <AnimatePresence >
-            {showModal && (
+            {(showModalWithID === title && showModal) && (
                 <>
                     <motion.div id="modalBG" onClick={(e) => {
-                        if (e.target.id === 'modalBG') setShowModal(!showModal)
+                        if (e.target.id === 'modalBG') {
+                            const card = e.currentTarget.firstChild;
+                            card.style.transform === 'rotateY(180deg)' ? card.style.transform = 'rotateY(0deg)' : card.style.transform = 'rotateY(180deg)'
+                            card.style.transform = '';
+                            card.style.transition = '';
+                            setShowModal(!showModal);
+
+                        }
                     }} className={utilStyles.modalBackground} variants={backdropVarients} animate="visible" exit="hidden" initial="hidden">
 
                         <motion.div animate="animate" initial="initial" exit="exit" variants={modalVarients} layoutId='background' className={utilStyles.modalProducts} transition={modalTransition}>
@@ -106,17 +113,17 @@ export default function ProductModal({ showModal, setShowModal, text, productIma
                                 </motion.div>
                                 <div className={utilStyles.upperInfo}>
 
-                                    <div className={utilStyles.modalTitle}><motion.h2 style={{ display: 'inline-block' }} transition={modalTransition} layoutId="title">{text}</motion.h2></div>
+                                    <div className={utilStyles.modalTitle}><motion.h2 style={{ display: 'inline-block' }} transition={modalTransition} layoutId={title}>{title}</motion.h2></div>
 
-                                    <motion.div animate={{ y: 0, opacity: 1 }} exit={{ y: -200, opacity: 0 }} initial={{ y: -200, opacity: 0 }} transition={modalTransition} className={utilStyles.modalDesc}><p>{someBollox}</p></motion.div>
+                                    <motion.div animate={{ y: 0, opacity: 1 }} exit={{ y: -200, opacity: 0 }} initial={{ y: -200, opacity: 0 }} transition={modalTransition} className={utilStyles.modalDesc}><p>{details1}</p></motion.div>
 
                                     <motion.div animate='animate' exit='exit' initial='initial' variants={imageVarients} transition={modalTransition} className={utilStyles.image1}>
                                         <Image
 
-                                            src='/images/products/battery_alone.jpg'
+                                            src={image1}
                                             height={665}
                                             width={600}
-                                            alt={text}
+                                            alt={title}
 
                                         >
 
@@ -124,10 +131,10 @@ export default function ProductModal({ showModal, setShowModal, text, productIma
                                     </motion.div>
                                     <motion.div animate='animate' exit='exit' initial='initial' variants={imageVarients} transition={modalTransition} className={utilStyles.image2}>
                                         <Image
-                                            src='/images/products/battery_alone.jpg'
+                                            src={image2}
                                             height={665}
                                             width={600}
-                                            alt={text}
+                                            alt={title}
 
                                         >
 
@@ -135,10 +142,10 @@ export default function ProductModal({ showModal, setShowModal, text, productIma
                                     </motion.div>
                                     <motion.div animate='animate' exit='exit' initial='initial' variants={imageVarients} transition={modalTransition} className={utilStyles.image3}>
                                         <Image
-                                            src='/images/products/battery_alone.jpg'
+                                            src={image3}
                                             height={665}
                                             width={600}
-                                            alt={text}
+                                            alt={title}
                                         >
 
                                         </Image>
@@ -147,9 +154,9 @@ export default function ProductModal({ showModal, setShowModal, text, productIma
 
                                     <div className={utilStyles.modalImages} >
                                         <motion.img
-                                            layoutId='productImg'
+                                            layoutId={productImage}
                                             src={productImage}
-                                            alt={alt}
+                                            alt={title}
                                             animate='animate' initial='initial' exit='exit' variants={modalVarients} transition={modalTransition}
 
                                         ></motion.img>
@@ -166,7 +173,7 @@ export default function ProductModal({ showModal, setShowModal, text, productIma
                                     const current = e.currentTarget;
                                     current.offsetParent.offsetParent.style.transition = 'ease 0.3s'
                                     current.offsetParent.offsetParent.style.transform = 'rotateY(0deg)'
-                                    setTimeout(()=> closeModal(current), 350)
+                                    setTimeout(() => closeModal(current), 350)
                                 }} className={utilStyles.fabFlip}>
                                     <div className={utilStyles.exitButton}>
                                         <svg viewBox="0 0 24 24" focusable="false" ><path fill="black" d="M.439,21.44a1.5,1.5,0,0,0,2.122,2.121L11.823,14.3a.25.25,0,0,1,.354,0l9.262,9.263a1.5,1.5,0,1,0,2.122-2.121L14.3,12.177a.25.25,0,0,1,0-.354l9.263-9.262A1.5,1.5,0,0,0,21.439.44L12.177,9.7a.25.25,0,0,1-.354,0L2.561.44A1.5,1.5,0,0,0,.439,2.561L9.7,11.823a.25.25,0,0,1,0,.354Z"></path></svg>
@@ -174,7 +181,7 @@ export default function ProductModal({ showModal, setShowModal, text, productIma
                                 </motion.div>
 
                                 <div className={utilStyles.inputs}>
-                                    <p>{text}</p>
+                                    <p>{title}</p>
 
                                     <label className={utilStyles.labelName} >
                                         <input type='text' name='name' required></input>

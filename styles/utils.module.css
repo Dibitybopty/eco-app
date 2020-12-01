@@ -838,6 +838,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  cursor: pointer;
 }
 
 .modelBackside{
@@ -928,6 +929,8 @@
   margin: 0;
   padding: 0;
   text-align: start;
+  font-size: 1rem;
+  font-weight: 600;
 }
 
 .upperInfo {
@@ -1006,7 +1009,7 @@
 }
 
 .image1 {
-  /* background-color: tomato; */
+  background-color: white;
   grid-area: image1;
   border: 3px solid black;
   display: flex;
@@ -1019,7 +1022,7 @@
 }
 
 .image2 {
-  /* background-color:thistle; */
+  background-color:white;
   grid-area: image2;
   display: flex;
   border: 3px solid black;
@@ -1032,7 +1035,7 @@
 }
 
 .image3 {
-  /* background-color: violet; */
+  background-color: white;
   grid-area: image3;
   display: flex;
   border: 3px solid black;
@@ -1220,6 +1223,35 @@
 
 .inputs p:active {
   font-weight: 700;
+}
+
+/* loading spinner */
+
+.ldsRing {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  border: 2px solid white;
+  border-radius: 50%;
+}
+.ldsRing:after {
+  content: "";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 0px;
+  border-radius: 50%;
+  border: 6px solid #dbc734;
+  border-color: #dbc734 transparent #dbc734 transparent;
+  animation: ldsRing 0.6s linear infinite;
+}
+@keyframes ldsRing {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 /* silly fancy pants idea */
