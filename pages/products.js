@@ -10,6 +10,7 @@ import firebase from 'firebase/app'
 import "firebase/firestore"
 import "firebase/auth"
 import initFirebase from '../lib/db'
+import ProductsLoading from '../components/ProductsLoading'
 
 
 export default function Products({ productList }) {
@@ -178,27 +179,11 @@ export default function Products({ productList }) {
           <motion.div transition={{ duration: 1.7 }} animate='animate' exit='exit' initial='initial' variants={cardAnimations} className={utilStyles.productRight}>
 
             {products.length === 0 ?
-              <motion.div variants={cards} onPointerMove={(e) => moveCard(e)} onPointerLeave={(e) => leaveCard(e)} type='cardContainer' className={utilStyles.productCardContainer}>
+            <>
+              {<ProductsLoading />}
 
-                <div type='card' className={utilStyles.productCard}>
-                  <div className={utilStyles.ldsRing}></div>
-
-
-                </div>
-
-                <div type='card' className={utilStyles.productCard}>
-                  <div className={utilStyles.ldsRing}></div>
-
-
-                </div>
-
-                <div type='card' className={utilStyles.productCard}>
-                  <div className={utilStyles.ldsRing}></div>
-
-
-                </div>
-
-              </motion.div>
+              </>
+              
               :
             <>{prods}</>
               
