@@ -122,28 +122,28 @@ function MyApp({ Component, pageProps, router }) {
   useEffect(() => {
     //console.log(document.readyState)
 
-      //if (document.readyState === 'complete') {
-        const allWrapper = document.getElementById('allWrapper');
-        const sunGroup = document.getElementById('sunGroup');
-        
-        //console.log('it is ready')
+    //if (document.readyState === 'complete') {
+    const allWrapper = document.getElementById('allWrapper');
+    const sunGroup = document.getElementById('sunGroup');
+
+    //console.log('it is ready')
 
 
 
-        allWrapper.addEventListener('mousemove', (e) => {
+    allWrapper.addEventListener('mousemove', (e) => {
 
-          let xAxis = ((allWrapper.offsetLeft + (allWrapper.offsetWidth / 2)) - e.pageX) / 90;
-          let yAxis = ((allWrapper.offsetTop + (allWrapper.offsetHeight / 2)) - e.pageY) / 90;
+      let xAxis = ((allWrapper.offsetLeft + (allWrapper.offsetWidth / 2)) - e.pageX) / 90;
+      let yAxis = ((allWrapper.offsetTop + (allWrapper.offsetHeight / 2)) - e.pageY) / 90;
 
-          //sunGroup.style.transform = `translate(${xAxis}px,${yAxis}px)`
-          
-          let myTween = new gsap.timeline().to(sunGroup, 0.8, { x: xAxis, y: yAxis })
+      //sunGroup.style.transform = `translate(${xAxis}px,${yAxis}px)`
 
-          myTween.play();
+      let myTween = new gsap.timeline().to(sunGroup, 0.8, { x: xAxis, y: yAxis })
 
-          //console.log(myTween)
-        })
-      //}
+      myTween.play();
+
+      //console.log(myTween)
+    })
+    //}
 
 
   }, [])
@@ -156,31 +156,53 @@ function MyApp({ Component, pageProps, router }) {
       x: 0,
       scale: 1,
     },
+  }
+
+  const buttonStaggerer = {
+    animate: {
+      transition: {
+        staggerChildren: 0.15,
+        delayChildren: 0.15,
+        
+      }
+    },
     exit: {
-      y: 105,
-      x: 20,
-      scale: 0,
+      transition: {
+        staggerChildren: 0.15,
+        delayChildren: 0.15,
+        duration: 5
+
+      }
+    },
+  }
+
+  const buttons = {
+    animate: {
+      y: 0,
+      x: 0,
+      scale: 1,
+    },
+    exit: {
+      transition: {
+        duration: 5
+        
+      }
     }
   }
 
-  function createButton(angle) {
-    const buttons = [
-      <motion.div  animate={buttonClicked ? "animate" : "exit"} exit="exit" initial="exit" variants={buttonVarients} className={utilStyles.menuButtonHome}></motion.div>,      
-      <motion.div  animate={buttonClicked ? "animate" : "exit"} exit="exit" initial="exit" variants={buttonVarients} className={utilStyles.menuButtonHome}></motion.div>,      
-      <motion.div  animate={buttonClicked ? "animate" : "exit"} exit="exit" initial="exit" variants={buttonVarients} className={utilStyles.menuButtonHome}></motion.div>,     
-      <motion.div  animate={buttonClicked ? "animate" : "exit"} exit="exit" initial="exit" variants={buttonVarients} className={utilStyles.menuButtonHome}></motion.div>      
-    ]
-  }
-  
 
 
   return (
     <div id='allWrapper' className={utilStyles.allWrapper}>
-      <div onClick={()=> setButtonClicked(!buttonClicked)} className={utilStyles.menuButtonWrapper}></div>
-      <motion.div  animate={buttonClicked ? "animate" : "exit"} exit="exit" initial="exit" variants={buttonVarients} className={utilStyles.menuButtonHome}></motion.div>
-      <motion.div animate={buttonClicked ? "animate" : "exit"} exit="exit" initial="exit" variants={buttonVarients} className={utilStyles.menuButtonProducts}></motion.div>
-      <motion.div animate={buttonClicked ? "animate" : "exit"} exit="exit" initial="exit" variants={buttonVarients} className={utilStyles.menuButtonGallery}></motion.div>
-      <motion.div animate={buttonClicked ? "animate" : "exit"} exit="exit" initial="exit" variants={buttonVarients} className={utilStyles.menuButtonContact}></motion.div>
+      <motion.div onClick={() => setButtonClicked(!buttonClicked)} className={utilStyles.menuButtonWrapper}></motion.div>
+      <motion.div animate={buttonClicked && 'animate'} exit='exit' initial='exit' variants={buttonStaggerer} className={utilStyles.buttonStaggerer}>
+        <motion.div onClick={(e) => {
+                    
+          }} animate={buttonClicked ? 'animate' : { y: 105, x: 20, scale: 0, transition: { delay: 0} }} exit={{ y: 105, x: 20, scale: 0 }} initial={{ y: 105, x: 20, scale: 0 }} variants={buttons} className={utilStyles.menuButtonHome}></motion.div>
+        <motion.div animate={buttonClicked ? 'animate' : { y: 65, x: 70, scale: 0, transition: { delay: 0.15} }} exit={{ y: 65, x: 70, scale: 0 }} initial={{ y: 65, x: 70, scale: 0 }} variants={buttons} className={utilStyles.menuButtonProducts}></motion.div>
+        <motion.div animate={buttonClicked ? 'animate' : { y: 0, x: 90, scale: 0, transition: { delay: 0.30} }} exit={{ y: 0, x: 90, scale: 0 }} initial={{ y: 0, x: 90, scale: 0 }} variants={buttons} className={utilStyles.menuButtonGallery}></motion.div>
+        <motion.div animate={buttonClicked ? 'animate' : { y: -60, x: 75, scale: 0, transition: { delay: 0.45} }} exit={{ y: -60, x: 75, scale: 0 }} initial={{ y: -60, x: 75, scale: 0 }} variants={buttons} className={utilStyles.menuButtonContact}></motion.div>
+      </motion.div>
 
       <div id='sideMenu' className={utilStyles.sideMenuItems}>
 
@@ -215,7 +237,7 @@ function MyApp({ Component, pageProps, router }) {
 
       <div id='sunBG' className={utilStyles.sunBG}>
         <div id='sunContainer' className={utilStyles.sunRays}>
-        <svg width="6467" height="5654" viewBox="0 0 6467 5654" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg width="6467" height="5654" viewBox="0 0 6467 5654" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g id="sunshine">
               <g id="sunRays">
                 <path id="Vector 1" d="M707 2674L707 2977L3412 2848.9L3412 2805.79L707 2674Z" fill="#FFD600" opacity="0.09" />
