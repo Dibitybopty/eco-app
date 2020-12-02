@@ -118,7 +118,7 @@ function MyApp({ Component, pageProps, router }) {
   //   dotStart = '19.7rem'
   // }
 
-  const [inputWidth, setInputWidth] = useState(true)
+  const [inputWidth, setInputWidth] = useState(false)
 
 
   useEffect(() => {
@@ -129,6 +129,8 @@ function MyApp({ Component, pageProps, router }) {
     const sunGroup = document.getElementById('sunGroup');
 
     //check for resize to add menu buttons
+
+    document.documentElement.clientWidth < 768 ? setInputWidth(true) : setInputWidth(false);
 
     window.addEventListener('resize', (e) => {
       document.documentElement.clientWidth < 768 ? setInputWidth(true) : setInputWidth(false);
