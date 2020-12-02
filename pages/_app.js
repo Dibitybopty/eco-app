@@ -145,47 +145,42 @@ function MyApp({ Component, pageProps, router }) {
         })
       //}
 
-      
-      
-     
 
   }, [])
 
-  function moveSun(e) {
-    let sunGroup = document.getElementById('sunGroup');
-    let sunContainer = document.getElementById('sunContainer');
-    //let sun = document.getElementById('sunImg');
-    //let sunRays = document.getElementById('sunRays');
-    // let outerRing = document.getElementById('outer-ring');
-    // let innerRing = document.getElementById('inner-ring');
-    //console.log(sun)
-    if ((sunGroup !== undefined && sunGroup !== null)) {
-      //minus the scroll position of the screen so it's always the same value no matter how far scrolled
-      //let scrollPosition = sunContainer.scrollTop;
+  const [buttonClicked, setButtonClicked] = useState(false);
 
-      let xAxis = ((sunContainer.offsetLeft + (sunContainer.offsetWidth / 2)) - e.clientX) / 90;
-      let yAxis = ((sunContainer.offsetTop + (sunContainer.offsetHeight / 2)) - e.clientY) / 90;
-      //use currentTarget offsetLeft somehow to fix jaggy? | fixed when paired with scroll position above! :D
-
-      //sun.style.transform = `translate(0,0)`
-      //sunRays.style.transform = `rotateZ(${(xAxis + yAxis) / 60 + 'deg'}) translate(0,0)`
-      //outerRing.style.transform = `rotateZ(${(xAxis + yAxis) / 2 + 'deg'}) translate(${(xAxis / 2) + 'px'},${(yAxis / 2) + 'px'})`
-      sunGroup.style.transform = `translate(${xAxis}px,${yAxis}px)`
-      //innerRing.style.transform = `rotateZ(${(xAxis + yAxis) / 6 + 'deg'}) translate(${(xAxis / 3) + 'px'},${(yAxis / 3) + 'px'})`
-      //sunRays.style.transformOrigin = 'center'
-
-      //console.log(e.clientX)
-
-
+  const buttonVarients = {
+    animate: {
+      y: 0,
+      x: 0,
+      scale: 1,
+    },
+    exit: {
+      y: 105,
+      x: 20,
+      scale: 0,
     }
   }
+
+  function createButton(angle) {
+    const buttons = [
+      <motion.div  animate={buttonClicked ? "animate" : "exit"} exit="exit" initial="exit" variants={buttonVarients} className={utilStyles.menuButtonHome}></motion.div>,      
+      <motion.div  animate={buttonClicked ? "animate" : "exit"} exit="exit" initial="exit" variants={buttonVarients} className={utilStyles.menuButtonHome}></motion.div>,      
+      <motion.div  animate={buttonClicked ? "animate" : "exit"} exit="exit" initial="exit" variants={buttonVarients} className={utilStyles.menuButtonHome}></motion.div>,     
+      <motion.div  animate={buttonClicked ? "animate" : "exit"} exit="exit" initial="exit" variants={buttonVarients} className={utilStyles.menuButtonHome}></motion.div>      
+    ]
+  }
+  
 
 
   return (
     <div id='allWrapper' className={utilStyles.allWrapper}>
-      <div className={utilStyles.menuButtonWrapper}>
-        
-      </div>
+      <div onClick={()=> setButtonClicked(!buttonClicked)} className={utilStyles.menuButtonWrapper}></div>
+      <motion.div  animate={buttonClicked ? "animate" : "exit"} exit="exit" initial="exit" variants={buttonVarients} className={utilStyles.menuButtonHome}></motion.div>
+      <motion.div animate={buttonClicked ? "animate" : "exit"} exit="exit" initial="exit" variants={buttonVarients} className={utilStyles.menuButtonProducts}></motion.div>
+      <motion.div animate={buttonClicked ? "animate" : "exit"} exit="exit" initial="exit" variants={buttonVarients} className={utilStyles.menuButtonGallery}></motion.div>
+      <motion.div animate={buttonClicked ? "animate" : "exit"} exit="exit" initial="exit" variants={buttonVarients} className={utilStyles.menuButtonContact}></motion.div>
 
       <div id='sideMenu' className={utilStyles.sideMenuItems}>
 

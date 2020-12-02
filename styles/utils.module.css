@@ -1224,11 +1224,59 @@
     border-radius: 50%;
     width: 7rem;
     height: 7rem;
-    bottom: 10rem;
+    bottom: 7rem;
     right: 5rem;
     background-color: blanchedalmond;
     cursor: pointer;
     z-index: 9999;
+  }
+
+  .menuButtonHome {
+    position: absolute;
+    border-radius: 50%;
+    width: 6rem;
+    height: 6rem;
+    bottom: 18.5rem;
+    right: 7.5rem;
+    background-color: blanchedalmond;
+    cursor: pointer;
+    z-index: 9998;
+  }
+
+  .menuButtonProducts {
+    position: absolute;
+    border-radius: 50%;
+    width: 6rem;
+    height: 6rem;
+    bottom: 14rem;
+    right: 12.5rem;
+    background-color: blanchedalmond;
+    cursor: pointer;
+    z-index: 9998;
+  }
+
+  .menuButtonGallery {
+    position: absolute;
+    border-radius: 50%;
+    width: 6rem;
+    height: 6rem;
+    bottom: 7.5rem;
+    right: 14.5rem;
+    background-color: blanchedalmond;
+    cursor: pointer;
+    z-index: 9998;
+  }
+
+  .menuButtonContact {
+    position: absolute;
+    border-radius: 50%;
+    width: 6rem;
+    height: 6rem;
+    bottom: 1rem;
+    right: 13.5rem;
+    background-color: blanchedalmond;
+    cursor: pointer;
+    z-index: 9998;
   }
 }
 
