@@ -562,11 +562,7 @@
   font-weight: 800;
 }
 
-@media screen and (max-width: 900px) {
-  .solarShape h1 {
-    font-size: 2rem;
-  }
-}
+
 
 .innerHomeTopRightContent {
   transform-style: preserve-3d;
@@ -631,6 +627,20 @@
   user-select: none;
   font-weight: 900;
   text-shadow: 2px 2px #000;
+}
+
+@media screen and (max-width: 900px) {
+  .solarShape {
+    width: 20rem;
+    height: 20rem;
+  }
+  .solarShapeBG {
+    width: 20rem;
+    height: 20rem;
+  }
+  .solarShape h1, .solarInfoTel p, .solarInfoPop p {
+    font-size: 80%;
+  }
 }
 
 .modalBackground {
@@ -830,14 +840,16 @@
   /* position: absolute; */
   top: 0;
   left: 0;
+
   border: 2.5px solid black;
   transform: translateZ(20px);
-  /* border-radius: 30px; */
+  border-radius: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   cursor: pointer;
+  overflow: hidden;
 }
 
 .modelBackside {
@@ -847,6 +859,8 @@
   position: absolute;
   transform: rotateY(.5turn);
   backface-visibility: hidden;
+  border-radius: 10px;
+
 }
 
 .modalProducts {
@@ -866,6 +880,8 @@
   /* overflow: hidden; */
   transform-style: preserve-3d;
   /* transform: rotateY(75deg); */
+  border-radius: 10px;
+
 }
 
 .modalProdWrapper {
@@ -940,6 +956,7 @@
 
 .fabFlip {
   position: absolute;
+  top: 0;
   right: 0;
   width: 30px;
   height: 30px;
