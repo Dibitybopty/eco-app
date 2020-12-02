@@ -270,6 +270,15 @@
   width: 75%;
 }
 
+@media screen and (max-width: 768px) {
+  .contactbg object {
+    width: 100%;
+  }
+  .contactbg svg {
+    width: 100%;
+  }
+}
+
 .contactInnerLeft {
   flex: 1;
 }
@@ -562,8 +571,6 @@
   font-weight: 800;
 }
 
-
-
 .innerHomeTopRightContent {
   transform-style: preserve-3d;
   display: flex;
@@ -840,7 +847,6 @@
   /* position: absolute; */
   top: 0;
   left: 0;
-
   border: 2.5px solid black;
   transform: translateZ(20px);
   border-radius: 10px;
@@ -860,7 +866,6 @@
   transform: rotateY(.5turn);
   backface-visibility: hidden;
   border-radius: 10px;
-
 }
 
 .modalProducts {
@@ -881,7 +886,6 @@
   transform-style: preserve-3d;
   /* transform: rotateY(75deg); */
   border-radius: 10px;
-
 }
 
 .modalProdWrapper {
@@ -1235,19 +1239,78 @@
 
 /* menu button */
 
+
+
 @media screen and (max-width: 768px) {
-  .menuButtonWrapper {
+  .menuButtonWrapper button {
     position: absolute;
     border-radius: 50%;
     width: 7rem;
     height: 7rem;
     bottom: 7rem;
     right: 5rem;
-    background-color: blanchedalmond;
+    background-color: #69cd3c;
     cursor: pointer;
     z-index: 9999;
+    border: 2px solid black;
+    display: inherit;
   }
-
+  .menuButtonWrapper img {
+    width: 100%;
+    height: 100%;
+  }
+  .ggMotion {
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 18px;
+    height: 14px;
+    transform: scale(2);
+    margin: auto;
+    transition: ease 0.3s;
+  }
+  .ggMotion::before {
+    content: "";
+    position: absolute;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    width: 10px;
+    height: 2px;
+    bottom: 0;
+    left: 4px;
+    box-shadow: 0px -6px 0, 0px -12px 0;
+    border-radius: 4px;
+    background: currentColor;
+    transition: ease 0.3s;
+  }
+  .ggMotionClicked {
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 18px;
+    height: 14px;
+    transform: scale(2);
+    margin: auto;
+    transition: ease 0.3s;
+  }
+  .ggMotionClicked::before {
+    content: "";
+    position: absolute;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    width: 10px;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    box-shadow: 4px -6px 0, 8px -12px 0;
+    border-radius: 4px;
+    background: currentColor;
+    transition: ease 0.3s;
+  }
   .menuButtonHome {
     position: absolute;
     border-radius: 50%;
@@ -1255,11 +1318,23 @@
     height: 6rem;
     bottom: 18.5rem;
     right: 7.5rem;
-    background-color: blanchedalmond;
+    background-color: #69cd3c;
     cursor: pointer;
     z-index: 9998;
+    border: none;
   }
-
+  .menuButtonHome button {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 2px solid black;
+    cursor: pointer;
+    background-color: #69cd3c;
+  }
+  .menuButtonHome img {
+    width: 100%;
+    height: 100%;
+  }
   .menuButtonProducts {
     position: absolute;
     border-radius: 50%;
@@ -1271,7 +1346,18 @@
     cursor: pointer;
     z-index: 9998;
   }
-
+  .menuButtonProducts img {
+    width: 100%;
+    height: 100%;
+  }
+  .menuButtonProducts button {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 2px solid black;
+    cursor: pointer;
+    background-color: #69cd3c;
+  }
   .menuButtonGallery {
     position: absolute;
     border-radius: 50%;
@@ -1283,7 +1369,18 @@
     cursor: pointer;
     z-index: 9998;
   }
-
+  .menuButtonGallery img {
+    width: 100%;
+    height: 100%;
+  }
+  .menuButtonGallery button {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 2px solid black;
+    cursor: pointer;
+    background-color: #69cd3c;
+  }
   .menuButtonContact {
     position: absolute;
     border-radius: 50%;
@@ -1294,6 +1391,18 @@
     background-color: blanchedalmond;
     cursor: pointer;
     z-index: 9998;
+  }
+  .menuButtonContact img {
+    width: 100%;
+    height: 100%;
+  }
+  .menuButtonContact button {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 2px solid black;
+    cursor: pointer;
+    background-color: #69cd3c;
   }
 }
 

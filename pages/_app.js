@@ -118,6 +118,8 @@ function MyApp({ Component, pageProps, router }) {
   //   dotStart = '19.7rem'
   // }
 
+  const [inputWidth, setInputWidth] = useState(true)
+
 
   useEffect(() => {
     //console.log(document.readyState)
@@ -126,7 +128,11 @@ function MyApp({ Component, pageProps, router }) {
     const allWrapper = document.getElementById('allWrapper');
     const sunGroup = document.getElementById('sunGroup');
 
-    //console.log('it is ready')
+    //check for resize to add menu buttons
+
+    window.addEventListener('resize', (e) => {
+      document.documentElement.clientWidth < 768 ? setInputWidth(true) : setInputWidth(false);
+    })
 
 
 
@@ -163,14 +169,13 @@ function MyApp({ Component, pageProps, router }) {
       transition: {
         staggerChildren: 0.15,
         delayChildren: 0.15,
-        
+
       }
     },
     exit: {
       transition: {
         staggerChildren: 0.15,
         delayChildren: 0.15,
-        duration: 5
 
       }
     },
@@ -182,27 +187,29 @@ function MyApp({ Component, pageProps, router }) {
       x: 0,
       scale: 1,
     },
-    exit: {
-      transition: {
-        duration: 5
-        
-      }
-    }
   }
 
 
 
   return (
     <div id='allWrapper' className={utilStyles.allWrapper}>
-      <motion.div onClick={() => setButtonClicked(!buttonClicked)} className={utilStyles.menuButtonWrapper}></motion.div>
-      <motion.div animate={buttonClicked && 'animate'} exit='exit' initial='exit' variants={buttonStaggerer} className={utilStyles.buttonStaggerer}>
-        <motion.div onClick={(e) => {
-                    
-          }} animate={buttonClicked ? 'animate' : { y: 105, x: 20, scale: 0, transition: { delay: 0} }} exit={{ y: 105, x: 20, scale: 0 }} initial={{ y: 105, x: 20, scale: 0 }} variants={buttons} className={utilStyles.menuButtonHome}></motion.div>
-        <motion.div animate={buttonClicked ? 'animate' : { y: 65, x: 70, scale: 0, transition: { delay: 0.15} }} exit={{ y: 65, x: 70, scale: 0 }} initial={{ y: 65, x: 70, scale: 0 }} variants={buttons} className={utilStyles.menuButtonProducts}></motion.div>
-        <motion.div animate={buttonClicked ? 'animate' : { y: 0, x: 90, scale: 0, transition: { delay: 0.30} }} exit={{ y: 0, x: 90, scale: 0 }} initial={{ y: 0, x: 90, scale: 0 }} variants={buttons} className={utilStyles.menuButtonGallery}></motion.div>
-        <motion.div animate={buttonClicked ? 'animate' : { y: -60, x: 75, scale: 0, transition: { delay: 0.45} }} exit={{ y: -60, x: 75, scale: 0 }} initial={{ y: -60, x: 75, scale: 0 }} variants={buttons} className={utilStyles.menuButtonContact}></motion.div>
-      </motion.div>
+      <div style={{ display: inputWidth ? 'initial' : 'none' }}>
+        <motion.div onClick={() => setButtonClicked(!buttonClicked)} className={utilStyles.menuButtonWrapper}><button><div className={buttonClicked ? utilStyles.ggMotionClicked : utilStyles.ggMotion}></div></button></motion.div>
+        <motion.div animate={buttonClicked && 'animate'} exit='exit' initial='exit' variants={buttonStaggerer} className={utilStyles.buttonStaggerer}>
+          <motion.div animate={buttonClicked ? 'animate' : { y: 105, x: 20, scale: 0, transition: { delay: 0 } }} exit={{ y: 105, x: 20, scale: 0 }} initial={{ y: 105, x: 20, scale: 0 }} variants={buttons} className={utilStyles.menuButtonHome}>
+            <Link href="/"><a><button><img src='/images/buttons/home.svg'></img></button></a></Link>
+          </motion.div>
+          <motion.div animate={buttonClicked ? 'animate' : { y: 65, x: 70, scale: 0, transition: { delay: 0.15 } }} exit={{ y: 65, x: 70, scale: 0 }} initial={{ y: 65, x: 70, scale: 0 }} variants={buttons} className={utilStyles.menuButtonProducts}>
+            <Link href="products"><a><button><img src='/images/buttons/products.svg'></img></button></a></Link>
+          </motion.div>
+          <motion.div animate={buttonClicked ? 'animate' : { y: 0, x: 90, scale: 0, transition: { delay: 0.30 } }} exit={{ y: 0, x: 90, scale: 0 }} initial={{ y: 0, x: 90, scale: 0 }} variants={buttons} className={utilStyles.menuButtonGallery}>
+            <Link href="gallery"><a><button><img src='/images/buttons/gallery.svg'></img></button></a></Link>
+          </motion.div>
+          <motion.div animate={buttonClicked ? 'animate' : { y: -60, x: 75, scale: 0, transition: { delay: 0.45 } }} exit={{ y: -60, x: 75, scale: 0 }} initial={{ y: -60, x: 75, scale: 0 }} variants={buttons} className={utilStyles.menuButtonContact}>
+            <Link href="contactus"><a><button><img src='/images/buttons/contact.svg'></img></button></a></Link>
+          </motion.div>
+        </motion.div>
+      </div>
 
       <div id='sideMenu' className={utilStyles.sideMenuItems}>
 
