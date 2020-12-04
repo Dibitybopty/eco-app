@@ -2,9 +2,7 @@ import { motion, AnimateSharedLayout } from 'framer-motion'
 import Head from 'next/head'
 import { useEffect, useState } from 'react'
 import Layout, { siteTitle } from '../components/layout'
-// import utilStyles from '../styles/Products.module.css'
 import utilStyles from '../styles/utils.module.css'
-import Image from 'next/image'
 import Modal from '../components/ProductModel';
 import firebase from 'firebase/app'
 import "firebase/firestore"
@@ -173,7 +171,12 @@ export default function Products({ productList }) {
         <title>{siteTitle}</title>
       </Head>
       <div className={utilStyles.productWrapper}>
+
+
         <div id="productBG" className={utilStyles.productBG}>
+        {/* <div className={utilStyles.galleryHeader}><h1>Eco Sales - Photo Gallery</h1></div> */}
+
+          
 
           <div className={utilStyles.productLeft}></div>
           <motion.div transition={{ duration: 1.7 }} animate='animate' exit='exit' initial='initial' variants={cardAnimations} className={utilStyles.productRight}>

@@ -33,21 +33,20 @@ export default function Layout({ children, home, products, contactus, gallery })
             )}
 
             {gallery && (
-                <>
-                    <div className={utilStyles.contactbg}>
+                    <div className={styles.pageContent} >
 
-                        <div className={utilStyles.contactInnerLeft}></div>
+                        {/* <div className={utilStyles.contactInnerLeft}></div>
                         <div className={utilStyles.contactInnerRight}>
                             <div className={utilStyles.productsSvg}>
                                 <object data="/images/undraw_art_edited.svg"></object>
                             </div>
 
-                        </div>
+                        </div> */}
+                        
+                        {children}
 
                     </div>
-                    {children}
-
-                </>
+                    
             )}
 
             {contactus && (
