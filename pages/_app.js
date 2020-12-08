@@ -294,7 +294,7 @@ function MyApp({ Component, pageProps, router }) {
         </div>
 
         {/* <div  className={utilStyles.cloudMain}><img id='cloudMain' src='/images/cloud-main.svg'></img></div> */}
-        <div  className={utilStyles.cloudFront}><img id='cloudFront' src='/images/cloud-front.svg'></img></div>
+        <motion.div animate={{x: router.route === '/contactus' ? 2000 : 0 }} transition={{delay: 0.5, duration: 1}} className={utilStyles.cloudFront}><img id='cloudFront' src='/images/cloud-front.svg'></img></motion.div>
 
 
       </div>
