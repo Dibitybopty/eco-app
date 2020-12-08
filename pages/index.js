@@ -67,15 +67,24 @@ export default function Home() {
             &nbsp;
 
           <motion.span style={{ display: 'inline-block', fontWeight: 600 }} layoutId="title">Green Homes Government Grant.</motion.span>
-          &nbsp;<span style={{fontWeight: 600}}>Click here to register your interest.</span>
-        </motion.div>
+          &nbsp;<span style={{ fontWeight: 600 }}>Click here to register your interest.</span>
+          </motion.div>
           <Modal showModal={showModal} setShowModal={setShowModal} text="Green Homes Government Grant" />
         </AnimateSharedLayout>
-        
+
         <div className={utilStyles.mainContent}>
 
+          <div className={utilStyles.blobContainer}>
+            <div className={utilStyles.mainHeadings}>
+              <h1>Eco Sales & Services Ltd.</h1>
+              <p>A local friendly renewable energy company giving nationwide renewable energy management solutions.</p>
+              <h3>TEL: 01782 256805</h3>
+            </div>
 
-          <div className={utilStyles.shapeContainer}>
+          </div>
+
+
+          {/* <div className={utilStyles.shapeContainer}>
             <div className={utilStyles.solarShape} initial={{ transform: 'rotateY(120deg)' }} animate={{ transform: 'rotateY(0)' }} exit={{ transform: 'rotateY(120deg)' }} transition={{ ease: [0.6, 0.01, -0.05, 0.9], delay: 0, duration: 0.6 }}>
               <div className={utilStyles.solarShapeBG} initial={{ x: 1000 }} animate={{ x: 0 }} exit={{ x: 1000 }} transition={{ ease: [0.6, 0.01, -0.05, 0.9], delay: 0, duration: 1.6 }}></div>
               <div className={utilStyles.solarHeadingPop}><h1 initial={{ x: -3000, opacity: 1, }} exit={{ x: -3000, opacity: 1, }} animate={{ x: 0, opacity: 1, }} transition={{ ease: [0.6, 0.01, -0.05, 0.9], delay: 0.12, duration: 2.6 }}>Eco Sales & Services Ltd.</h1></div>
@@ -83,12 +92,12 @@ export default function Home() {
               <div className={utilStyles.solarInfoTel}><p initial={{ x: 3000, opacity: 1, }} exit={{ x: 3000, opacity: 1, }} animate={{ x: 0, opacity: 1, }} transition={{ ease: [0.6, 0.01, -0.05, 0.9], delay: 0.08, duration: 2.3 }}>TEL: 01782 256805</p></div>
 
             </div>
-          </div>
+          </div> */}
 
 
         </div>
-        </div>
-      
+      </div>
+
     </Layout>
   )
 }

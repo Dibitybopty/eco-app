@@ -346,6 +346,7 @@
 }
 
 .sunBG {
+  position: relative;
   /* position: fixed;
 	top: 0;
 	left: 0; */
@@ -355,6 +356,51 @@
   opacity: 0.89;
   /* filter: blur(10px); */
   transform-style: preserve-3d;
+}
+
+.cloudBack {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.cloudBack img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translateZ(20px);
+  height: 50%;
+}
+
+.cloudMain {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.cloudMain img {
+  position: absolute;
+  top: 20%;
+  right: 5%;
+  transform: translateZ(30px);
+  height: 50%;
+}
+
+.cloudFront {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.cloudFront img {
+  position: absolute;
+  top: 30%;
+  right: 15%;
+  transform: translateZ(35px);
+  height: 50%;
 }
 
 .theSun {
@@ -400,6 +446,23 @@
     width: 500%;
     transform: translateZ(20px);
     overflow: visible;
+  }
+  .cloudBack {
+    height: 50%;
+    right: 5rem;
+    top: 5rem;
+  }
+  .cloudMain {
+    height: 50%;
+    right: 10rem;
+    top: 5rem;
+    display: none;
+  }
+  .cloudFront {
+    height: 50%;
+    right: 15rem;
+    top: 5rem;
+    display: none;
   }
 }
 
@@ -525,6 +588,62 @@
   overflow: hidden;
 }
 
+.blobContainer {
+  width: 50%;
+  height: 100vh;
+  margin: 0 0 0 auto;
+  background-size: contain;
+  background-position: right top;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  position: relative;
+  top: 7rem;
+}
+
+.mainHeadings {
+  margin-top: 5rem;
+  margin-right: 6rem;
+  width: 80%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas: 'heading heading heading' 'p p p' 'tel tel tel';
+  flex-direction: column;
+  position: absolute;
+}
+
+.mainHeadings>* {
+  text-align: center;
+  text-shadow: 1.5px 1.5px #ccc;
+}
+
+.mainHeadings h1 {
+  font-weight: 900;
+  font-size: 3rem;
+  grid-area: heading;
+}
+
+.mainHeadings h3 {
+  font-weight: 900;
+  color: #69cd3c;
+  font-size: 2.2rem;
+  text-shadow: 1.5px 1.5px #333;
+  grid-area: tel;
+}
+
+.plop {
+  grid-area: hello;
+}
+
+.mainHeadings p {
+  font-weight: 600;
+  font-size: 2rem;
+  align-self: center;
+  text-align: center;
+  grid-area: p;
+}
+
 .shapeContainer {
   position: absolute;
   top: 7rem;
@@ -536,6 +655,22 @@
 @media screen and (max-width: 768px) {
   .shapeContainer {
     top: 12rem;
+  }
+  .blobContainer {
+    width: 100%;
+  }
+  .mainHeadings>* {
+    margin-right: 1.5rem;
+  }
+  .mainHeadings {
+    margin: 10rem auto;
+    width: 100%;
+  }
+  .mainHeadings p {
+    width: 100%;
+  }
+  .mainHeadings h1, .mainHeadings p {
+    text-shadow: 0px 1px 2px #ccc;
   }
 }
 
@@ -1529,6 +1664,8 @@
   .gallery {
     width: 100vw;
     margin: 5rem 0;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 0.3fr));
+    grid-auto-rows: 20rem;
   }
   .galleryHeader {
     display: grid;
