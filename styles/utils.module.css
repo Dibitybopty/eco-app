@@ -397,10 +397,10 @@
 
 .cloudFront img {
   position: absolute;
-  top: 30%;
+  top: 20%;
   right: 15%;
   transform: translateZ(35px);
-  height: 50%;
+  height: 60%;
 }
 
 .theSun {
@@ -460,9 +460,9 @@
   }
   .cloudFront {
     height: 50%;
-    right: 15rem;
+    right: 10rem;
     top: 5rem;
-    display: none;
+    /* display: none; */
   }
 }
 
@@ -602,6 +602,14 @@
   top: 7rem;
 }
 
+.mainHeadingsWrapper {
+  position: absolute;
+  top: -1rem;
+  left: -3rem;
+  width: 100%;
+  height: 100%;
+}
+
 .mainHeadings {
   margin-top: 5rem;
   margin-right: 6rem;
@@ -615,7 +623,9 @@
 
 .mainHeadings>* {
   text-align: center;
-  text-shadow: 1.5px 1.5px #ccc;
+  /* text-shadow: 1.5px 1.5px #ccc; */
+  color: #bd9f45;
+  -webkit-text-stroke: 2px black;
 }
 
 .mainHeadings h1 {
@@ -630,10 +640,7 @@
   font-size: 2.2rem;
   text-shadow: 1.5px 1.5px #333;
   grid-area: tel;
-}
-
-.plop {
-  grid-area: hello;
+  text-align: right;
 }
 
 .mainHeadings p {
@@ -642,6 +649,10 @@
   align-self: center;
   text-align: center;
   grid-area: p;
+  max-width: 80%;
+  justify-self: center;
+  margin: 0;
+  -webkit-text-stroke: 1px black;
 }
 
 .shapeContainer {
@@ -659,8 +670,14 @@
   .blobContainer {
     width: 100%;
   }
+  .mainHeadingsWrapper {
+    top: -5rem;
+    left: 0;
+  }
   .mainHeadings>* {
     margin-right: 1.5rem;
+  -webkit-text-stroke: 1px black;
+
   }
   .mainHeadings {
     margin: 10rem auto;
@@ -668,9 +685,13 @@
   }
   .mainHeadings p {
     width: 100%;
+  -webkit-text-stroke: 0 black;
+
   }
   .mainHeadings h1, .mainHeadings p {
-    text-shadow: 0px 1px 2px #ccc;
+    /* text-shadow: 0px 1px 2px #ccc; */
+    text-shadow: 1px 1px 2px #000;
+
   }
 }
 

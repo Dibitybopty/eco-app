@@ -75,10 +75,12 @@ export default function Home() {
         <div className={utilStyles.mainContent}>
 
           <div className={utilStyles.blobContainer}>
-            <div className={utilStyles.mainHeadings}>
-              <h1>Eco Sales & Services Ltd.</h1>
-              <p>A local friendly renewable energy company giving nationwide renewable energy management solutions.</p>
-              <h3>TEL: 01782 256805</h3>
+            <div className={utilStyles.mainHeadingsWrapper}>
+              <div className={utilStyles.mainHeadings}>
+                <h1>Eco Sales & Services Ltd.</h1>
+                <p>A local friendly renewable energy company giving nationwide renewable energy management solutions.</p>
+                <h3>TEL: 01782 256805</h3>
+              </div>
             </div>
 
           </div>

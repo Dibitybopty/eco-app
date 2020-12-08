@@ -147,14 +147,14 @@ function MyApp({ Component, pageProps, router }) {
       let yAxis = ((allWrapper.offsetTop + (allWrapper.offsetHeight / 2)) - e.pageY) / 90;
       let cloudxAxis = ((allWrapper.offsetTop + (allWrapper.offsetWidth / 90)) + e.pageX) / 300;
       let cloudxAxis2 = ((allWrapper.offsetTop + (allWrapper.offsetWidth / 90)) - e.pageX) / 150;
-      let cloudxAxis3 = ((allWrapper.offsetTop + (allWrapper.offsetWidth / 90)) + e.pageX) / 500;
+      // let cloudxAxis3 = ((allWrapper.offsetTop + (allWrapper.offsetWidth / 90)) + e.pageX) / 500;
 
       //sunGroup.style.transform = `translate(${xAxis}px,${yAxis}px)`
 
       let myTween = new gsap.timeline().to(sunGroup, 0.8, { x: xAxis, y: yAxis })
       let myTween2 = new gsap.timeline().to(cloudBack, 0.8, { x: cloudxAxis})
       let myTween3 = new gsap.timeline().to(cloudFront, 0.8, { x: cloudxAxis2})
-      let myTween4 = new gsap.timeline().to(cloudMain, 0.8, { x: cloudxAxis3 })
+      // let myTween4 = new gsap.timeline().to(cloudMain, 0.8, { x: cloudxAxis3 })
 
       // myTween.play();
       // myTween2.play();
@@ -257,7 +257,7 @@ function MyApp({ Component, pageProps, router }) {
       </AnimatePresence>
 
       <div id='sunBG' className={utilStyles.sunBG}>
-        <div id='cloudBack' className={utilStyles.cloudBack}><img src='/images/cloud-back.svg'></img></div>
+        <div className={utilStyles.cloudBack}><img id='cloudBack' src='/images/cloud-back.svg'></img></div>
         <div id='sunContainer' className={utilStyles.sunRays}>
           <svg width="6467" height="5654" viewBox="0 0 6467 5654" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g id="sunshine">
@@ -293,8 +293,8 @@ function MyApp({ Component, pageProps, router }) {
 
         </div>
 
-        <div id='cloudMain' className={utilStyles.cloudMain}><img src='/images/cloud-main.svg'></img></div>
-        <div id='cloudFront' className={utilStyles.cloudFront}><img src='/images/cloud-front.svg'></img></div>
+        {/* <div  className={utilStyles.cloudMain}><img id='cloudMain' src='/images/cloud-main.svg'></img></div> */}
+        <div  className={utilStyles.cloudFront}><img id='cloudFront' src='/images/cloud-front.svg'></img></div>
 
 
       </div>
