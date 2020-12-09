@@ -4,6 +4,7 @@ import utilStyles from '../styles/utils.module.css'
 import { motion, AnimateSharedLayout } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import Modal from '../components/Modal';
+import WindTurbine from '../components/wind_turbine'
 
 
 export default function Home() {
@@ -73,13 +74,16 @@ export default function Home() {
         </AnimateSharedLayout>
 
         <div className={utilStyles.mainContent}>
-
+          <div className={utilStyles.turbines}>
+            {/* <WindTurbine/> */}
+            {/* <img src='/images/animate-turbines.svg'></img> */}
+          </div>
           <div className={utilStyles.blobContainer}>
             <div className={utilStyles.mainHeadingsWrapper}>
               <div className={utilStyles.mainHeadings}>
-                <h1>Eco Sales & Services Ltd.</h1>
-                <p>A local friendly renewable energy company giving nationwide renewable energy management solutions.</p>
-                <h3>TEL: 01782 256805</h3>
+                <motion.h1 initial={{ x: -3000, opacity: 1, }} exit={{ x: -3000, opacity: 1, }} animate={{ x: 0, opacity: 1, }} transition={{ ease: [0.6, 0.01, -0.05, 0.9], delay: 0.12, duration: 2.6 }}>Eco Sales & Services Ltd.</motion.h1>
+                <motion.p initial={{ x: 3000, opacity: 1, }} exit={{ x: 3000, opacity: 1, }} animate={{ x: 0, opacity: 1, }} transition={{ ease: [0.6, 0.01, -0.05, 0.9], delay: 0.12, duration: 2.9 }}>A local friendly renewable energy company giving nationwide renewable energy management solutions.</motion.p>
+                <motion.h3 initial={{ x: 3000, opacity: 1, }} exit={{ x: 3000, opacity: 1, }} animate={{ x: 0, opacity: 1, }} transition={{ ease: [0.6, 0.01, -0.05, 0.9], delay: 0.08, duration: 3.3 }}>TEL: 01782 256805</motion.h3>
               </div>
             </div>
 

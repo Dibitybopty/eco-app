@@ -589,6 +589,14 @@
   overflow: hidden;
 }
 
+.turbines{
+  position: absolute;
+  bottom: -1rem;
+  width: 60%;
+  opacity: 0.5;
+}
+
+
 .blobContainer {
   width: 50%;
   height: 100vh;
@@ -668,6 +676,9 @@
 @media screen and (max-width: 768px) {
   .shapeContainer {
     top: 12rem;
+  }
+  .turbines{
+    width: 100%;
   }
   .blobContainer {
     width: 100%;

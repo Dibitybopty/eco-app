@@ -58,18 +58,18 @@ export default function ProductsLoading() {
 
   const cards = {
     animate: {
-      y: 0,
+      opacity: 1,
       transition: {
         duration: 1
       }
 
     },
     initial: {
-      y: 1000,
+      opacity: 0,
 
     },
     exit: {
-      y: 1000,
+      opacity: 0,
       transition: {
         duration: 1.7,
         delayChildren: 0

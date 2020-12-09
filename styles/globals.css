@@ -44,20 +44,20 @@ body {
 
 /* animate turbines */
 
-/* #mid_prop {
-  animation: midTurbine 5s cubic-bezier(0.0, 0.02, 0.75, 0.75) infinite;
+/* #spinme1 {
+  animation: midTurbine 5s linear infinite;
   transform-origin: center;
   transform-box: fill-box;
 }
 
-#right_prop {
-  animation: midTurbine 5.2s cubic-bezier(0.0, 0.02, 0.75, 0.75) infinite;
+#spinme2 {
+  animation: midTurbine 5.2s linear infinite;
   transform-origin: center;
   transform-box: fill-box;
 }
 
-#left_prop {
-  animation: midTurbine 5.3s cubic-bezier(0.0, 0.02, 0.75, 0.75) infinite;
+#spinme3 {
+  animation: midTurbine 5.3s linear infinite;
   transform-origin: center;
   transform-box: fill-box;
 }
