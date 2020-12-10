@@ -93,13 +93,13 @@ export default function Modal({ showModal, setShowModal, text }) {
                                     <motion.span style={{ color: 'black' }} className={utilStyles.placeholder}>HOW CAN WE HELP?</motion.span>
                                 </motion.label>
                                 <motion.button variants={item} style={{ backgroundColor: '#309b00', border: '1px solid black' }} >ENQUIRE</motion.button>
-                                
+
                             </motion.div>
 
-                            <motion.div animate={{opacity: 1}} initial={{opacity: 0}} transition={{delay: 1}} exit={{opacity: 0, transition: {delay: 0, duration: 0}}} className={utilStyles.modalPhone}>
-                                    <motion.p>Or Telephone on: </motion.p>
-                                    <motion.p>01782 256805</motion.p>
-                                </motion.div>
+                            {/* <motion.div animate={{ opacity: 1 }} initial={{ opacity: 0 }} transition={{ delay: 1 }} exit={{ opacity: 0, transition: { delay: 0, duration: 0 } }} className={utilStyles.modalPhone}>
+                                <motion.p>Or Telephone on: </motion.p>
+                                <motion.p>01782 256805</motion.p>
+                            </motion.div> */}
 
                         </motion.div>
 
