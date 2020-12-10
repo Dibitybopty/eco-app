@@ -871,6 +871,28 @@
   height: 100vh;
 }
 
+.productsTitleWrapper{
+  z-index: -1;
+  display: grid;
+  grid-template-columns: 0.5fr 1fr;
+  overflow: hidden;
+  scrollbar-width: none;
+}
+
+.productsTitle{
+  
+}
+
+.productsTitle p {
+  text-align: center;
+  font-weight: 900;
+  font-size: 3rem;
+  text-shadow: 2px 2px 0 black;
+  color: #bd9f45;
+  margin-bottom: 0;
+
+}
+
 .productsSvg {
   padding: 6rem;
   height: 100vh;
@@ -879,6 +901,10 @@
 }
 
 .productBG {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
   display: grid;
   height: 100vh;
   grid-template-columns: 0.5fr 1fr;
@@ -898,7 +924,7 @@
   /* column-gap: 2rem; */
   row-gap: 1rem;
   justify-content: center;
-  margin-top: 5rem;
+  margin-top: 8rem;
 }
 
 .productCardContainer {
@@ -1057,6 +1083,24 @@
 .modalProdWrapper {
   transform: translateZ(30px);
   backface-visibility: hidden;
+}
+
+.modalPhone {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin-bottom: 15px;
+}
+
+.modalPhone p{
+  margin: 2px;
+  margin-bottom: 10px;
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  color: #000;
 }
 
 @media screen and (max-width: 700px) {

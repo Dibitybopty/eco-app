@@ -127,42 +127,42 @@ export default function Products({ productList }) {
 
   const prods = products.map((prod) =>
     <AnimateSharedLayout key={prod.title} >
-    
-    <Modal id={prod.title} showModal={showModal} showModalWithID={showModalWithID} setShowModal={setShowModal} title={prod.title} productImage={prod.mainImage} details1={prod.details1} details2={prod.details2} details3={prod.details3} image1={prod.subImage1} image2={prod.subImage2} image3={prod.subImage3}  />
 
-    <motion.div variants={cards} onPointerMove={(e) => moveCard(e)} onPointerLeave={(e) => leaveCard(e)} type='cardContainer' className={utilStyles.productCardContainer}>
+      <Modal id={prod.title} showModal={showModal} showModalWithID={showModalWithID} setShowModal={setShowModal} title={prod.title} productImage={prod.mainImage} details1={prod.details1} details2={prod.details2} details3={prod.details3} image1={prod.subImage1} image2={prod.subImage2} image3={prod.subImage3} />
 
-      <div type='card' className={utilStyles.productCard}>
-        <motion.div onClick={() => {
-          setShowModalWithID(prod.title)
-          setShowModal(!showModal)
+      <motion.div variants={cards} onPointerMove={(e) => moveCard(e)} onPointerLeave={(e) => leaveCard(e)} type='cardContainer' className={utilStyles.productCardContainer}>
+
+        <div type='card' className={utilStyles.productCard}>
+          <motion.div onClick={() => {
+            setShowModalWithID(prod.title)
+            setShowModal(!showModal)
           }} layoutId='background' className={utilStyles.productCircle}>
-          <div className={utilStyles.productImages}>
-            <motion.img layoutId={prod.mainImage}
-              src={prod.mainImage}
-              width={643}
-              height={378}
-              alt={prod.title}
-            ></motion.img>
-          </div>
-          <div className={utilStyles.lowerImage}>
-            <motion.h3 style={{ display: 'inline-block' }} layoutId={prod.title}>{prod.title}</motion.h3>
-            <p>{prod.subtitle}</p>
-          </div>
+            <div className={utilStyles.productImages}>
+              <motion.img layoutId={prod.mainImage}
+                src={prod.mainImage}
+                width={643}
+                height={378}
+                alt={prod.title}
+              ></motion.img>
+            </div>
+            <div className={utilStyles.lowerImage}>
+              <motion.h3 style={{ display: 'inline-block' }} layoutId={prod.title}>{prod.title}</motion.h3>
+              <p>{prod.subtitle}</p>
+            </div>
 
-        </motion.div>
+          </motion.div>
 
 
-        <motion.button onClick={() => {
-          setShowModalWithID(prod.title)
-          setShowModal(!showModal)
+          <motion.button onClick={() => {
+            setShowModalWithID(prod.title)
+            setShowModal(!showModal)
           }} >MORE INFO</motion.button>
 
 
-      </div>
+        </div>
 
-    </motion.div>
-  </AnimateSharedLayout>
+      </motion.div>
+    </AnimateSharedLayout>
   )
 
   return (
@@ -171,134 +171,32 @@ export default function Products({ productList }) {
         <title>{siteTitle}</title>
       </Head>
       <div className={utilStyles.productWrapper}>
-
+        <div className={utilStyles.productsTitleWrapper}>
+          <div></div>
+          <div className={utilStyles.productsTitle}>
+          <p>ECO SALES - PRODUCTS</p>
+          </div>
+        </div>
 
         <div id="productBG" className={utilStyles.productBG}>
-        {/* <div className={utilStyles.galleryHeader}><h1>Eco Sales - Photo Gallery</h1></div> */}
+          {/* <div className={utilStyles.galleryHeader}><h1>Eco Sales - Photo Gallery</h1></div> */}
 
-          
+
 
           <div className={utilStyles.productLeft}></div>
           <motion.div transition={{ duration: 1.7 }} animate='animate' exit='exit' initial='initial' variants={cardAnimations} className={utilStyles.productRight}>
 
+
             {products.length === 0 ?
-            <>
-              {<ProductsLoading />}
+              <>
+                {<ProductsLoading />}
 
               </>
-              
+
               :
-            <>{prods}</>
-              
+              <>{prods}</>
+
             }
-            {/* <motion.div variants={cards} onPointerMove={(e) => moveCard(e)} onPointerLeave={(e) => leaveCard(e)} type='cardContainer' className={utilStyles.productCardContainer}>
-              <div type='card' className={utilStyles.productCard}>
-                <div className={utilStyles.productCircle}>
-                  <div className={utilStyles.productImages}>
-                    <Image
-                      src='/images/products/pumps.png'
-                      width={643}
-                      height={378}
-                      alt='Air Source Heat Pumps'
-                      className={utilStyles.productInnerImages}
-
-                    ></Image>
-                  </div>
-                  <div className={utilStyles.lowerImage}>
-                    <h3>Air Source Heat Pumps</h3>
-                  </div>
-
-                </div>
-
-
-                <motion.button>MORE INFO</motion.button>
-
-
-              </div>
-            </motion.div>
-            <motion.div variants={cards} onPointerMove={(e) => moveCard(e)} onPointerLeave={(e) => leaveCard(e)} type='cardContainer' className={utilStyles.productCardContainer}>
-              <div type='card' className={utilStyles.productCard}>
-                <div className={utilStyles.productCircle}>
-                  <div className={utilStyles.productImages}>
-                    <Image
-                      src='/images/products/solarphoto.png'
-                      width={643}
-                      height={378}
-                      alt='Lithium Battery'
-                      className={utilStyles.productInnerImages}
-
-                    ></Image>
-                  </div>
-                  <div className={utilStyles.lowerImage}>
-                    <h3>Solar Photovoltaic</h3>
-                  </div>
-
-                </div>
-
-
-                <motion.button>MORE INFO</motion.button>
-
-              </div>
-            </motion.div>
-            <motion.div variants={cards} onPointerMove={(e) => moveCard(e)} onPointerLeave={(e) => leaveCard(e)} type='cardContainer' className={utilStyles.productCardContainer}>
-              <div type='card' className={utilStyles.productCard}>
-                <h3>Solar Thermal Panels</h3>
-              </div>
-            </motion.div>
-            <motion.div variants={cards} onPointerMove={(e) => moveCard(e)} onPointerLeave={(e) => leaveCard(e)} type='cardContainer' className={utilStyles.productCardContainer}>
-              <div type='card' className={utilStyles.productCard}>
-                <div className={utilStyles.productCircle}>
-                  <div className={utilStyles.productImages}>
-                    <Image
-                      src='/images/products/thermals.png'
-                      width={643}
-                      height={378}
-                      alt='Lithium Battery'
-                      className={utilStyles.productInnerImages}
-
-                    ></Image>
-                  </div>
-                  <div className={utilStyles.lowerImage}>
-                    <h3>Thermodynamic Hot Water Systems</h3>
-                  </div>
-
-                </div>
-
-
-                <motion.button>MORE INFO</motion.button>
-
-              </div>
-            </motion.div>
-            <motion.div variants={cards} onPointerMove={(e) => moveCard(e)} onPointerLeave={(e) => leaveCard(e)} type='cardContainer' className={utilStyles.productCardContainer}>
-              <div type='card' className={utilStyles.productCard}>
-                <h3>Air-to-Air Heat Pumps</h3>
-              </div>
-            </motion.div>
-            <motion.div variants={cards} onPointerMove={(e) => moveCard(e)} onPointerLeave={(e) => leaveCard(e)} type='cardContainer' className={utilStyles.productCardContainer}>
-              <div type='card' className={utilStyles.productCard}>
-                <h3>Home Energy Minder</h3>
-              </div>
-            </motion.div>
-            <motion.div variants={cards} onPointerMove={(e) => moveCard(e)} onPointerLeave={(e) => leaveCard(e)} type='cardContainer' className={utilStyles.productCardContainer}>
-              <div type='card' className={utilStyles.productCard}>
-                <h3>ESP Ecocent Series</h3>
-              </div>
-            </motion.div>
-            <motion.div variants={cards} onPointerMove={(e) => moveCard(e)} onPointerLeave={(e) => leaveCard(e)} type='cardContainer' className={utilStyles.productCardContainer}>
-              <div type='card' className={utilStyles.productCard}>
-                <h3>Solar iBoost</h3>
-              </div>
-            </motion.div>
-            <motion.div variants={cards} onPointerMove={(e) => moveCard(e)} onPointerLeave={(e) => leaveCard(e)} type='cardContainer' className={utilStyles.productCardContainer}>
-              <div type='card' className={utilStyles.productCard}>
-                <h3>Growatt Inverter Upgrade</h3>
-              </div>
-            </motion.div>
-            <motion.div variants={cards} onPointerMove={(e) => moveCard(e)} onPointerLeave={(e) => leaveCard(e)} type='cardContainer' className={utilStyles.productCardContainer}>
-              <div type='card' className={utilStyles.productCard}>
-                <h3>Infrared Heating Panels</h3>
-              </div>
-            </motion.div> */}
           </motion.div>
 
 
