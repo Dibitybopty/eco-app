@@ -893,6 +893,13 @@
 
 }
 
+@media screen and (max-width: 768px){
+  .productsTitleWrapper {
+    grid-template-columns: 1fr;
+
+  }
+}
+
 .productsSvg {
   padding: 6rem;
   height: 100vh;
