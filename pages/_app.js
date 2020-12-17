@@ -207,6 +207,7 @@ function MyApp({ Component, pageProps, router }) {
 
   return (
     <div id='allWrapper' className={utilStyles.allWrapper}>
+      <div className={utilStyles.ecoTitle}><h1>Eco Sales & Services Ltd.</h1></div>
       <div style={{ display: inputWidth ? 'initial' : 'none' }}>
         <motion.div onClick={() => setButtonClicked(!buttonClicked)} className={utilStyles.menuButtonWrapper}><button><div className={buttonClicked ? utilStyles.ggMotionClicked : utilStyles.ggMotion}></div></button></motion.div>
         <motion.div animate={buttonClicked && 'animate'} exit='exit' initial='exit' variants={buttonStaggerer} className={utilStyles.buttonStaggerer}>

@@ -90,7 +90,7 @@ export default function Home() {
 
         <div className={utilStyles.mainContent}>
           <div className={utilStyles.turbines}>
-            {/* <WindTurbine/> */}
+            <WindTurbine/>
             {/* <img src='/images/animate-turbines.svg'></img> */}
           </div>
           <div className={utilStyles.blobContainer}>

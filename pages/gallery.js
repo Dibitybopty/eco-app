@@ -65,7 +65,7 @@ export default function Gallery() {
         <motion.div transition={{ duration: 1.7 }} animate='animate' exit='exit' initial='initial' variants={cardAnimations} className={utilStyles.gallery}>
 
           <motion.div variants={cards} className={utilStyles.galleryGroup}>
-            <Image layout='fill' objectFit="cover" className={utilStyles.galleryImages} src='https://img1.wsimg.com/isteam/ip/15b1b8e3-2dc8-4905-bc55-7e810b2a928f/df933c83-c5e1-4c29-b701-864d40905bd7.jpg/:/rs=w:1300px,h:800px' alt='solar house'></Image>
+            <Image layout='fill' objectfit="cover" className={utilStyles.galleryImages} src='https://img1.wsimg.com/isteam/ip/15b1b8e3-2dc8-4905-bc55-7e810b2a928f/df933c83-c5e1-4c29-b701-864d40905bd7.jpg/:/rs=w:1300px,h:800px' alt='solar house'></Image>
             <div className={utilStyles.galleryIcons}>
               <svg
                 viewBox="0 0 24 24"
@@ -79,7 +79,7 @@ export default function Gallery() {
             </div>
           </motion.div>
           <motion.div variants={cards} className={utilStyles.galleryGroup}>
-            <Image layout='fill' objectFit="cover" className={utilStyles.galleryImages} src='https://img1.wsimg.com/isteam/ip/15b1b8e3-2dc8-4905-bc55-7e810b2a928f/df933c83-c5e1-4c29-b701-864d40905bd7.jpg/:/rs=w:1300px,h:800px' alt='solar house'></Image>
+            <Image layout='fill' objectfit="cover" className={utilStyles.galleryImages} src='https://img1.wsimg.com/isteam/ip/15b1b8e3-2dc8-4905-bc55-7e810b2a928f/df933c83-c5e1-4c29-b701-864d40905bd7.jpg/:/rs=w:1300px,h:800px' alt='solar house'></Image>
             <div className={utilStyles.galleryIcons}>
               <svg
                 viewBox="0 0 24 24"
@@ -93,7 +93,7 @@ export default function Gallery() {
             </div>
           </motion.div>
           <motion.div variants={cards} className={utilStyles.galleryGroup}>
-            <Image layout='fill' objectFit="cover" className={utilStyles.galleryImages} src='https://img1.wsimg.com/isteam/ip/15b1b8e3-2dc8-4905-bc55-7e810b2a928f/df933c83-c5e1-4c29-b701-864d40905bd7.jpg/:/rs=w:1300px,h:800px' alt='solar house'></Image>
+            <Image layout='fill' objectfit="cover" className={utilStyles.galleryImages} src='https://img1.wsimg.com/isteam/ip/15b1b8e3-2dc8-4905-bc55-7e810b2a928f/df933c83-c5e1-4c29-b701-864d40905bd7.jpg/:/rs=w:1300px,h:800px' alt='solar house'></Image>
             <div className={utilStyles.galleryIcons}>
               <svg
                 viewBox="0 0 24 24"
@@ -107,7 +107,7 @@ export default function Gallery() {
             </div>
           </motion.div>
           <motion.div variants={cards} className={utilStyles.galleryGroup}>
-            <Image layout='fill' objectFit="cover" className={utilStyles.galleryImages} src='https://img1.wsimg.com/isteam/ip/15b1b8e3-2dc8-4905-bc55-7e810b2a928f/df933c83-c5e1-4c29-b701-864d40905bd7.jpg/:/rs=w:1300px,h:800px' alt='solar house'></Image>
+            <Image layout='fill' objectfit="cover" className={utilStyles.galleryImages} src='https://img1.wsimg.com/isteam/ip/15b1b8e3-2dc8-4905-bc55-7e810b2a928f/df933c83-c5e1-4c29-b701-864d40905bd7.jpg/:/rs=w:1300px,h:800px' alt='solar house'></Image>
             <div className={utilStyles.galleryIcons}>
               <svg
                 viewBox="0 0 24 24"
@@ -121,7 +121,7 @@ export default function Gallery() {
             </div>
           </motion.div>
           <motion.div variants={cards} className={utilStyles.galleryGroup}>
-            <Image layout='fill' objectFit="cover" className={utilStyles.galleryImages} src='https://img1.wsimg.com/isteam/ip/15b1b8e3-2dc8-4905-bc55-7e810b2a928f/df933c83-c5e1-4c29-b701-864d40905bd7.jpg/:/rs=w:1300px,h:800px' alt='solar house'></Image>
+            <Image layout='fill' objectfit="cover" className={utilStyles.galleryImages} src='https://img1.wsimg.com/isteam/ip/15b1b8e3-2dc8-4905-bc55-7e810b2a928f/df933c83-c5e1-4c29-b701-864d40905bd7.jpg/:/rs=w:1300px,h:800px' alt='solar house'></Image>
             <div className={utilStyles.galleryIcons}>
               <svg
                 viewBox="0 0 24 24"
@@ -135,7 +135,7 @@ export default function Gallery() {
             </div>
           </motion.div>
           <motion.div variants={cards} className={utilStyles.galleryGroup}>
-            <Image layout='fill' objectFit="cover" className={utilStyles.galleryImages} src='https://img1.wsimg.com/isteam/ip/15b1b8e3-2dc8-4905-bc55-7e810b2a928f/df933c83-c5e1-4c29-b701-864d40905bd7.jpg/:/rs=w:1300px,h:800px' alt='solar house'></Image>
+            <Image layout='fill' objectfit="cover" className={utilStyles.galleryImages} src='https://img1.wsimg.com/isteam/ip/15b1b8e3-2dc8-4905-bc55-7e810b2a928f/df933c83-c5e1-4c29-b701-864d40905bd7.jpg/:/rs=w:1300px,h:800px' alt='solar house'></Image>
             <div className={utilStyles.galleryIcons}>
               <svg
                 viewBox="0 0 24 24"
@@ -149,7 +149,7 @@ export default function Gallery() {
             </div>
           </motion.div>
           <motion.div variants={cards} className={utilStyles.galleryGroup}>
-            <Image layout='fill' objectFit="cover" className={utilStyles.galleryImages} src='https://img1.wsimg.com/isteam/ip/15b1b8e3-2dc8-4905-bc55-7e810b2a928f/df933c83-c5e1-4c29-b701-864d40905bd7.jpg/:/rs=w:1300px,h:800px' alt='solar house'></Image>
+            <Image layout='fill' objectfit="cover" className={utilStyles.galleryImages} src='https://img1.wsimg.com/isteam/ip/15b1b8e3-2dc8-4905-bc55-7e810b2a928f/df933c83-c5e1-4c29-b701-864d40905bd7.jpg/:/rs=w:1300px,h:800px' alt='solar house'></Image>
             <div className={utilStyles.galleryIcons}>
               <svg
                 viewBox="0 0 24 24"
@@ -163,7 +163,7 @@ export default function Gallery() {
             </div>
           </motion.div>
           <motion.div variants={cards} className={utilStyles.galleryGroup}>
-            <Image layout='fill' objectFit="cover" className={utilStyles.galleryImages} src='https://img1.wsimg.com/isteam/ip/15b1b8e3-2dc8-4905-bc55-7e810b2a928f/df933c83-c5e1-4c29-b701-864d40905bd7.jpg/:/rs=w:1300px,h:800px' alt='solar house'></Image>
+            <Image layout='fill' objectfit="cover" className={utilStyles.galleryImages} src='https://img1.wsimg.com/isteam/ip/15b1b8e3-2dc8-4905-bc55-7e810b2a928f/df933c83-c5e1-4c29-b701-864d40905bd7.jpg/:/rs=w:1300px,h:800px' alt='solar house'></Image>
             <div className={utilStyles.galleryIcons}>
               <svg
                 viewBox="0 0 24 24"
@@ -177,7 +177,7 @@ export default function Gallery() {
             </div>
           </motion.div>
           <motion.div variants={cards} className={utilStyles.galleryGroup}>
-            <Image layout='fill' objectFit="cover" className={utilStyles.galleryImages} src='https://img1.wsimg.com/isteam/ip/15b1b8e3-2dc8-4905-bc55-7e810b2a928f/df933c83-c5e1-4c29-b701-864d40905bd7.jpg/:/rs=w:1300px,h:800px' alt='solar house'></Image>
+            <Image layout='fill' objectfit="cover" className={utilStyles.galleryImages} src='https://img1.wsimg.com/isteam/ip/15b1b8e3-2dc8-4905-bc55-7e810b2a928f/df933c83-c5e1-4c29-b701-864d40905bd7.jpg/:/rs=w:1300px,h:800px' alt='solar house'></Image>
             <div className={utilStyles.galleryIcons}>
               <svg
                 viewBox="0 0 24 24"
@@ -191,7 +191,7 @@ export default function Gallery() {
             </div>
           </motion.div>
           <motion.div variants={cards} className={utilStyles.galleryGroup}>
-            <Image layout='fill' objectFit="cover" className={utilStyles.galleryImages} src='https://img1.wsimg.com/isteam/ip/15b1b8e3-2dc8-4905-bc55-7e810b2a928f/df933c83-c5e1-4c29-b701-864d40905bd7.jpg/:/rs=w:1300px,h:800px' alt='solar house'></Image>
+            <Image layout='fill' objectfit="cover" className={utilStyles.galleryImages} src='https://img1.wsimg.com/isteam/ip/15b1b8e3-2dc8-4905-bc55-7e810b2a928f/df933c83-c5e1-4c29-b701-864d40905bd7.jpg/:/rs=w:1300px,h:800px' alt='solar house'></Image>
             <div className={utilStyles.galleryIcons}>
               <svg
                 viewBox="0 0 24 24"
@@ -205,7 +205,7 @@ export default function Gallery() {
             </div>
           </motion.div>
           <motion.div variants={cards} className={utilStyles.galleryGroup}>
-            <Image layout='fill' objectFit="cover" className={utilStyles.galleryImages} src='https://img1.wsimg.com/isteam/ip/15b1b8e3-2dc8-4905-bc55-7e810b2a928f/df933c83-c5e1-4c29-b701-864d40905bd7.jpg/:/rs=w:1300px,h:800px' alt='solar house'></Image>
+            <Image layout='fill' objectfit="cover" className={utilStyles.galleryImages} src='https://img1.wsimg.com/isteam/ip/15b1b8e3-2dc8-4905-bc55-7e810b2a928f/df933c83-c5e1-4c29-b701-864d40905bd7.jpg/:/rs=w:1300px,h:800px' alt='solar house'></Image>
             <div className={utilStyles.galleryIcons}>
               <svg
                 viewBox="0 0 24 24"

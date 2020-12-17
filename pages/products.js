@@ -125,8 +125,9 @@ export default function Products({ productList }) {
     }
   }
 
-  const prods = products.map((prod) =>
-    <AnimateSharedLayout key={prod.title} >
+  const prods = products.map((prod, i) =>
+  <div key={prod.title + i}>
+    <AnimateSharedLayout >
 
       <Modal id={prod.title} showModal={showModal} showModalWithID={showModalWithID} setShowModal={setShowModal} title={prod.title} productImage={prod.mainImage} details1={prod.details1} details2={prod.details2} details3={prod.details3} image1={prod.subImage1} image2={prod.subImage2} image3={prod.subImage3} />
 
@@ -163,6 +164,7 @@ export default function Products({ productList }) {
 
       </motion.div>
     </AnimateSharedLayout>
+    </div>
   )
 
   return (
@@ -171,12 +173,12 @@ export default function Products({ productList }) {
         <title>{siteTitle}</title>
       </Head>
       <div className={utilStyles.productWrapper}>
-        <div className={utilStyles.productsTitleWrapper}>
+        {/* <div className={utilStyles.productsTitleWrapper}>
           <div></div>
           <div className={utilStyles.productsTitle}>
           <p>ECO SALES - PRODUCTS</p>
           </div>
-        </div>
+        </div> */}
 
         <div id="productBG" className={utilStyles.productBG}>
           {/* <div className={utilStyles.galleryHeader}><h1>Eco Sales - Photo Gallery</h1></div> */}
