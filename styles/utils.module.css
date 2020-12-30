@@ -618,7 +618,20 @@
   .ecoTitle{
     display: none;
   }
+  .ecoCurved{
+    display: none;
+  }
 }
+
+.ecoCurved{
+  position: absolute;
+  pointer-events: none;
+  bottom: -0.39rem;
+  right: 0;
+  width: 80rem;
+  z-index: 1000;
+}
+
 
 .blobContainer {
   width: 50%;

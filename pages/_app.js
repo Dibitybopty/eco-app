@@ -152,8 +152,8 @@ function MyApp({ Component, pageProps, router }) {
       //sunGroup.style.transform = `translate(${xAxis}px,${yAxis}px)`
 
       let myTween = new gsap.timeline().to(sunGroup, 0.8, { x: xAxis, y: yAxis })
-      let myTween2 = new gsap.timeline().to(cloudBack, 0.8, { x: cloudxAxis})
-      let myTween3 = new gsap.timeline().to(cloudFront, 0.8, { x: cloudxAxis2})
+      let myTween2 = new gsap.timeline().to(cloudBack, 0.8, { x: cloudxAxis })
+      let myTween3 = new gsap.timeline().to(cloudFront, 0.8, { x: cloudxAxis2 })
       // let myTween4 = new gsap.timeline().to(cloudMain, 0.8, { x: cloudxAxis3 })
 
       // myTween.play();
@@ -207,7 +207,28 @@ function MyApp({ Component, pageProps, router }) {
 
   return (
     <div id='allWrapper' className={utilStyles.allWrapper}>
-      <div className={utilStyles.ecoTitle}><h1>Eco Sales & Services Ltd.</h1></div>
+      {/* <div className={utilStyles.ecoTitle}><h1>Eco Sales & Services Ltd.</h1></div> */}
+      <div className={utilStyles.ecoCurved}>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 585 420">
+         
+            <g id="phone">
+            <ellipse
+            fill='none'
+       id="circle852"
+       cx="160.72598"
+       cy="436.33487"
+       transform="matrix(-0.06214954,0.99806685,0.99724481,0.07418077,0,0) rotate(-3 0 0)"
+       
+       rx="204.63535"
+       ry="169.39551" />
+              <text fontWeight="bold" fill="#69CD3C" fontSize="3rem" letterSpacing="15">
+                <textPath alignment-baseline="top" href="#circle852">
+                  ECO SALES
+    </textPath>
+              </text>
+            </g>
+        </svg>
+      </div>
       <div style={{ display: inputWidth ? 'initial' : 'none' }}>
         <motion.div onClick={() => setButtonClicked(!buttonClicked)} className={utilStyles.menuButtonWrapper}><button><div className={buttonClicked ? utilStyles.ggMotionClicked : utilStyles.ggMotion}></div></button></motion.div>
         <motion.div animate={buttonClicked && 'animate'} exit='exit' initial='exit' variants={buttonStaggerer} className={utilStyles.buttonStaggerer}>
@@ -246,7 +267,7 @@ function MyApp({ Component, pageProps, router }) {
 
       </div>
 
-      <AnimatePresence initial={true} >
+      <AnimatePresence initial={false} >
 
         <motion.div className={utilStyles.siteWrapper} key={router.route} initial="pageEnter" animate="center" exit="pageExit" variants={variants}
           transition={{
@@ -295,12 +316,12 @@ function MyApp({ Component, pageProps, router }) {
         </div>
 
         {/* <div  className={utilStyles.cloudMain}><img id='cloudMain' src='/images/cloud-main.svg'></img></div> */}
-        <motion.div animate={{x: router.route === '/contactus' ? 2000 : 0 }} transition={{delay: 0.5, duration: 2}} className={utilStyles.cloudFront}><img id='cloudFront' src='/images/cloud-front.svg'></img></motion.div>
+        <motion.div animate={{ x: router.route === '/contactus' ? 2000 : 0 }} transition={{ delay: 0.5, duration: 2 }} className={utilStyles.cloudFront}><img id='cloudFront' src='/images/cloud-front.svg'></img></motion.div>
 
 
       </div>
 
-    </div>
+    </div >
 
 
   )
