@@ -131,7 +131,7 @@ export default function Products({ productList }) {
 
       <Modal id={prod.title} showModal={showModal} showModalWithID={showModalWithID} setShowModal={setShowModal} title={prod.title} productImage={prod.mainImage} details1={prod.details1} details2={prod.details2} details3={prod.details3} image1={prod.subImage1} image2={prod.subImage2} image3={prod.subImage3} />
 
-      <motion.div variants={cards} onPointerMove={(e) => moveCard(e)} onPointerLeave={(e) => leaveCard(e)} type='cardContainer' className={utilStyles.productCardContainer}>
+      <motion.div variants={cards} type='cardContainer' className={utilStyles.productCardContainer}>
 
         <div type='card' className={utilStyles.productCard}>
           <motion.div onClick={() => {
