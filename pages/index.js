@@ -59,62 +59,7 @@ export default function Home() {
         <title>{siteTitle}</title>
       </Head>
       <div className={utilStyles.homeWrapper}>
-        <AnimateSharedLayout>
-          <motion.div onClick={() => setShowModal(!showModal)} layoutId="banner" className={utilStyles.banner} animate="show" exit="exit" initial="hidden" variants={container}>
-            <span>Up to</span>&nbsp;
-          <motion.span variants={item} >£</motion.span>
-            <motion.span variants={item} >1</motion.span>
-            <motion.span variants={item} >0</motion.span>
-            <motion.span variants={item} >,</motion.span>
-            <motion.span variants={item} >0</motion.span>
-            <motion.span variants={item} >0</motion.span>
-            <motion.span variants={item} >0</motion.span>
-            &nbsp;
-            <motion.span variants={item} >F</motion.span>
-            <motion.span variants={item} >R</motion.span>
-            <motion.span variants={item} >E</motion.span>
-            <motion.span variants={item} >E</motion.span>
-            &nbsp;
-            <motion.span variants={item} >S</motion.span>
-            <motion.span variants={item} >O</motion.span>
-            <motion.span variants={item} >L</motion.span>
-            <motion.span variants={item} >A</motion.span>
-            <motion.span variants={item} >R</motion.span>
-            &nbsp;
-
-          <motion.span style={{ display: 'inline-block', fontWeight: 600 }} layoutId="title">Green Homes Government Grant.</motion.span>
-          &nbsp;<span style={{ fontWeight: 600 }}>Click here to register your interest.</span>
-          </motion.div>
-          <Modal showModal={showModal} setShowModal={setShowModal} text="Green Homes Government Grant" />
-          <motion.div onClick={() => setShowModal(!showModal)} layoutId="banner" animate="show" exit="exit" initial="hidden" variants={container} className={utilStyles.shapeContainer}>
-            <span>Limited time offer! &nbsp;</span>
-            <span>Up to</span>&nbsp;
-          <motion.span variants={item} >£</motion.span>
-            <motion.span variants={item} >1</motion.span>
-            <motion.span variants={item} >0</motion.span>
-            <motion.span variants={item} >,</motion.span>
-            <motion.span variants={item} >0</motion.span>
-            <motion.span variants={item} >0</motion.span>
-            <motion.span variants={item} >0</motion.span>
-            &nbsp;
-            <motion.span variants={item} >F</motion.span>
-            <motion.span variants={item} >R</motion.span>
-            <motion.span variants={item} >E</motion.span>
-            <motion.span variants={item} >E</motion.span>
-            &nbsp;
-            <motion.span variants={item} >S</motion.span>
-            <motion.span variants={item} >O</motion.span>
-            <motion.span variants={item} >L</motion.span>
-            <motion.span variants={item} >A</motion.span>
-            <motion.span variants={item} >R</motion.span>
-            &nbsp;
-
-          <motion.span style={{ display: 'inline-block', fontWeight: 600 }} layoutId="title">Green Homes Government Grant.</motion.span>
-          &nbsp;<span style={{ fontWeight: 600 }}>Click here to register your interest.</span>
-
-          </motion.div>
-          <Modal showModal={showModal} setShowModal={setShowModal} text="Green Homes Government Grant" />
-        </AnimateSharedLayout>
+       
 
         <div className={utilStyles.mainContent}>
           <div className={utilStyles.turbines}>
